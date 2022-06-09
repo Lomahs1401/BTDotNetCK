@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{312661D0-65E6-4828-9AF5-885C4427B8CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BTDotNetCK</RootNamespace>
+    <AssemblyName>BTDotNetCK</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Coffee-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BLL_ForgotPassword.cs" />
+    <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="BLL\BLL_QLNV.cs" />
+    <Compile Include="DAL\DAL_ForgotPassword.cs" />
+    <Compile Include="DAL\DAL_Login.cs" />
+    <Compile Include="DAL\DAL_QLBH.cs" />
+    <Compile Include="DAL\DAL_QLDT.cs" />
+    <Compile Include="DAL\DAL_QLNV.cs" />
+    <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\Dashboard.cs" />
+    <Compile Include="DTO\Order.cs" />
+    <Compile Include="DTO\OrderDetail.cs" />
+    <Compile Include="DTO\Product.cs" />
+    <Compile Include="DTO\Staff.cs" />
+    <Compile Include="DTO\Table.cs" />
+    <Compile Include="GUI\FormAddNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddNV.Designer.cs">
+      <DependentUpon>FormAddNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAlert.Designer.cs">
+      <DependentUpon>FormAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormForgotPassword.Designer.cs">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMainMenuNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMainMenuNV.Designer.cs">
+      <DependentUpon>FormMainMenuNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMainMenuQTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMainMenuQTV.Designer.cs">
+      <DependentUpon>FormMainMenuQTV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLBH.Designer.cs">
+      <DependentUpon>FormQLBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLBHNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLBHNV.Designer.cs">
+      <DependentUpon>FormQLBHNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLDT.Designer.cs">
+      <DependentUpon>FormQLDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLKH.Designer.cs">
+      <DependentUpon>FormQLKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLKHNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLKHNV.Designer.cs">
+      <DependentUpon>FormQLKHNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLNV.Designer.cs">
+      <DependentUpon>FormQLNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLMH.Designer.cs">
+      <DependentUpon>FormQLMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormSettingAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormSettingAccount.Designer.cs">
+      <DependentUpon>FormSettingAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormEditNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormEditNV.Designer.cs">
+      <DependentUpon>FormEditNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormTTNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormTTNV.Designer.cs">
+      <DependentUpon>FormTTNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MyApplicationContext.cs" />
+    <Compile Include="GUI\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuColorTable.cs" />
+    <Compile Include="GUI\MenuRenderer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GUI\RJDropDownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="GUI\FormAddNV.resx">
+      <DependentUpon>FormAddNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormForgotPassword.resx">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMainMenuNV.resx">
+      <DependentUpon>FormMainMenuNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMainMenuQTV.resx">
+      <DependentUpon>FormMainMenuQTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLBH.resx">
+      <DependentUpon>FormQLBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLBHNV.resx">
+      <DependentUpon>FormQLBHNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLDT.resx">
+      <DependentUpon>FormQLDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLKH.resx">
+      <DependentUpon>FormQLKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLKHNV.resx">
+      <DependentUpon>FormQLKHNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLNV.resx">
+      <DependentUpon>FormQLNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLMH.resx">
+      <DependentUpon>FormQLMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormSettingAccount.resx">
+      <DependentUpon>FormSettingAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormEditNV.resx">
+      <DependentUpon>FormEditNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormTTNV.resx">
+      <DependentUpon>FormTTNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Coffee-icon.ico" />
+    <Content Include="Img\Icon\error.png" />
+    <Content Include="Img\Icon\icons8_cancel_45px.png" />
+    <Content Include="Img\Icon\info.png" />
+    <Content Include="Img\Icon\success.png" />
+    <Content Include="Img\Icon\warning.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\web-browser.png" />
+    <None Include="Resources\sql-file2.png" />
+    <None Include="Resources\Logo Project AM 2.png" />
+    <None Include="Resources\logo book store.png" />
+    <None Include="Resources\java.png" />
+    <None Include="Resources\api.png" />
+    <None Include="Resources\icons8_user_settings_30px.png" />
+    <None Include="Resources\icons8_reserve_30px_1.png" />
+    <None Include="Resources\icons8_Logout_30px.png" />
+    <None Include="Resources\user info.png" />
+    <None Include="Resources\delete_30px.png" />
+    <None Include="Resources\icons8_cancel_45px.png" />
+    <None Include="Img\Icon\shopping1.png" />
+    <None Include="Resources\profits.png" />
+    <None Include="Resources\price-tag.png" />
+    <None Include="Resources\payment.png" />
+    <None Include="Resources\package2.png" />
+    <None Include="Resources\money-bag.png" />
+    <None Include="Resources\buyer.png" />
+    <None Include="Resources\women.png" />
+    <None Include="Resources\man 1.png" />
+    <None Include="Resources\division.png" />
+    <None Include="Img\Icon\add-user.png" />
+    <None Include="Resources\icons8_search_20px.png" />
+    <None Include="Resources\icons8_picture_30px.png" />
+    <None Include="Resources\icons8_Close_30px.png" />
+    <None Include="Img\Icon\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\blue eye icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\blue eye slash icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\coffee app icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\coffee shop icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\Coffee-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\Email icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\exit blue icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\female admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\female employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\lock-xxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\male admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\male employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\password icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\user icon.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
