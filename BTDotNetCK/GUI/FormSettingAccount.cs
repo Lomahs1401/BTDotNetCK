@@ -25,12 +25,6 @@ namespace BTDotNetCK.GUI
             InitializeComponent();
         }
 
-        public void Alert(string msg, FormAlert.EnmType type)
-        {
-            FormAlert frm = new FormAlert();
-            frm.ShowAlert(msg, type);
-        }
-
         private byte[] ImageToByteArray(Guna2PictureBox pictureBox)
         {
             using (Bitmap bitmap = new Bitmap(pictureBox.ImageLocation))

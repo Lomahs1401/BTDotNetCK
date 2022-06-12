@@ -38,7 +38,7 @@ namespace BTDotNetCK.GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lblEmployeeUsername = new System.Windows.Forms.Label();
+            this.lblStaffName = new System.Windows.Forms.Label();
             this.EmployeePicture = new FontAwesome.Sharp.IconPictureBox();
             this.btnMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.btnMaximize = new FontAwesome.Sharp.IconPictureBox();
@@ -200,7 +200,7 @@ namespace BTDotNetCK.GUI
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelTitleBar.Controls.Add(this.lblEmployeeUsername);
+            this.panelTitleBar.Controls.Add(this.lblStaffName);
             this.panelTitleBar.Controls.Add(this.EmployeePicture);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
@@ -215,19 +215,19 @@ namespace BTDotNetCK.GUI
             this.panelTitleBar.TabIndex = 2;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTitleBar_MouseDown);
             // 
-            // lblEmployeeUsername
+            // lblStaffName
             // 
-            this.lblEmployeeUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEmployeeUsername.AutoSize = true;
-            this.lblEmployeeUsername.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblEmployeeUsername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblEmployeeUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblEmployeeUsername.Location = new System.Drawing.Point(800, 28);
-            this.lblEmployeeUsername.Name = "lblEmployeeUsername";
-            this.lblEmployeeUsername.Size = new System.Drawing.Size(85, 19);
-            this.lblEmployeeUsername.TabIndex = 14;
-            this.lblEmployeeUsername.Text = "Employee";
-            this.lblEmployeeUsername.Click += new System.EventHandler(this.LblEmployeeUsername_Click);
+            this.lblStaffName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStaffName.AutoSize = true;
+            this.lblStaffName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblStaffName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblStaffName.ForeColor = System.Drawing.Color.Black;
+            this.lblStaffName.Location = new System.Drawing.Point(800, 28);
+            this.lblStaffName.Name = "lblStaffName";
+            this.lblStaffName.Size = new System.Drawing.Size(44, 19);
+            this.lblStaffName.TabIndex = 14;
+            this.lblStaffName.Text = "Staff";
+            this.lblStaffName.Click += new System.EventHandler(this.LblEmployeeUsername_Click);
             // 
             // EmployeePicture
             // 
@@ -392,7 +392,7 @@ namespace BTDotNetCK.GUI
             // 
             this.iconPictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.iconPictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.iconPictureBox5.BackgroundImage = global::BTDotNetCK.Properties.Resources.java;
+            this.iconPictureBox5.BackgroundImage = global::BTDotNetCK.Properties.Resources.c_sharp;
             this.iconPictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.iconPictureBox5.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -616,7 +616,7 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.ToolStripMenuItem ghiChúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.Label lblEmployeeUsername;
+        private System.Windows.Forms.Label lblStaffName;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;

@@ -96,15 +96,15 @@ namespace BTDotNetCK.GUI
             if (account.Role == 0)
             {
                 Hide();
-                new FormMainMenuQTV(account.UserName, nameStaff).Show();
-                Close();
+                new FormMainMenuQTV(account.UserName, password, nameStaff).Show();
+                Dispose();
             }
             // Nhân viên
             else
             {
                 Hide();
                 new FormMainMenuNV(account.UserName, nameStaff).Show();
-                Close();
+                Dispose();
             }
         }
 
@@ -112,7 +112,7 @@ namespace BTDotNetCK.GUI
         {
             Hide();
             new FormForgotPassword(username, password, email, emailPassword).Show();
-            Close();
+            Dispose();
         }
         private void Show_Click(object sender, EventArgs e)
         {

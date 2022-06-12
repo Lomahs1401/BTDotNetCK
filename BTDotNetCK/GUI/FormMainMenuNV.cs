@@ -39,8 +39,8 @@ namespace BTDotNetCK.GUI
 
         private void ShowUserInfo()
         {
-            lblUserName.Text = accountUsername;
-            lblEmployeeUsername.Text = nameStaff;
+            lblUserName.Text = nameStaff;
+            lblStaffName.Text = accountUsername;
         }
 
         //Structs

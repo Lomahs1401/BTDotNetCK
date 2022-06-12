@@ -103,17 +103,17 @@
     <Compile Include="GUI\FormAddNV.Designer.cs">
       <DependentUpon>FormAddNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormAlert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormAlert.Designer.cs">
-      <DependentUpon>FormAlert.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\FormForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FormForgotPassword.Designer.cs">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormIdentify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormIdentify.Designer.cs">
+      <DependentUpon>FormIdentify.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormLogin.cs">
       <SubType>Form</SubType>
@@ -204,11 +204,15 @@
     <Compile Include="GUI\RJDropDownMenu.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Validator\Validator.cs" />
     <EmbeddedResource Include="GUI\FormAddNV.resx">
       <DependentUpon>FormAddNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormIdentify.resx">
+      <DependentUpon>FormIdentify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -275,38 +279,58 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Coffee-icon.ico" />
+    <None Include="Img\Icon\women.png" />
+    <None Include="Img\Icon\web-browser.png" />
+    <None Include="Img\Icon\api.png" />
+    <None Include="Img\Icon\buyer.png" />
+    <None Include="Img\Icon\c-sharp.png" />
+    <None Include="Img\Icon\division.png" />
+    <None Include="Img\Icon\delete_30px.png" />
     <Content Include="Img\Icon\error.png" />
     <Content Include="Img\Icon\icons8_cancel_45px.png" />
+    <None Include="Img\Icon\icons8_Close_30px.png" />
+    <None Include="Img\Icon\icons8_Logout_30px.png" />
+    <None Include="Img\Icon\icons8_picture_30px.png" />
+    <None Include="Img\Icon\icons8_reserve_30px_1.png" />
+    <None Include="Img\Icon\icons8_search_20px.png" />
+    <None Include="Img\Icon\icons8_user_settings_30px.png" />
     <Content Include="Img\Icon\info.png" />
+    <None Include="Img\Icon\package2.png" />
+    <None Include="Img\Icon\payment.png" />
+    <None Include="Img\Icon\pencil.png" />
+    <None Include="Img\Icon\price-tag.png" />
+    <None Include="Img\Icon\profits.png" />
+    <None Include="Img\Icon\sql-file2.png" />
+    <None Include="Img\Icon\man 1.png" />
+    <None Include="Img\Icon\java.png" />
+    <None Include="Img\Icon\money-bag.png" />
+    <None Include="Img\Icon\shield.png" />
     <Content Include="Img\Icon\success.png" />
+    <None Include="Img\Icon\user info.png" />
     <Content Include="Img\Icon\warning.png" />
-    <None Include="Resources\pencil.png" />
-    <None Include="Resources\web-browser.png" />
-    <None Include="Resources\sql-file2.png" />
-    <None Include="Resources\Logo Project AM 2.png" />
-    <None Include="Resources\logo book store.png" />
-    <None Include="Resources\java.png" />
-    <None Include="Resources\api.png" />
-    <None Include="Resources\icons8_user_settings_30px.png" />
-    <None Include="Resources\icons8_reserve_30px_1.png" />
-    <None Include="Resources\icons8_Logout_30px.png" />
-    <None Include="Resources\user info.png" />
-    <None Include="Resources\delete_30px.png" />
-    <None Include="Resources\icons8_cancel_45px.png" />
+    <None Include="Img\Staff\male staff 10.jpg" />
+    <None Include="Img\Staff\male staff 9.jpg" />
+    <None Include="Img\Staff\male staff 8.jpg" />
+    <None Include="Img\Staff\male staff 7.jpg" />
+    <None Include="Img\Staff\male staff 6.jpg" />
+    <None Include="Img\Staff\male staff 5.jpg" />
+    <None Include="Img\Staff\male staff 4.jpg" />
+    <None Include="Img\Staff\male staff 3.jpg" />
+    <None Include="Img\Staff\male staff 2.jpg" />
+    <None Include="Img\Staff\male staff 1.jpg" />
+    <None Include="Img\Staff\male staff.jpg" />
+    <None Include="Img\Staff\female staff 10.jpg" />
+    <None Include="Img\Staff\female staff 9.jpg" />
+    <None Include="Img\Staff\female staff 8.jpg" />
+    <None Include="Img\Staff\female staff 7.jpg" />
+    <None Include="Img\Staff\female staff 6.jpg" />
+    <None Include="Img\Staff\female staff 5.jpg" />
+    <None Include="Img\Staff\female staff 4.jpg" />
+    <None Include="Img\Staff\female staff 3.jpg" />
+    <None Include="Img\Staff\female staff 2.jpg" />
+    <None Include="Img\Staff\female staff 1.jpg" />
     <None Include="Img\Icon\shopping1.png" />
-    <None Include="Resources\profits.png" />
-    <None Include="Resources\price-tag.png" />
-    <None Include="Resources\payment.png" />
-    <None Include="Resources\package2.png" />
-    <None Include="Resources\money-bag.png" />
-    <None Include="Resources\buyer.png" />
-    <None Include="Resources\women.png" />
-    <None Include="Resources\man 1.png" />
-    <None Include="Resources\division.png" />
     <None Include="Img\Icon\add-user.png" />
-    <None Include="Resources\icons8_search_20px.png" />
-    <None Include="Resources\icons8_picture_30px.png" />
-    <None Include="Resources\icons8_Close_30px.png" />
     <None Include="Img\Icon\logo.png" />
   </ItemGroup>
   <ItemGroup>

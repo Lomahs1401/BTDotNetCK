@@ -31,7 +31,7 @@ namespace BTDotNetCK.DAL
         }
 
         // Insert, Update, Delete
-        public bool ExecuteDB(string query)
+        public int ExecuteDB(string query)
         {
             try
             {
@@ -39,14 +39,14 @@ namespace BTDotNetCK.DAL
                 {
                     SqlCommand sqlCommand = new SqlCommand(query, connection);
                     connection.Open();
-                    sqlCommand.ExecuteNonQuery();
+                    int result = sqlCommand.ExecuteNonQuery();
                     connection.Close();
-                    return true;
+                    return result;
                 }
             }
             catch (Exception)
             {
-                return false;
+                return -1;
             }
         }
 

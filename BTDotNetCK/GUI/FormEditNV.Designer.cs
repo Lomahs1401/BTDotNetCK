@@ -180,6 +180,7 @@ namespace BTDotNetCK.GUI
             this.tbStartDate.SelectedText = "";
             this.tbStartDate.Size = new System.Drawing.Size(409, 30);
             this.tbStartDate.TabIndex = 58;
+            this.tbStartDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbStartDate_KeyPress);
             // 
             // lblStartDate
             // 
@@ -196,6 +197,7 @@ namespace BTDotNetCK.GUI
             // btnCancel
             // 
             this.btnCancel.BorderRadius = 15;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -213,6 +215,7 @@ namespace BTDotNetCK.GUI
             // btnSave
             // 
             this.btnSave.BorderRadius = 15;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -230,6 +233,7 @@ namespace BTDotNetCK.GUI
             // btnDeleteImg
             // 
             this.btnDeleteImg.BorderRadius = 20;
+            this.btnDeleteImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDeleteImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDeleteImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -248,6 +252,7 @@ namespace BTDotNetCK.GUI
             // btnNVImg
             // 
             this.btnNVImg.BorderRadius = 20;
+            this.btnNVImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNVImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnNVImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNVImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -291,6 +296,7 @@ namespace BTDotNetCK.GUI
             // avatar
             // 
             this.avatar.BackColor = System.Drawing.Color.Transparent;
+            this.avatar.ErrorImage = null;
             this.avatar.ImageRotate = 0F;
             this.avatar.Location = new System.Drawing.Point(10, 44);
             this.avatar.Name = "avatar";
@@ -385,6 +391,7 @@ namespace BTDotNetCK.GUI
             this.tbEmailNV.SelectedText = "";
             this.tbEmailNV.Size = new System.Drawing.Size(409, 30);
             this.tbEmailNV.TabIndex = 2;
+            this.tbEmailNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbEmailNV_KeyPress);
             // 
             // tbSDTNV
             // 
@@ -409,6 +416,7 @@ namespace BTDotNetCK.GUI
             this.tbSDTNV.SelectedText = "";
             this.tbSDTNV.Size = new System.Drawing.Size(409, 30);
             this.tbSDTNV.TabIndex = 5;
+            this.tbSDTNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbSDTNV_KeyPress);
             // 
             // tbAddressNV
             // 
@@ -433,6 +441,7 @@ namespace BTDotNetCK.GUI
             this.tbAddressNV.SelectedText = "";
             this.tbAddressNV.Size = new System.Drawing.Size(409, 30);
             this.tbAddressNV.TabIndex = 7;
+            this.tbAddressNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbAddressNV_KeyPress);
             // 
             // tbCMNDNV
             // 
@@ -457,6 +466,7 @@ namespace BTDotNetCK.GUI
             this.tbCMNDNV.SelectedText = "";
             this.tbCMNDNV.Size = new System.Drawing.Size(409, 30);
             this.tbCMNDNV.TabIndex = 6;
+            this.tbCMNDNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbCMNDNV_KeyPress);
             // 
             // tbBD
             // 
@@ -481,6 +491,7 @@ namespace BTDotNetCK.GUI
             this.tbBD.SelectedText = "";
             this.tbBD.Size = new System.Drawing.Size(409, 30);
             this.tbBD.TabIndex = 3;
+            this.tbBD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbBD_KeyPress);
             // 
             // tbNameNV
             // 
@@ -505,6 +516,7 @@ namespace BTDotNetCK.GUI
             this.tbNameNV.SelectedText = "";
             this.tbNameNV.Size = new System.Drawing.Size(409, 30);
             this.tbNameNV.TabIndex = 1;
+            this.tbNameNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbNameNV_KeyPress);
             // 
             // lblCMND
             // 
@@ -614,6 +626,7 @@ namespace BTDotNetCK.GUI
             this.Name = "FormEditNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sửa nhân viên";
+            this.Load += new System.EventHandler(this.FormEditNV_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

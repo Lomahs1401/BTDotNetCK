@@ -1,4 +1,6 @@
-﻿using BTDotNetCK.GUI;
+﻿using BTDotNetCK.BLL;
+using BTDotNetCK.DTO;
+using BTDotNetCK.GUI;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -18,8 +20,9 @@ namespace BTDotNetCK.GUI
         private readonly Panel btnLeftBorder;
         private Form currentChildForm;
         private readonly string accountUsername;
+        private readonly string password;
         private readonly string nameStaff;
-        public FormMainMenuQTV(string username, string nameStaff)
+        public FormMainMenuQTV(string accountUsername, string password, string nameStaff)
         {
             InitializeComponent();
             btnLeftBorder = new Panel
@@ -33,7 +36,8 @@ namespace BTDotNetCK.GUI
             ControlBox = false;
             DoubleBuffered = true;
             MaximizedBounds = Screen.FromHandle(Handle).WorkingArea;
-            accountUsername = username;
+            this.accountUsername = accountUsername;
+            this.password = password;
             this.nameStaff = nameStaff;
             ShowUserInfo();
         }
@@ -99,7 +103,6 @@ namespace BTDotNetCK.GUI
                 // Open only form
                 currentChildForm.Close();
             }
-
             currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -123,7 +126,7 @@ namespace BTDotNetCK.GUI
         private void BtnQLNV_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormQLNV());
+            OpenChildForm(new FormQLNV(password));
         }
 
         private void BtnQLBH_Click(object sender, EventArgs e)
@@ -146,7 +149,7 @@ namespace BTDotNetCK.GUI
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            Dispose();
         }
 
         private void BtnMaximize_Click(object sender, EventArgs e)
@@ -243,11 +246,6 @@ namespace BTDotNetCK.GUI
                 btnLeftBorder.Visible = false;
                 OpenChildForm(new FormSettingAccount(accountUsername));
             }
-        }
-
-        private void rjAdminUserSettingMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using DoAnPBL3.Models;
+﻿using BTDotNetCK.BLL;
+using BTDotNetCK.DTO;
+using DoAnPBL3.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,21 +16,52 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormTTNV : Form
     {
-        private readonly string ID_Employee;
-        public FormTTNV(string ID_Employee)
+        private readonly string ID_Staff;
+        public FormTTNV(string ID_Staff)
         {
             InitializeComponent();
-            this.ID_Employee = ID_Employee;
+            this.ID_Staff = ID_Staff;
         }
 
         private void FormTTNV_Load(object sender, EventArgs e)
         {
-
+            guna2ShadowForm1.SetShadowForm(this);
+            ShowInfo(BLL_QLNV.Instance.GetStaffByID(ID_Staff));
         }
 
-        private void RjbtnCancel_Click(object sender, EventArgs e)
+        private void ShowInfo(Staff staff)
         {
-            Close();
+            tbIDNV.Text = staff.ID_Staff;
+            tbNameNV.Text = staff.NameStaff;
+            tbEmailNV.Text = staff.Email;
+            tbBD.Text = staff.DateOfBirth.ToString("dd/MM/yyyy");
+            tbStartDate.Text = staff.StartDate.ToString("dd/MM/yyyy");
+            if (staff.EndDate == null || staff.EndDate.Value.ToString("dd/MM/yyyy") == "01/01/1900")
+                tbEndDate.Text = "";
+            else
+                tbEndDate.Text = staff.EndDate.Value.ToString("dd/MM/yyyy");
+            tbGender.Text = staff.Gender;
+            tbCMNDNV.Text = staff.ID_Card;
+            tbAddressNV.Text = staff.Address;
+            tbSDTNV.Text = staff.Phone;
+            try
+            {
+                Bitmap bitmap = new Bitmap(staff.Image);
+                avatar.Image = bitmap;
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Đường dẫn trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Đường dẫn không hợp lệ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnOK_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

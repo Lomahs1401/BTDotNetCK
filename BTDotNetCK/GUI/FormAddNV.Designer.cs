@@ -35,6 +35,9 @@ namespace BTDotNetCK.GUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.msgValidateStartDate = new System.Windows.Forms.Label();
+            this.tbStartDate = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblStartDate = new System.Windows.Forms.Label();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnOK = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteImg = new Guna.UI2.WinForms.Guna2Button();
@@ -63,9 +66,6 @@ namespace BTDotNetCK.GUI
             this.lblNameNV = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.msgValidateStartDate = new System.Windows.Forms.Label();
-            this.tbStartDate = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblStartDate = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContainer.SuspendLayout();
@@ -148,9 +148,56 @@ namespace BTDotNetCK.GUI
             this.panelContainer.Size = new System.Drawing.Size(833, 664);
             this.panelContainer.TabIndex = 5;
             // 
+            // msgValidateStartDate
+            // 
+            this.msgValidateStartDate.AutoSize = true;
+            this.msgValidateStartDate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msgValidateStartDate.Location = new System.Drawing.Point(402, 279);
+            this.msgValidateStartDate.Name = "msgValidateStartDate";
+            this.msgValidateStartDate.Size = new System.Drawing.Size(0, 16);
+            this.msgValidateStartDate.TabIndex = 59;
+            // 
+            // tbStartDate
+            // 
+            this.tbStartDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.tbStartDate.BorderRadius = 6;
+            this.tbStartDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbStartDate.DefaultText = "";
+            this.tbStartDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.tbStartDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.tbStartDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.tbStartDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.tbStartDate.FillColor = System.Drawing.Color.Tan;
+            this.tbStartDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStartDate.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.tbStartDate.ForeColor = System.Drawing.Color.Black;
+            this.tbStartDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStartDate.Location = new System.Drawing.Point(393, 246);
+            this.tbStartDate.Name = "tbStartDate";
+            this.tbStartDate.PasswordChar = '\0';
+            this.tbStartDate.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbStartDate.PlaceholderText = "Nhập ngày bắt đầu vào làm";
+            this.tbStartDate.SelectedText = "";
+            this.tbStartDate.Size = new System.Drawing.Size(409, 30);
+            this.tbStartDate.TabIndex = 4;
+            this.tbStartDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbStartDate_KeyPress);
+            // 
+            // lblStartDate
+            // 
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDate.ForeColor = System.Drawing.Color.Black;
+            this.lblStartDate.Location = new System.Drawing.Point(286, 254);
+            this.lblStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(101, 18);
+            this.lblStartDate.TabIndex = 57;
+            this.lblStartDate.Text = "Ngày vào làm";
+            // 
             // btnCancel
             // 
             this.btnCancel.BorderRadius = 15;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -161,13 +208,14 @@ namespace BTDotNetCK.GUI
             this.btnCancel.Location = new System.Drawing.Point(413, 595);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(145, 36);
-            this.btnCancel.TabIndex = 56;
+            this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnOK
             // 
             this.btnOK.BorderRadius = 15;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -178,13 +226,14 @@ namespace BTDotNetCK.GUI
             this.btnOK.Location = new System.Drawing.Point(240, 595);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(145, 36);
-            this.btnOK.TabIndex = 55;
+            this.btnOK.TabIndex = 11;
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // btnDeleteImg
             // 
             this.btnDeleteImg.BorderRadius = 20;
+            this.btnDeleteImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDeleteImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDeleteImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -196,13 +245,14 @@ namespace BTDotNetCK.GUI
             this.btnDeleteImg.Location = new System.Drawing.Point(142, 313);
             this.btnDeleteImg.Name = "btnDeleteImg";
             this.btnDeleteImg.Size = new System.Drawing.Size(110, 40);
-            this.btnDeleteImg.TabIndex = 54;
+            this.btnDeleteImg.TabIndex = 10;
             this.btnDeleteImg.Text = "Xóa ảnh";
             this.btnDeleteImg.Click += new System.EventHandler(this.BtnDeleteImg_Click);
             // 
             // btnNVImg
             // 
             this.btnNVImg.BorderRadius = 20;
+            this.btnNVImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNVImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnNVImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNVImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -214,7 +264,7 @@ namespace BTDotNetCK.GUI
             this.btnNVImg.Location = new System.Drawing.Point(10, 313);
             this.btnNVImg.Name = "btnNVImg";
             this.btnNVImg.Size = new System.Drawing.Size(110, 40);
-            this.btnNVImg.TabIndex = 53;
+            this.btnNVImg.TabIndex = 9;
             this.btnNVImg.Text = "Chọn ảnh";
             this.btnNVImg.Click += new System.EventHandler(this.BtnNVImg_Click);
             // 
@@ -240,12 +290,13 @@ namespace BTDotNetCK.GUI
             this.cbGender.MinimumSize = new System.Drawing.Size(409, 0);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(409, 36);
-            this.cbGender.TabIndex = 52;
+            this.cbGender.TabIndex = 5;
             this.cbGender.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // avatar
             // 
             this.avatar.BackColor = System.Drawing.Color.Transparent;
+            this.avatar.ErrorImage = null;
             this.avatar.ImageRotate = 0F;
             this.avatar.Location = new System.Drawing.Point(10, 44);
             this.avatar.Name = "avatar";
@@ -340,6 +391,7 @@ namespace BTDotNetCK.GUI
             this.tbEmailNV.SelectedText = "";
             this.tbEmailNV.Size = new System.Drawing.Size(409, 30);
             this.tbEmailNV.TabIndex = 2;
+            this.tbEmailNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbEmailNV_KeyPress);
             // 
             // tbSDTNV
             // 
@@ -363,7 +415,8 @@ namespace BTDotNetCK.GUI
             this.tbSDTNV.PlaceholderText = "Nhập số điện thoại";
             this.tbSDTNV.SelectedText = "";
             this.tbSDTNV.Size = new System.Drawing.Size(409, 30);
-            this.tbSDTNV.TabIndex = 5;
+            this.tbSDTNV.TabIndex = 6;
+            this.tbSDTNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbSDTNV_KeyPress);
             // 
             // tbAddressNV
             // 
@@ -387,7 +440,8 @@ namespace BTDotNetCK.GUI
             this.tbAddressNV.PlaceholderText = "Nhập địa chỉ";
             this.tbAddressNV.SelectedText = "";
             this.tbAddressNV.Size = new System.Drawing.Size(409, 30);
-            this.tbAddressNV.TabIndex = 7;
+            this.tbAddressNV.TabIndex = 8;
+            this.tbAddressNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbAddressNV_KeyPress);
             // 
             // tbCMNDNV
             // 
@@ -411,7 +465,8 @@ namespace BTDotNetCK.GUI
             this.tbCMNDNV.PlaceholderText = "Nhập CMND";
             this.tbCMNDNV.SelectedText = "";
             this.tbCMNDNV.Size = new System.Drawing.Size(409, 30);
-            this.tbCMNDNV.TabIndex = 6;
+            this.tbCMNDNV.TabIndex = 7;
+            this.tbCMNDNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbCMNDNV_KeyPress);
             // 
             // tbBD
             // 
@@ -436,6 +491,7 @@ namespace BTDotNetCK.GUI
             this.tbBD.SelectedText = "";
             this.tbBD.Size = new System.Drawing.Size(409, 30);
             this.tbBD.TabIndex = 3;
+            this.tbBD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbBD_KeyPress);
             // 
             // tbNameNV
             // 
@@ -460,6 +516,7 @@ namespace BTDotNetCK.GUI
             this.tbNameNV.SelectedText = "";
             this.tbNameNV.Size = new System.Drawing.Size(409, 30);
             this.tbNameNV.TabIndex = 1;
+            this.tbNameNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbNameNV_KeyPress);
             // 
             // lblCMND
             // 
@@ -557,51 +614,6 @@ namespace BTDotNetCK.GUI
             this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.White;
             this.guna2ShadowForm1.TargetForm = this;
             // 
-            // msgValidateStartDate
-            // 
-            this.msgValidateStartDate.AutoSize = true;
-            this.msgValidateStartDate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msgValidateStartDate.Location = new System.Drawing.Point(402, 279);
-            this.msgValidateStartDate.Name = "msgValidateStartDate";
-            this.msgValidateStartDate.Size = new System.Drawing.Size(0, 16);
-            this.msgValidateStartDate.TabIndex = 59;
-            // 
-            // tbStartDate
-            // 
-            this.tbStartDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
-            this.tbStartDate.BorderRadius = 6;
-            this.tbStartDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbStartDate.DefaultText = "";
-            this.tbStartDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
-            this.tbStartDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
-            this.tbStartDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.tbStartDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.tbStartDate.FillColor = System.Drawing.Color.Tan;
-            this.tbStartDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbStartDate.Font = new System.Drawing.Font("Arial", 11.25F);
-            this.tbStartDate.ForeColor = System.Drawing.Color.Black;
-            this.tbStartDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbStartDate.Location = new System.Drawing.Point(393, 246);
-            this.tbStartDate.Name = "tbStartDate";
-            this.tbStartDate.PasswordChar = '\0';
-            this.tbStartDate.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbStartDate.PlaceholderText = "Nhập ngày bắt đầu";
-            this.tbStartDate.SelectedText = "";
-            this.tbStartDate.Size = new System.Drawing.Size(409, 30);
-            this.tbStartDate.TabIndex = 58;
-            // 
-            // lblStartDate
-            // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDate.ForeColor = System.Drawing.Color.Black;
-            this.lblStartDate.Location = new System.Drawing.Point(286, 254);
-            this.lblStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(99, 18);
-            this.lblStartDate.TabIndex = 57;
-            this.lblStartDate.Text = "Ngày bắt đầu";
-            // 
             // FormAddNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,7 +626,6 @@ namespace BTDotNetCK.GUI
             this.Name = "FormAddNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddNV";
-            this.Load += new System.EventHandler(this.FormAddNV_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

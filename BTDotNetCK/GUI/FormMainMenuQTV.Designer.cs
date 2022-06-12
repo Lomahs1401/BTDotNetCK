@@ -392,7 +392,7 @@ namespace BTDotNetCK.GUI
             // 
             this.iconPictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.iconPictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.iconPictureBox5.BackgroundImage = global::BTDotNetCK.Properties.Resources.java;
+            this.iconPictureBox5.BackgroundImage = global::BTDotNetCK.Properties.Resources.c_sharp;
             this.iconPictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.iconPictureBox5.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.None;

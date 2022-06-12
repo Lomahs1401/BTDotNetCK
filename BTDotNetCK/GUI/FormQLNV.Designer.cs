@@ -103,6 +103,7 @@ namespace BTDotNetCK.GUI
             this.btnDeleteNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteNV.UseVisualStyleBackColor = false;
+            this.btnDeleteNV.Click += new System.EventHandler(this.BtnDeleteNV_Click);
             // 
             // btnAddNV
             // 
@@ -252,6 +253,7 @@ namespace BTDotNetCK.GUI
             this.tbTK.SelectedText = "";
             this.tbTK.Size = new System.Drawing.Size(250, 31);
             this.tbTK.TabIndex = 56;
+            this.tbTK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbTK_KeyPress);
             // 
             // guna2Elipse1
             // 
@@ -285,6 +287,7 @@ namespace BTDotNetCK.GUI
             this.btnTK.Size = new System.Drawing.Size(141, 31);
             this.btnTK.TabIndex = 57;
             this.btnTK.Text = "Tìm kiếm";
+            this.btnTK.Click += new System.EventHandler(this.BtnTK_Click);
             // 
             // pictureBox1
             // 
@@ -344,8 +347,6 @@ namespace BTDotNetCK.GUI
             // 
             this.dgvQLNV.AllowUserToAddRows = false;
             this.dgvQLNV.AllowUserToDeleteRows = false;
-            this.dgvQLNV.AllowUserToResizeColumns = false;
-            this.dgvQLNV.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvQLNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvQLNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -353,6 +354,7 @@ namespace BTDotNetCK.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvQLNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQLNV.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvQLNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvQLNV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvQLNV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -409,6 +411,7 @@ namespace BTDotNetCK.GUI
             this.dgvQLNV.ThemeStyle.RowsStyle.Height = 22;
             this.dgvQLNV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvQLNV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvQLNV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvQLNV_RowHeaderMouseClick);
             // 
             // ID
             // 
@@ -463,6 +466,7 @@ namespace BTDotNetCK.GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormQLNV";
             this.Text = "Quản lý nhân viên";
+            this.Load += new System.EventHandler(this.FormQLNV_Load);
             this.panelOptions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

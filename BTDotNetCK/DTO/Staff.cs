@@ -17,10 +17,9 @@ namespace BTDotNetCK.DTO
         public string ID_Card { get; set; }
         public string Address { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
         public string Image { get; set; }
         public string AccountUsername { get; set; }
-        public int WorkState { get; set; }
 
         public Staff()
         {
@@ -28,8 +27,8 @@ namespace BTDotNetCK.DTO
         }
 
         public Staff(string ID_Staff, string nameStaff, string email, DateTime dateOfBirth, string gender, 
-                        string phone, string ID_Card, string address, DateTime startDate, DateTime endDate, 
-                        string image, string accountUsername, int workState)
+                        string phone, string ID_Card, string address, DateTime startDate, DateTime? endDate, 
+                        string image, string accountUsername)
         {
             this.ID_Staff = ID_Staff;
             NameStaff = nameStaff;
@@ -43,7 +42,6 @@ namespace BTDotNetCK.DTO
             EndDate = endDate;
             Image = image;
             AccountUsername = accountUsername;
-            WorkState = workState;
         }
     }
 }
