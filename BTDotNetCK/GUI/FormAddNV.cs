@@ -20,8 +20,6 @@ namespace BTDotNetCK.GUI
     {
         public delegate void LoadData(object sender, EventArgs e);
         public LoadData RefreshData { get; set; }
-        private string filePath = null;
-        private Bitmap bitmap = null;
 
         public FormAddNV()
         {
@@ -211,18 +209,6 @@ namespace BTDotNetCK.GUI
             if (isValidName && isValidEmail && isValidDateOfBirth && isValidStartDate && 
                 isValidGender && isValidIdCard && isValidPhone && isValidAddress)
             {
-                //try
-                //{
-                //    filePath = "Images\\" + Path.GetFileName(avatar.ImageLocation);
-                //    MessageBox.Show(filePath);
-                //    Bitmap bitmap = new Bitmap(avatar.ImageLocation);
-                //    bitmap.Save(filePath);
-                //}
-                //catch (ExternalException ex)
-                //{
-                //    MessageBox.Show(ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return;
-                //}
                 string ID_Staff = BLL_QLNV.Instance.GetLastID();
                 string code = ID_Staff.Substring(1, ID_Staff.Length - 1); // 0006
                 int num = Convert.ToInt32(code); // 6

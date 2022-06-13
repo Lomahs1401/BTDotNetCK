@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BTDotNetCK.BLL;
 using FontAwesome.Sharp;
 
 namespace BTDotNetCK.GUI
@@ -19,15 +20,17 @@ namespace BTDotNetCK.GUI
         private readonly Panel btnLeftBorder;
         private Form currentChildForm;
         private readonly string accountUsername;
+        private readonly string password;
         private readonly string nameStaff;
 
-        public FormMainMenuNV(string accountUsername, string nameStaff)
+        public FormMainMenuNV(string accountUsername, string password, string nameStaff)
         {
             InitializeComponent();
             btnLeftBorder = new Panel();
             btnLeftBorder.Size = new Size(7, 77);
             panelMenu.Controls.Add(btnLeftBorder);
             this.accountUsername = accountUsername;
+            this.password = password;
             this.nameStaff = nameStaff;
             //Form
             Text = string.Empty;
@@ -215,34 +218,19 @@ namespace BTDotNetCK.GUI
 
         private void MainMenuNV_Load(object sender, EventArgs e)
         {
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             timer1.Start();
             lblDate.Text = DateTime.Now.ToLongDateString();
             rjStaffUserSettingMenu.IsMainMenu = true;
+            string img = BLL_QLNV.Instance.GetImage(accountUsername);
+            if (img == DBNull.Value.ToString())
+                EmployeePicture.Image = null;
+            else
+                EmployeePicture.Image = Image.FromFile(Path.Combine(projectDirectory, img));
             guna2ShadowForm1.SetShadowForm(this);
-            //using (BookStoreContext context = new BookStoreContext())
-            //{
-            //    var employee = context.Employees
-            //                        .Join(
-            //                            context.Accounts,
-            //                            em => em.AccountUsername,
-            //                            acc => acc.Username,
-            //                            (em, acc) => new { em.FullNameEmployee, em.AccountUsername, acc.Avatar })
-            //                       .Where(em => em.AccountUsername == accountUsername)
-            //                       .Select(em => new { em.FullNameEmployee, em.AccountUsername, em.Avatar })
-            //                       .ToList()
-            //                       .FirstOrDefault();
-            //    lblUserName.Text = employee.FullNameEmployee;
-            //    lblEmployeeUsername.Text = employee.AccountUsername;
-            //    if (employee.Avatar != null)
-            //    {
-            //        MemoryStream memoryStream = new MemoryStream(employee.Avatar);
-            //        EmployeePicture.Image = Image.FromStream(memoryStream);
-            //    }
-            //    else
-            //    {
-            //        EmployeePicture.Image = null;
-            //    }
-            //}
+            lblTitleChildForm.Text = "Home";
+            iconCurrentChildForm.IconChar = IconChar.Home;
+            iconCurrentChildForm.ForeColor = Color.FromArgb(128, 64, 0);
         }
 
         private void EmployeePicture_Click(object sender, EventArgs e)
@@ -259,7 +247,7 @@ namespace BTDotNetCK.GUI
             if (đăngXuấtToolStripMenuItem.Selected == true)
             {
                 Hide();
-                new FormLogin().ShowDialog();
+                new FormLogin().Show();
                 Close();
             }
 
@@ -267,7 +255,9 @@ namespace BTDotNetCK.GUI
             {
                 DisableButton();
                 btnLeftBorder.Visible = false;
-                OpenChildForm(new FormSettingAccount(accountUsername));
+                FormSettingAccount formSettingAccount = new FormSettingAccount(accountUsername, password, 1);
+                formSettingAccount.RefreshData += new FormSettingAccount.LoadData(MainMenuNV_Load);
+                OpenChildForm(formSettingAccount);
             }
         }
     }

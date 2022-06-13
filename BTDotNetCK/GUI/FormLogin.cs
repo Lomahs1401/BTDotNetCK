@@ -103,7 +103,7 @@ namespace BTDotNetCK.GUI
             else
             {
                 Hide();
-                new FormMainMenuNV(account.UserName, nameStaff).Show();
+                new FormMainMenuNV(account.UserName, password, nameStaff).Show();
                 Dispose();
             }
         }

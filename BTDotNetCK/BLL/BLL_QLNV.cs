@@ -35,9 +35,9 @@ namespace BTDotNetCK.BLL
             return DAL_QLNV.Instance.GetListStaffs();
         }
 
-        public Staff GetStaffByID(string id)
+        public Staff GetStaffByID(string ID_Staff)
         {
-            return DAL_QLNV.Instance.GetStaffByID(id);
+            return DAL_QLNV.Instance.GetStaffByID(ID_Staff);
         }
 
         public List<Staff> GetStaffByName(string name)
@@ -73,6 +73,11 @@ namespace BTDotNetCK.BLL
         public int GetNumberTotalFemaleStaff()
         {
             return DAL_QLNV.Instance.GetNumberTotalFemaleStaff();
+        }
+
+        public string GetImage(string accountUsername)
+        {
+            return DAL_QLNV.Instance.GetImage(accountUsername);
         }
 
         public bool AddStaff(Staff staff, string username, string password)

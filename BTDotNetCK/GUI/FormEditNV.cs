@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace BTDotNetCK.GUI
 
         private void ShowInfo(Staff staff)
         {
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             tbNameNV.Text = staff.NameStaff;
             tbEmailNV.Text = staff.Email;
             tbBD.Text = staff.DateOfBirth.ToString("dd/MM/yyyy");
@@ -37,7 +39,7 @@ namespace BTDotNetCK.GUI
             tbCMNDNV.Text = staff.ID_Card;
             tbAddressNV.Text = staff.Address;
             tbSDTNV.Text = staff.Phone;
-            avatar.ImageLocation = staff.Image;
+            avatar.Image = Image.FromFile(Path.Combine(projectDirectory, staff.Image));
         }
 
         private void BtnSave_Click(object sender, EventArgs e)

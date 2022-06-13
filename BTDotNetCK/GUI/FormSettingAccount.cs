@@ -1,4 +1,6 @@
-﻿using DoAnPBL3.Models;
+﻿using BTDotNetCK.BLL;
+using BTDotNetCK.DTO;
+using DoAnPBL3.Models;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -17,30 +19,23 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormSettingAccount : Form
     {
+        public delegate void LoadData(object sender, EventArgs e);
+        public LoadData RefreshData { get; set; }
         private readonly string accountUsername;
+        private readonly string oldPassword;
+        private readonly int role;
 
-        public FormSettingAccount(string accountUsername)
+        public FormSettingAccount(string accountUsername, string oldPassword, int role)
         {
             this.accountUsername = accountUsername;
+            this.oldPassword = oldPassword;
+            this.role = role;
             InitializeComponent();
         }
 
-        private byte[] ImageToByteArray(Guna2PictureBox pictureBox)
+        private void FormSettingAccount_Load(object sender, EventArgs e)
         {
-            using (Bitmap bitmap = new Bitmap(pictureBox.ImageLocation))
-            {
-                MemoryStream memoryStream = new MemoryStream();
-                try
-                {
-                    bitmap.Save(memoryStream, ImageFormat.Bmp);
-                }
-                catch (ExternalException)
-                {
-                    MessageBox.Show("Lỗi không thể lưu được ảnh. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    throw;
-                }
-                return memoryStream.ToArray();
-            }
+            pbAvatar.ImageLocation = BLL_QLNV.Instance.GetImage(accountUsername);
         }
 
         private void BtnEditImg_Click(object sender, EventArgs e)
@@ -67,86 +62,81 @@ namespace BTDotNetCK.GUI
 
         private void BtnSaveChange_Click(object sender, EventArgs e)
         {
-            //    string newPassword = tbPassword.Text;
-            //    string confirmPassword = tbConfirmPassword.Text;
-            //    byte[] newAvatar;
-            //    bool isEqualToOldPassword = true, isConfirmPassMatchToNewPass = false;
-            //    using (BookStoreContext context = new BookStoreContext())
-            //    {
-            //        // Validate password
-            //        var oldPassword = context.Accounts
-            //            .Where(acc => acc.Username == accountUsername)
-            //            .Where(acc => acc.Password == newPassword)
-            //            .Select(acc => acc)
-            //            .ToList();
-            //        if (newPassword == "")
-            //        {
-            //            msgValidateNewPassword.ForeColor = Color.Red;
-            //            msgValidateNewPassword.Text = "Mật khẩu mới không được để trống";
-            //        }
-            //        else
-            //        {
-            //            if (oldPassword.Count() > 0)
-            //            {
-            //                msgValidateNewPassword.ForeColor = Color.Red;
-            //                msgValidateNewPassword.Text = "Mật khẩu mới không được trùng mật khẩu cũ";
-            //                isEqualToOldPassword = true;
-            //            }
-            //            else
-            //            {
-            //                msgValidateNewPassword.ForeColor = Color.White;
-            //                msgValidateNewPassword.Text = "";
-            //                isEqualToOldPassword = false;
-            //            }
-            //            if (confirmPassword != newPassword)
-            //            {
-            //                msgValidateConfirmPassword.ForeColor = Color.Red;
-            //                msgValidateConfirmPassword.Text = "Mật khẩu xác nhận không khớp";
-            //                isConfirmPassMatchToNewPass = false;
-            //            }
-            //            else
-            //            {
-            //                msgValidateConfirmPassword.ForeColor = Color.White;
-            //                msgValidateConfirmPassword.Text = "";
-            //                isConfirmPassMatchToNewPass = true;
-            //            }
-            //        }
-            //        // Validate image
-            //        if (pbAvatar.ImageLocation == "" || pbAvatar.ImageLocation == null)
-            //        {
-            //            newAvatar = null;
-            //        }
-            //        else
-            //        {
-            //            try
-            //            {
-            //                newAvatar = ImageToByteArray(pbAvatar);
-            //            }
-            //            catch (ExternalException)
-            //            {
-            //                return;
-            //            }
-            //        }
-            //        if (!isEqualToOldPassword && isConfirmPassMatchToNewPass)
-            //        {
-            //            DialogResult dialogResult = RJMessageBox.Show("Xác nhận lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            //            if (dialogResult == DialogResult.Yes)
-            //            {
-            //                Account account = context.Accounts.Find(accountUsername);
-            //                account.Password = newPassword;
-            //                account.Avatar = newAvatar;
-            //                // Update to DB
-            //                context.SaveChanges();
-            //                Alert("Lưu mới dữ liệu thành công", FormAlert.EnmType.Success);
-            //                Close();
-            //            }
-            //            else
-            //                return;
-            //        }
-            //        else
-            //            return;
-            //    }
-            //}
+            string newPassword = tbPassword.Text;
+            string confirmPassword = tbConfirmPassword.Text;
+            bool isEqualToOldPassword, isConfirmPassMatchToNewPass, isNewAvatar;
+            if (newPassword == "")
+            {
+                msgValidateNewPassword.ForeColor = Color.Red;
+                msgValidateNewPassword.Text = "Mật khẩu mới không được để trống";
+            }
+            else
+            {
+                if (oldPassword == newPassword)
+                {
+                    msgValidateNewPassword.ForeColor = Color.Red;
+                    msgValidateNewPassword.Text = "Mật khẩu mới không được trùng mật khẩu cũ";
+                    isEqualToOldPassword = true;
+                }
+                else
+                {
+                    msgValidateNewPassword.ForeColor = Color.Black;
+                    msgValidateNewPassword.Text = "";
+                    isEqualToOldPassword = false;
+                }
+                if (confirmPassword != newPassword)
+                {
+                    msgValidateConfirmPassword.ForeColor = Color.Red;
+                    msgValidateConfirmPassword.Text = "Mật khẩu xác nhận không khớp";
+                    isConfirmPassMatchToNewPass = false;
+                }
+                else
+                {
+                    msgValidateConfirmPassword.ForeColor = Color.White;
+                    msgValidateConfirmPassword.Text = "";
+                    isConfirmPassMatchToNewPass = true;
+                }
+                isNewAvatar = pbAvatar.ImageLocation != BLL_QLNV.Instance.GetImage(accountUsername);
+                if ((!isEqualToOldPassword && isConfirmPassMatchToNewPass) || isNewAvatar)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Xác nhận lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Account account = new Account(accountUsername, newPassword, role, pbAvatar.Image == null ? null : pbAvatar.ImageLocation);
+                        if (BLL_QLTK.Instance.SaveNewInfo(account))
+                        {
+                            MessageBox.Show("Lưu mới dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            RefreshData(sender, e);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lưu dữ liệu thất bại. Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    else
+                        return;
+                }
+            }
+        }
+
+        private void TbPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnSaveChange.PerformClick();
+                e.Handled = true;
+            }
+        }
+
+        private void TbConfirmPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnSaveChange.PerformClick();
+                e.Handled = true;
+            }
         }
     }
 }

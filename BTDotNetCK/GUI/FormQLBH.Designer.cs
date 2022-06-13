@@ -30,9 +30,10 @@ namespace BTDotNetCK.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLBH));
             this.remainingQuantity = new System.Windows.Forms.Label();
             this.lblRemainingQuantity = new System.Windows.Forms.Label();
             this.quantitySold = new System.Windows.Forms.Label();
@@ -70,7 +71,7 @@ namespace BTDotNetCK.GUI
             this.remainingQuantity.BackColor = System.Drawing.Color.Transparent;
             this.remainingQuantity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remainingQuantity.ForeColor = System.Drawing.Color.Black;
-            this.remainingQuantity.Location = new System.Drawing.Point(802, 55);
+            this.remainingQuantity.Location = new System.Drawing.Point(787, 55);
             this.remainingQuantity.Name = "remainingQuantity";
             this.remainingQuantity.Size = new System.Drawing.Size(29, 16);
             this.remainingQuantity.TabIndex = 44;
@@ -83,11 +84,11 @@ namespace BTDotNetCK.GUI
             this.lblRemainingQuantity.BackColor = System.Drawing.Color.Transparent;
             this.lblRemainingQuantity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRemainingQuantity.ForeColor = System.Drawing.Color.Black;
-            this.lblRemainingQuantity.Location = new System.Drawing.Point(749, 24);
+            this.lblRemainingQuantity.Location = new System.Drawing.Point(695, 24);
             this.lblRemainingQuantity.Name = "lblRemainingQuantity";
-            this.lblRemainingQuantity.Size = new System.Drawing.Size(136, 16);
+            this.lblRemainingQuantity.Size = new System.Drawing.Size(190, 16);
             this.lblRemainingQuantity.TabIndex = 43;
-            this.lblRemainingQuantity.Text = "Số mặt hàng còn lại";
+            this.lblRemainingQuantity.Text = "Số mặt hàng chưa được bán";
             // 
             // quantitySold
             // 
@@ -96,7 +97,7 @@ namespace BTDotNetCK.GUI
             this.quantitySold.BackColor = System.Drawing.Color.Transparent;
             this.quantitySold.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantitySold.ForeColor = System.Drawing.Color.Black;
-            this.quantitySold.Location = new System.Drawing.Point(449, 55);
+            this.quantitySold.Location = new System.Drawing.Point(437, 55);
             this.quantitySold.Name = "quantitySold";
             this.quantitySold.Size = new System.Drawing.Size(29, 16);
             this.quantitySold.TabIndex = 42;
@@ -109,11 +110,11 @@ namespace BTDotNetCK.GUI
             this.lblQuantitySold.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantitySold.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantitySold.ForeColor = System.Drawing.Color.Black;
-            this.lblQuantitySold.Location = new System.Drawing.Point(398, 24);
+            this.lblQuantitySold.Location = new System.Drawing.Point(373, 24);
             this.lblQuantitySold.Name = "lblQuantitySold";
-            this.lblQuantitySold.Size = new System.Drawing.Size(137, 16);
+            this.lblQuantitySold.Size = new System.Drawing.Size(152, 16);
             this.lblQuantitySold.TabIndex = 41;
-            this.lblQuantitySold.Text = "Số mặt hàng đã bán";
+            this.lblQuantitySold.Text = "Số lượng đã bán được";
             // 
             // totalProduct
             // 
@@ -255,9 +256,10 @@ namespace BTDotNetCK.GUI
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::BTDotNetCK.Properties.Resources.Set_Product;
             this.pictureBox3.Location = new System.Drawing.Point(168, 18);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 27);
+            this.pictureBox3.Size = new System.Drawing.Size(38, 33);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 47;
             this.pictureBox3.TabStop = false;
@@ -265,9 +267,10 @@ namespace BTDotNetCK.GUI
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.product;
             this.pictureBox1.Location = new System.Drawing.Point(891, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 27);
+            this.pictureBox1.Size = new System.Drawing.Size(38, 33);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
@@ -275,9 +278,10 @@ namespace BTDotNetCK.GUI
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Image = global::BTDotNetCK.Properties.Resources.quantity;
             this.pictureBox2.Location = new System.Drawing.Point(541, 18);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 27);
+            this.pictureBox2.Size = new System.Drawing.Size(38, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 45;
             this.pictureBox2.TabStop = false;
@@ -288,23 +292,24 @@ namespace BTDotNetCK.GUI
             this.dgvQLBH.AllowUserToDeleteRows = false;
             this.dgvQLBH.AllowUserToResizeColumns = false;
             this.dgvQLBH.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvQLBH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvQLBH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvQLBH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvQLBH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQLBH.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvQLBH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvQLBH.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvQLBH.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLBH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLBH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvQLBH.ColumnHeadersHeight = 30;
             this.dgvQLBH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvQLBH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -312,14 +317,14 @@ namespace BTDotNetCK.GUI
             this.NameProduct,
             this.Quantity,
             this.Price});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLBH.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLBH.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvQLBH.EnableHeadersVisualStyles = false;
             this.dgvQLBH.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.dgvQLBH.Location = new System.Drawing.Point(12, 170);
@@ -350,6 +355,7 @@ namespace BTDotNetCK.GUI
             this.dgvQLBH.ThemeStyle.RowsStyle.Height = 22;
             this.dgvQLBH.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvQLBH.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvQLBH.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvQLBH_RowHeaderMouseClick);
             // 
             // ID
             // 
@@ -370,8 +376,8 @@ namespace BTDotNetCK.GUI
             // Quantity
             // 
             this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Số lượng";
+            this.Quantity.DataPropertyName = "QuantitySold";
+            this.Quantity.HeaderText = "Số lượng đã bán";
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
             // 
@@ -413,9 +419,11 @@ namespace BTDotNetCK.GUI
             this.Controls.Add(this.tbTK);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormQLBH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý bán hàng";
+            this.Load += new System.EventHandler(this.FormQLBH_Load);
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

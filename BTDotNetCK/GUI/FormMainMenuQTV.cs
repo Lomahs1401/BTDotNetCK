@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace BTDotNetCK.GUI
         private readonly string accountUsername;
         private readonly string password;
         private readonly string nameStaff;
+
         public FormMainMenuQTV(string accountUsername, string password, string nameStaff)
         {
             InitializeComponent();
@@ -213,12 +215,22 @@ namespace BTDotNetCK.GUI
 
         private void FormMainMenuQTV_Load(object sender, EventArgs e)
         {
-            timer1.Tick += new System.EventHandler(Timer1_Tick);
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            timer1.Tick += new EventHandler(Timer1_Tick);
             timer1.Start();
 
             lblDate.Text = DateTime.Now.ToLongDateString();
             Time.Text = DateTime.Now.ToLongTimeString();
+            string img = BLL_QLNV.Instance.GetImage(accountUsername);
+            if (img == DBNull.Value.ToString())
+                AdminPicture.Image = null;
+            else
+                AdminPicture.Image = Image.FromFile(Path.Combine(projectDirectory, img));
             guna2ShadowForm1.SetShadowForm(this);
+            lblTitleChildForm.Text = "Home";
+            iconCurrentChildForm.IconChar = IconChar.Home;
+            iconCurrentChildForm.ForeColor = Color.FromArgb(128, 64, 0);
+
         }
 
         private void AdminPicture_Click(object sender, EventArgs e)
@@ -244,7 +256,9 @@ namespace BTDotNetCK.GUI
                 DisableButton();
                 iconCurrentChildForm.IconChar = IconChar.Cog;
                 btnLeftBorder.Visible = false;
-                OpenChildForm(new FormSettingAccount(accountUsername));
+                FormSettingAccount formSettingAccount = new FormSettingAccount(accountUsername, password, 0);
+                formSettingAccount.RefreshData += new FormSettingAccount.LoadData(FormMainMenuQTV_Load);
+                OpenChildForm(formSettingAccount);
             }
         }
     }

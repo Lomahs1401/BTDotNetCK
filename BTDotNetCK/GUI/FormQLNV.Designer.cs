@@ -354,7 +354,6 @@ namespace BTDotNetCK.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvQLNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQLNV.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvQLNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvQLNV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvQLNV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;

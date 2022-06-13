@@ -101,6 +101,13 @@ namespace BTDotNetCK.DAL
             return accountUsername.Rows[0]["TenDangNhap"].ToString();
         }
 
+        public string GetImage(string accountUsername)
+        {
+            string queryGetImage = @"select Anh from TAIKHOAN where TenDangNhap = '" + accountUsername + "';";
+            DataTable image = DataProvider.Instance.GetRecords(queryGetImage);
+            return image.Rows[0]["Anh"].ToString();
+        }
+
         public int GetNumberTotalStaff()
         {
             string queryGetNumberStaff = @"select count(ID_QuanLy) as TongNhanVien from NhanVienQuanLy 

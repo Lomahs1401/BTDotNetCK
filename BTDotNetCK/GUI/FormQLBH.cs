@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BTDotNetCK.BLL;
+using BTDotNetCK.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,6 +48,39 @@ namespace BTDotNetCK.GUI
             btnHDTN.BackColor = Color.RoyalBlue;
         }
 
+        private void FormQLBH_Load(object sender, EventArgs e)
+        {
+            dgvQLBH.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dgvQLBH.RowHeadersVisible = true;
+            List<Product> listProducts = BLL_QLBH.Instance.GetProducts();
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("NameProduct", typeof(string)),
+                new DataColumn("QuantitySold", typeof(int)),
+                new DataColumn("Price", typeof(int)),
+            });
+            for (int i = 0; i < listProducts.Count; i++)
+            {
+                DataRow dataRow = data.NewRow();
+                dataRow["ID"] = listProducts[i].ID_Product;
+                dataRow["NameProduct"] = listProducts[i].NameProduct;
+                dataRow["QuantitySold"] = listProducts[i].QuantitySold;
+                dataRow["Price"] = listProducts[i].Price;
+                data.Rows.Add(dataRow);
+            }
+            dgvQLBH.DataSource = data;
+        }
 
+        private void DgvQLBH_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            new FormTTMH(GetID_Product()).ShowDialog();
+        }
+
+        private string GetID_Product()
+        {
+            return dgvQLBH.CurrentRow.Cells["ID"].Value.ToString();
+        }
     }
 }

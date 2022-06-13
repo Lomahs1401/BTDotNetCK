@@ -81,12 +81,15 @@
   <ItemGroup>
     <Compile Include="BLL\BLL_ForgotPassword.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="BLL\BLL_QLBH.cs" />
     <Compile Include="BLL\BLL_QLNV.cs" />
+    <Compile Include="BLL\BLL_QLTK.cs" />
     <Compile Include="DAL\DAL_ForgotPassword.cs" />
     <Compile Include="DAL\DAL_Login.cs" />
     <Compile Include="DAL\DAL_QLBH.cs" />
     <Compile Include="DAL\DAL_QLDT.cs" />
     <Compile Include="DAL\DAL_QLNV.cs" />
+    <Compile Include="DAL\DAL_QLTK.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DTO\Account.cs" />
@@ -187,6 +190,12 @@
     <Compile Include="GUI\FormEditNV.Designer.cs">
       <DependentUpon>FormEditNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormTTMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormTTMH.Designer.cs">
+      <DependentUpon>FormTTMH.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormTTNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +259,9 @@
     <EmbeddedResource Include="GUI\FormEditNV.resx">
       <DependentUpon>FormEditNV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormTTMH.resx">
+      <DependentUpon>FormTTMH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormTTNV.resx">
       <DependentUpon>FormTTNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +291,66 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Coffee-icon.ico" />
+    <None Include="Img\Product\tra sua dau nhieu thach.jpg" />
+    <None Include="Img\Product\tra sua dau do.jpg" />
+    <None Include="Img\Product\thom ep.jpg" />
+    <None Include="Img\Product\ca phe sua sai gon.jpg" />
+    <None Include="Img\Product\ca phe den sai gon.jpg" />
+    <None Include="Img\Product\xoai xay socola.jpg" />
+    <None Include="Img\Product\tra sua truyen thong.jpg" />
+    <None Include="Img\Product\tra sua tran chau duong trang.jpg" />
+    <None Include="Img\Product\tra sua tran chau duong den.jpg" />
+    <None Include="Img\Product\tra sua socola.jpg" />
+    <None Include="Img\Product\tra sua milkfoam.jpg" />
+    <None Include="Img\Product\tra sua kem flan.jpg" />
+    <None Include="Img\Product\tra sua bac ha.jpg" />
+    <None Include="Img\Product\tra hoa dau biec tran chau.png" />
+    <None Include="Img\Product\tra hoa dau biec thach.jpg" />
+    <None Include="Img\Product\tra hoa dau biec milk foam.jpg" />
+    <None Include="Img\Product\tra hoa dau biec hat chia.jpg" />
+    <None Include="Img\Product\tra dao.jpg" />
+    <None Include="Img\Product\tra dao cam ha.jpg" />
+    <None Include="Img\Product\sua tuoi tran chau duong den.jpg" />
+    <None Include="Img\Product\sua tuoi tran chau duong den kem trung nuong.jpg" />
+    <None Include="Img\Product\sua tuoi nong.jpg" />
+    <None Include="Img\Product\sua tuoi da.jpg" />
+    <None Include="Img\Product\sua chua viet quat.png" />
+    <None Include="Img\Product\sua chua nha dam.jpg" />
+    <None Include="Img\Product\sua chua dau.jpg" />
+    <None Include="Img\Product\sua chua da.jpg" />
+    <None Include="Img\Product\sua chua ca phe.jpg" />
+    <None Include="Img\Product\socola da xay.jpg" />
+    <None Include="Img\Product\socola bot bien.jpg" />
+    <None Include="Img\Product\sinh to xoai.jpg" />
+    <None Include="Img\Product\sinh to dau.jpg" />
+    <None Include="Img\Product\milo dam tran chau duong den.jpg" />
+    <None Include="Img\Product\matcha da xay.jpg" />
+    <None Include="Img\Product\matcha bot bien.jpg" />
+    <None Include="Img\Product\latte matcha.jpg" />
+    <None Include="Img\Product\kem oc que.jpg" />
+    <None Include="Img\Product\kem ly socola.jpg" />
+    <None Include="Img\Product\kem ly dau.jpg" />
+    <None Include="Img\Product\dalgona tran chau.jpg" />
+    <None Include="Img\Product\cookies socola.jpg" />
+    <None Include="Img\Product\cookies da xay.jpg" />
+    <None Include="Img\Product\coc ep.jpg" />
+    <None Include="Img\Product\chanh tuoi nong.jpg" />
+    <None Include="Img\Product\chanh tuoi da.jpg" />
+    <None Include="Img\Product\chanh day.jpg" />
+    <None Include="Img\Product\capuchino.jpg" />
+    <None Include="Img\Product\cam ep.jpg" />
+    <None Include="Img\Product\cacao nong.jpg" />
+    <None Include="Img\Product\cacao da.jpg" />
+    <None Include="Img\Product\ca rot ep.jpg" />
+    <None Include="Img\Product\ca phe sua phin.png" />
+    <None Include="Img\Product\ca phe sua may.jpg" />
+    <None Include="Img\Product\ca phe dua.jpg" />
+    <None Include="Img\Product\ca phe dua da xay.png" />
+    <None Include="Img\Product\Ca phe den phin.png" />
+    <None Include="Img\Product\ca phe den may.png" />
+    <None Include="Img\Product\ca phe bot bien.jpg" />
+    <None Include="Img\Product\bac xiu nong.jpg" />
+    <None Include="Img\Product\bac xiu da.jpg" />
     <None Include="Img\Icon\women.png" />
     <None Include="Img\Icon\web-browser.png" />
     <None Include="Img\Icon\api.png" />
@@ -286,6 +358,58 @@
     <None Include="Img\Icon\c-sharp.png" />
     <None Include="Img\Icon\division.png" />
     <None Include="Img\Icon\delete_30px.png" />
+    <None Include="Img\GI\aether.png" />
+    <None Include="Img\GI\albedo.png" />
+    <None Include="Img\GI\aloy.png" />
+    <None Include="Img\GI\amber.png" />
+    <None Include="Img\GI\ayato.png" />
+    <None Include="Img\GI\beidou.png" />
+    <None Include="Img\GI\ayaka.png" />
+    <None Include="Img\GI\barbara.png" />
+    <None Include="Img\GI\bennett.png" />
+    <None Include="Img\GI\childe.png" />
+    <None Include="Img\GI\chongyun.png" />
+    <None Include="Img\GI\diluc.png" />
+    <None Include="Img\GI\diona.png" />
+    <None Include="Img\GI\eula.png" />
+    <None Include="Img\GI\fischl.png" />
+    <None Include="Img\GI\ganyu.png" />
+    <None Include="Img\GI\gorou.png" />
+    <None Include="Img\GI\heizou.png" />
+    <None Include="Img\GI\hutao.png" />
+    <None Include="Img\GI\itto.png" />
+    <None Include="Img\GI\jean.png" />
+    <None Include="Img\GI\kazuha.png" />
+    <None Include="Img\GI\keqing.png" />
+    <None Include="Img\GI\klee.png" />
+    <None Include="Img\GI\kokomi.png" />
+    <None Include="Img\GI\kuki shinobu.png" />
+    <None Include="Img\GI\lisa.png" />
+    <None Include="Img\GI\lumine.png" />
+    <None Include="Img\GI\mona.png" />
+    <None Include="Img\GI\kaeya.png" />
+    <None Include="Img\GI\zhongli.png" />
+    <None Include="Img\GI\yunjin.png" />
+    <None Include="Img\GI\yoimiya.png" />
+    <None Include="Img\GI\yelan.png" />
+    <None Include="Img\GI\yanfei.png" />
+    <None Include="Img\GI\yae miko.png" />
+    <None Include="Img\GI\xinyan.png" />
+    <None Include="Img\GI\xingqiu.png" />
+    <None Include="Img\GI\xiao.png" />
+    <None Include="Img\GI\xiangling.png" />
+    <None Include="Img\GI\venti.png" />
+    <None Include="Img\GI\thoma.png" />
+    <None Include="Img\GI\sucrose.png" />
+    <None Include="Img\GI\shenhe.png" />
+    <None Include="Img\GI\sayu.png" />
+    <None Include="Img\GI\rosaria.png" />
+    <None Include="Img\GI\razor.png" />
+    <None Include="Img\GI\raiden shogun.png" />
+    <None Include="Img\GI\qiqi.png" />
+    <None Include="Img\GI\noelle.png" />
+    <None Include="Img\GI\ningguang.png" />
+    <None Include="Img\GI\kujou sara.png" />
     <Content Include="Img\Icon\error.png" />
     <Content Include="Img\Icon\icons8_cancel_45px.png" />
     <None Include="Img\Icon\icons8_Close_30px.png" />
@@ -305,6 +429,10 @@
     <None Include="Img\Icon\java.png" />
     <None Include="Img\Icon\money-bag.png" />
     <None Include="Img\Icon\shield.png" />
+    <None Include="Img\Icon\Set_Product.png" />
+    <None Include="Img\Icon\quantity.png" />
+    <None Include="Img\Icon\product.png" />
+    <None Include="Img\Icon\product detail.png" />
     <Content Include="Img\Icon\success.png" />
     <None Include="Img\Icon\user info.png" />
     <Content Include="Img\Icon\warning.png" />

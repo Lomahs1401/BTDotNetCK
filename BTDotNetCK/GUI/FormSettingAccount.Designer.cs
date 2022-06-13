@@ -38,9 +38,9 @@ namespace BTDotNetCK.GUI
             this.tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblAvatar = new System.Windows.Forms.Label();
+            this.pbAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnDeleteImg = new BTDotNetCK.GUI.RJButton();
             this.btnEditImg = new BTDotNetCK.GUI.RJButton();
-            this.pbAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +78,7 @@ namespace BTDotNetCK.GUI
             this.tbConfirmPassword.SelectedText = "";
             this.tbConfirmPassword.Size = new System.Drawing.Size(200, 36);
             this.tbConfirmPassword.TabIndex = 2;
+            this.tbConfirmPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbConfirmPassword_KeyPress);
             // 
             // lblConfirmPassword
             // 
@@ -145,6 +146,7 @@ namespace BTDotNetCK.GUI
             this.tbPassword.SelectedText = "";
             this.tbPassword.Size = new System.Drawing.Size(200, 36);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbPassword_KeyPress);
             // 
             // lblPassword
             // 
@@ -171,6 +173,19 @@ namespace BTDotNetCK.GUI
             this.lblAvatar.Size = new System.Drawing.Size(101, 18);
             this.lblAvatar.TabIndex = 19;
             this.lblAvatar.Text = "Hình đại diện";
+            // 
+            // pbAvatar
+            // 
+            this.pbAvatar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbAvatar.ErrorImage = null;
+            this.pbAvatar.ImageRotate = 0F;
+            this.pbAvatar.Location = new System.Drawing.Point(378, 244);
+            this.pbAvatar.Name = "pbAvatar";
+            this.pbAvatar.Size = new System.Drawing.Size(200, 200);
+            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAvatar.TabIndex = 20;
+            this.pbAvatar.TabStop = false;
             // 
             // btnDeleteImg
             // 
@@ -222,18 +237,6 @@ namespace BTDotNetCK.GUI
             this.btnEditImg.UseVisualStyleBackColor = false;
             this.btnEditImg.Click += new System.EventHandler(this.BtnEditImg_Click);
             // 
-            // pbAvatar
-            // 
-            this.pbAvatar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAvatar.ImageRotate = 0F;
-            this.pbAvatar.Location = new System.Drawing.Point(378, 244);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(200, 200);
-            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAvatar.TabIndex = 20;
-            this.pbAvatar.TabStop = false;
-            // 
             // FormSettingAccount
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -253,7 +256,9 @@ namespace BTDotNetCK.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormSettingAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thay đổi tài khoản";
+            this.Load += new System.EventHandler(this.FormSettingAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

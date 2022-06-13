@@ -41,7 +41,7 @@ namespace BTDotNetCK.DAL
                     Connection = connection
                 };
                 command.Parameters.AddWithValue("@TenDangNhap", account.UserName);
-                command.Parameters.AddWithValue("@MatKhau", account.UserName);
+                command.Parameters.AddWithValue("@MatKhau", account.Password);
                 command.Parameters.AddWithValue("@Quyen", account.Role);
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
                 DataTable data = new DataTable();

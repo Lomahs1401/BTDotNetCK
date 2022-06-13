@@ -31,6 +31,7 @@ namespace BTDotNetCK.GUI
 
         private void ShowInfo(Staff staff)
         {
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             tbIDNV.Text = staff.ID_Staff;
             tbNameNV.Text = staff.NameStaff;
             tbEmailNV.Text = staff.Email;
@@ -44,19 +45,10 @@ namespace BTDotNetCK.GUI
             tbCMNDNV.Text = staff.ID_Card;
             tbAddressNV.Text = staff.Address;
             tbSDTNV.Text = staff.Phone;
-            try
-            {
-                Bitmap bitmap = new Bitmap(staff.Image);
-                avatar.Image = bitmap;
-            }
-            catch (ArgumentNullException)
-            {
-                MessageBox.Show("Đường dẫn trống!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException)
-            {
-                MessageBox.Show("Đường dẫn không hợp lệ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            if (staff.Image == DBNull.Value.ToString())
+                avatar.Image = null;
+            else
+                avatar.Image = Image.FromFile(Path.Combine(projectDirectory, staff.Image));
         }
 
         private void BtnOK_Click(object sender, EventArgs e)
