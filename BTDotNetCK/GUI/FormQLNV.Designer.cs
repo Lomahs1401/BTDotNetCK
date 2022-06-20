@@ -153,7 +153,7 @@ namespace BTDotNetCK.GUI
             this.btnSuaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSuaNV.UseVisualStyleBackColor = false;
-            this.btnSuaNV.Click += new System.EventHandler(this.BtnSuaNV_Click);
+            this.btnSuaNV.Click += new System.EventHandler(this.BtnEditNV_Click);
             // 
             // lblSNVNu
             // 

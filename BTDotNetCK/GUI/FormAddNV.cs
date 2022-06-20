@@ -233,7 +233,6 @@ namespace BTDotNetCK.GUI
                 string password = sb.ToString();
                 if (BLL_QLNV.Instance.AddStaff(GetAllInfo(newStaffId.ToString(), username), username, password))
                 {
-                    ResetAllInfo();
                     MessageBox.Show("Thêm nhân viên mới thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshData(sender, e);
                     Dispose();
@@ -295,44 +294,6 @@ namespace BTDotNetCK.GUI
                 Image = avatar.ImageLocation,
                 AccountUsername = username
             };
-        }
-
-        private void ResetAllInfo()
-        {
-            tbNameNV.Text = "";
-            msgValidateName.Text = "";
-            msgValidateName.ForeColor = Color.Black;
-
-            tbEmailNV.Text = "";
-            msgValidateEmail.Text = "";
-            msgValidateEmail.ForeColor = Color.Black;
-
-            tbBD.Text = "";
-            msgValidateDateOfBirth.Text = "";
-            msgValidateDateOfBirth.ForeColor = Color.Black;
-
-            tbStartDate.Text = "";
-            msgValidateStartDate.Text = "";
-            msgValidateStartDate.ForeColor = Color.Black;
-
-            cbGender.SelectedItem = null;
-            msgValidateGender.Text = "";
-            msgValidateGender.ForeColor = Color.Black;
-
-            tbSDTNV.Text = "";
-            msgValidatePhone.Text = "";
-            msgValidatePhone.ForeColor = Color.Black;
-
-            tbCMNDNV.Text = "";
-            msgValidateIDCard.Text = "";
-            msgValidateIDCard.ForeColor = Color.Black;
-
-            tbAddressNV.Text = "";
-            msgValidateAddress.Text = "";
-            msgValidateAddress.ForeColor = Color.Black;
-
-            avatar.Image = null;
-            avatar.ImageLocation = "";
         }
 
         private void BtnNVImg_Click(object sender, EventArgs e)

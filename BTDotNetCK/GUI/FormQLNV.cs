@@ -57,15 +57,19 @@ namespace BTDotNetCK.GUI
         {
             FormAddNV formAddNV = new FormAddNV();
             formAddNV.RefreshData += new FormAddNV.LoadData(FormQLNV_Load);
-            formAddNV.Show();
+            formAddNV.ShowDialog();
         }
 
-        private void BtnSuaNV_Click(object sender, EventArgs e)
+        private void BtnEditNV_Click(object sender, EventArgs e)
         {
             if (dgvQLNV.CurrentRow == null)
                 MessageBox.Show("Hệ thống chưa có nhân viên nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                new FormEditNV(GetID_Staff()).Show();
+            {
+                FormEditNV formEditNV = new FormEditNV(GetID_Staff());
+                formEditNV.RefreshData += new FormEditNV.LoadData(FormQLNV_Load);
+                formEditNV.ShowDialog();
+            }
         }
 
         private void BtnDeleteNV_Click(object sender, EventArgs e)

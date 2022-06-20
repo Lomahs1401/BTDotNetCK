@@ -494,7 +494,7 @@ namespace BTDotNetCK.GUI
             this.Time.AutoSize = true;
             this.Time.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time.ForeColor = System.Drawing.Color.Black;
-            this.Time.Location = new System.Drawing.Point(856, 32);
+            this.Time.Location = new System.Drawing.Point(853, 32);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(40, 16);
             this.Time.TabIndex = 21;
@@ -517,7 +517,7 @@ namespace BTDotNetCK.GUI
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(811, 5);
+            this.lblDate.Location = new System.Drawing.Point(799, 5);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(37, 16);
             this.lblDate.TabIndex = 14;

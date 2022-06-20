@@ -15,6 +15,8 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormEditNV : Form
     {
+        public delegate void LoadData(object sender, EventArgs e);
+        public LoadData RefreshData { get; set; }
         private readonly string ID_Staff;
 
         public FormEditNV(string ID_Staff)
