@@ -30,6 +30,7 @@ namespace BTDotNetCK.GUI
             lblSNVNu.Text = BLL_QLNV.Instance.GetNumberTotalFemaleStaff().ToString();
             dgvQLNV.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             dgvQLNV.RowHeadersVisible = true;
+            dgvQLNV.BorderStyle = BorderStyle.FixedSingle;
             List<Staff> listStaffs = BLL_QLNV.Instance.GetStaffs();
             DataTable data = new DataTable();
             data.Columns.AddRange(new DataColumn[]
@@ -82,7 +83,7 @@ namespace BTDotNetCK.GUI
                 DialogResult result = MessageBox.Show("Xác nhận xóa nhân viên " + staff.NameStaff + "?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    FormIdentify formIdentify = new FormIdentify(staff.AccountUsername, password);
+                    FormIdentify formIdentify = new FormIdentify(staff.AccountUsername, password, "");
                     formIdentify.RefreshData += new FormIdentify.LoadData(FormQLNV_Load);
                     formIdentify.Show();
                 }
@@ -121,9 +122,28 @@ namespace BTDotNetCK.GUI
                         new DataColumn("Gender", typeof(string)),
                         new DataColumn("Phone", typeof(string)),
             });
-            if (btnTK.Text.Trim() == "")
+            if (tbTK.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng điền thông tin nhân viên cần tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (tbTK.Text.Length == 5)
+            {
+                Staff staff = BLL_QLNV.Instance.GetStaffByID(tbTK.Text);
+                if (staff == null)
+                {
+                    MessageBox.Show("Không tìm thấy", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DataRow dataRow = data.NewRow();
+                    dataRow["ID"] = staff.ID_Staff;
+                    dataRow["NameStaff"] = staff.NameStaff;
+                    dataRow["Email"] = staff.Email;
+                    dataRow["Gender"] = staff.Gender;
+                    dataRow["Phone"] = staff.Phone;
+                    data.Rows.Add(dataRow);
+                    dgvQLNV.DataSource = data;
+                }
             }
             else if (Validators.IsValidPhoneNumber(tbTK.Text, Validators.PHONE_REGEX))
             {

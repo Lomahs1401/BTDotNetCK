@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace BTDotNetCK.BLL
 {
+    // Quản lý nhân viên
     class BLL_QLNV
     {
         private static BLL_QLNV _Instance;

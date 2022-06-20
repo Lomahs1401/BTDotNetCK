@@ -249,7 +249,7 @@ namespace BTDotNetCK.GUI
             this.tbTK.Name = "tbTK";
             this.tbTK.PasswordChar = '\0';
             this.tbTK.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbTK.PlaceholderText = "Tìm kiếm theo tên hoặc SĐT";
+            this.tbTK.PlaceholderText = "Tìm kiếm theo ID, tên hoặc SĐT";
             this.tbTK.SelectedText = "";
             this.tbTK.Size = new System.Drawing.Size(250, 31);
             this.tbTK.TabIndex = 56;
@@ -354,6 +354,7 @@ namespace BTDotNetCK.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvQLNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQLNV.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvQLNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvQLNV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvQLNV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BTDotNetCK.BLL
 {
+    // Quản lý quên mật khẩu
     class BLL_ForgotPassword
     {
         private const string EMAIL_REGEX = "^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$";

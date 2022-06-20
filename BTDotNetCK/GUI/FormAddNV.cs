@@ -209,15 +209,23 @@ namespace BTDotNetCK.GUI
             if (isValidName && isValidEmail && isValidDateOfBirth && isValidStartDate && 
                 isValidGender && isValidIdCard && isValidPhone && isValidAddress)
             {
+                StringBuilder newStaffId; // S0006
                 string ID_Staff = BLL_QLNV.Instance.GetLastID();
-                string code = ID_Staff.Substring(1, ID_Staff.Length - 1); // 0006
-                int num = Convert.ToInt32(code); // 6
-                num++; // 6 + 1 -> 7
-                string numStr = num.ToString(); // "7"
-                int lenNumStr = numStr.Length; // 1
-                StringBuilder newStaffId = new StringBuilder(ID_Staff); // S0006
-                newStaffId = newStaffId.Remove(newStaffId.Length - lenNumStr, lenNumStr);// S000
-                newStaffId.Append(numStr); // S000 + 7 => E0007
+                if (ID_Staff == "S0000")
+                {
+                    newStaffId = new StringBuilder(ID_Staff);
+                }
+                else
+                {
+                    string code = ID_Staff.Substring(1, ID_Staff.Length - 1); // 0006
+                    int num = Convert.ToInt32(code); // 6
+                    num++; // 6 + 1 -> 7
+                    string numStr = num.ToString(); // "7"
+                    int lenNumStr = numStr.Length; // 1
+                    newStaffId = new StringBuilder(ID_Staff);
+                    newStaffId = newStaffId.Remove(newStaffId.Length - lenNumStr, lenNumStr);// S000
+                    newStaffId.Append(numStr); // S000 + 7 => E0007
+                }
 
                 string username = BLL_QLNV.Instance.ReplaceWhiteSpace(tbNameNV.Text.ToLower());
                 StringBuilder sb = new StringBuilder();
@@ -231,6 +239,7 @@ namespace BTDotNetCK.GUI
                 }
                 username = sb.ToString();
                 string password = sb.ToString();
+
                 if (BLL_QLNV.Instance.AddStaff(GetAllInfo(newStaffId.ToString(), username), username, password))
                 {
                     MessageBox.Show("Thêm nhân viên mới thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -271,6 +280,12 @@ namespace BTDotNetCK.GUI
 
         private Staff GetAllInfo(string newID_Staff, string username)
         {
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            string path;
+            if (avatar.Image == null)
+                path = null;
+            else
+                path = avatar.ImageLocation.Remove(0, projectDirectory.Length + 1);
             return new Staff
             {
                 ID_Staff = newID_Staff,
@@ -291,7 +306,7 @@ namespace BTDotNetCK.GUI
                 Phone = tbSDTNV.Text,
                 ID_Card = tbCMNDNV.Text,
                 Address = tbAddressNV.Text,
-                Image = avatar.ImageLocation,
+                Image = path,
                 AccountUsername = username
             };
         }

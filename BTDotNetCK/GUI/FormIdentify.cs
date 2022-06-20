@@ -18,12 +18,13 @@ namespace BTDotNetCK.GUI
         public LoadData RefreshData { get; set; }
         private readonly string accountUsername;
         private readonly string password;
-
-        public FormIdentify(string accountUsername, string password)
+        private readonly string id;
+        public FormIdentify(string accountUsername, string password, string id)
         {
             InitializeComponent();
             this.accountUsername = accountUsername;
             this.password = password;
+            this.id = id;
         }
 
         private void FormIdentify_Load(object sender, EventArgs e)
@@ -39,16 +40,33 @@ namespace BTDotNetCK.GUI
                 MessageBox.Show("Sai mật khẩu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                if (BLL_QLNV.Instance.DeleteStaff(accountUsername))
+                if (accountUsername != "")
                 {
-                    MessageBox.Show("Xóa nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshData(sender, e);
-                    Dispose();
+                    if (BLL_QLNV.Instance.DeleteStaff(accountUsername))
+                    {
+                        MessageBox.Show("Xóa nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshData(sender, e);
+                        Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại. Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Dispose();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Dispose();
+                    if (BLL_QLBH.Instance.DeleteProduct(id))
+                    {
+                        MessageBox.Show("Xóa mặt hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshData(sender, e);
+                        Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại. Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Dispose();
+                    }
                 }
             }
         }

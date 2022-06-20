@@ -79,7 +79,10 @@ namespace BTDotNetCK.DAL
                 sqlDataAdapter.Fill(data);
                 connection.Close();
 
-                return GetStaff(data.Rows[0]);
+                if (data.Rows.Count > 0)
+                    return GetStaff(data.Rows[0]);
+                else
+                    return null;
             }
         }
 
@@ -156,7 +159,7 @@ namespace BTDotNetCK.DAL
                 Address = r["DiaChi"].ToString(),
                 StartDate = (DateTime)r["NgayVaoLam"],
                 EndDate = r["NgayNghiViec"] == DBNull.Value ? (DateTime?)null : (DateTime)r["NgayNghiViec"],
-                Image = r["Anh"]?.ToString(),
+                Image = r["Anh"].ToString(),
                 AccountUsername = r["TenDangNhap"].ToString(),
             };
         }

@@ -31,11 +31,13 @@ namespace BTDotNetCK.GUI
         {
             this.components = new System.ComponentModel.Container();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.tbIDProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblIDProduct = new System.Windows.Forms.Label();
             this.btnOK = new Guna.UI2.WinForms.Guna2Button();
+            this.productImg = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tbQuantitySold = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbNameProduct = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,12 +46,12 @@ namespace BTDotNetCK.GUI
             this.lblNameProduct = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.productImg = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbCategory = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblCategory = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitleBar
@@ -63,6 +65,19 @@ namespace BTDotNetCK.GUI
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(833, 41);
             this.panelTitleBar.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.product_detail;
+            this.pictureBox1.Location = new System.Drawing.Point(173, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -79,6 +94,8 @@ namespace BTDotNetCK.GUI
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelContainer.Controls.Add(this.tbCategory);
+            this.panelContainer.Controls.Add(this.lblCategory);
             this.panelContainer.Controls.Add(this.tbIDProduct);
             this.panelContainer.Controls.Add(this.lblIDProduct);
             this.panelContainer.Controls.Add(this.btnOK);
@@ -94,7 +111,7 @@ namespace BTDotNetCK.GUI
             this.panelContainer.Location = new System.Drawing.Point(0, 41);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(833, 416);
+            this.panelContainer.Size = new System.Drawing.Size(833, 507);
             this.panelContainer.TabIndex = 5;
             // 
             // tbIDProduct
@@ -127,7 +144,7 @@ namespace BTDotNetCK.GUI
             this.lblIDProduct.AutoSize = true;
             this.lblIDProduct.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIDProduct.ForeColor = System.Drawing.Color.Black;
-            this.lblIDProduct.Location = new System.Drawing.Point(286, 48);
+            this.lblIDProduct.Location = new System.Drawing.Point(290, 48);
             this.lblIDProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIDProduct.Name = "lblIDProduct";
             this.lblIDProduct.Size = new System.Drawing.Size(98, 18);
@@ -145,12 +162,24 @@ namespace BTDotNetCK.GUI
             this.btnOK.FillColor = System.Drawing.Color.SeaGreen;
             this.btnOK.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(346, 368);
+            this.btnOK.Location = new System.Drawing.Point(346, 440);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(145, 36);
             this.btnOK.TabIndex = 55;
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
+            // 
+            // productImg
+            // 
+            this.productImg.BackColor = System.Drawing.Color.Transparent;
+            this.productImg.ErrorImage = null;
+            this.productImg.ImageRotate = 0F;
+            this.productImg.Location = new System.Drawing.Point(11, 39);
+            this.productImg.Name = "productImg";
+            this.productImg.Size = new System.Drawing.Size(262, 353);
+            this.productImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.productImg.TabIndex = 51;
+            this.productImg.TabStop = false;
             // 
             // tbQuantitySold
             // 
@@ -168,7 +197,7 @@ namespace BTDotNetCK.GUI
             this.tbQuantitySold.Font = new System.Drawing.Font("Arial", 11.25F);
             this.tbQuantitySold.ForeColor = System.Drawing.Color.Black;
             this.tbQuantitySold.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbQuantitySold.Location = new System.Drawing.Point(417, 202);
+            this.tbQuantitySold.Location = new System.Drawing.Point(417, 282);
             this.tbQuantitySold.Name = "tbQuantitySold";
             this.tbQuantitySold.PasswordChar = '\0';
             this.tbQuantitySold.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -193,7 +222,7 @@ namespace BTDotNetCK.GUI
             this.tbPrice.Font = new System.Drawing.Font("Arial", 11.25F);
             this.tbPrice.ForeColor = System.Drawing.Color.Black;
             this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPrice.Location = new System.Drawing.Point(417, 282);
+            this.tbPrice.Location = new System.Drawing.Point(417, 362);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.PasswordChar = '\0';
             this.tbPrice.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -232,7 +261,7 @@ namespace BTDotNetCK.GUI
             this.lblQuantitySold.AutoSize = true;
             this.lblQuantitySold.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantitySold.ForeColor = System.Drawing.Color.Black;
-            this.lblQuantitySold.Location = new System.Drawing.Point(286, 210);
+            this.lblQuantitySold.Location = new System.Drawing.Point(290, 288);
             this.lblQuantitySold.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantitySold.Name = "lblQuantitySold";
             this.lblQuantitySold.Size = new System.Drawing.Size(126, 18);
@@ -244,7 +273,7 @@ namespace BTDotNetCK.GUI
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblPrice.Location = new System.Drawing.Point(286, 286);
+            this.lblPrice.Location = new System.Drawing.Point(290, 370);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(63, 18);
@@ -256,7 +285,7 @@ namespace BTDotNetCK.GUI
             this.lblNameProduct.AutoSize = true;
             this.lblNameProduct.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameProduct.ForeColor = System.Drawing.Color.Black;
-            this.lblNameProduct.Location = new System.Drawing.Point(289, 127);
+            this.lblNameProduct.Location = new System.Drawing.Point(290, 127);
             this.lblNameProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNameProduct.Name = "lblNameProduct";
             this.lblNameProduct.Size = new System.Drawing.Size(105, 18);
@@ -274,36 +303,48 @@ namespace BTDotNetCK.GUI
             this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.White;
             this.guna2ShadowForm1.TargetForm = this;
             // 
-            // productImg
+            // tbCategory
             // 
-            this.productImg.BackColor = System.Drawing.Color.Transparent;
-            this.productImg.ErrorImage = null;
-            this.productImg.ImageRotate = 0F;
-            this.productImg.Location = new System.Drawing.Point(11, 39);
-            this.productImg.Name = "productImg";
-            this.productImg.Size = new System.Drawing.Size(242, 273);
-            this.productImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.productImg.TabIndex = 51;
-            this.productImg.TabStop = false;
+            this.tbCategory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.tbCategory.BorderRadius = 6;
+            this.tbCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCategory.DefaultText = "";
+            this.tbCategory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.tbCategory.DisabledState.FillColor = System.Drawing.Color.Tan;
+            this.tbCategory.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.tbCategory.DisabledState.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbCategory.Enabled = false;
+            this.tbCategory.FillColor = System.Drawing.Color.Tan;
+            this.tbCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCategory.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.tbCategory.ForeColor = System.Drawing.Color.Black;
+            this.tbCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCategory.Location = new System.Drawing.Point(417, 202);
+            this.tbCategory.Name = "tbCategory";
+            this.tbCategory.PasswordChar = '\0';
+            this.tbCategory.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbCategory.PlaceholderText = "Loại hàng hóa";
+            this.tbCategory.SelectedText = "";
+            this.tbCategory.Size = new System.Drawing.Size(393, 30);
+            this.tbCategory.TabIndex = 62;
             // 
-            // pictureBox1
+            // lblCategory
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.product_detail;
-            this.pictureBox1.Location = new System.Drawing.Point(173, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.Color.Black;
+            this.lblCategory.Location = new System.Drawing.Point(290, 208);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(38, 18);
+            this.lblCategory.TabIndex = 63;
+            this.lblCategory.Text = "Loại";
             // 
             // FormTTMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 457);
+            this.ClientSize = new System.Drawing.Size(833, 548);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -313,10 +354,10 @@ namespace BTDotNetCK.GUI
             this.Load += new System.EventHandler(this.FormTTMH_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +380,7 @@ namespace BTDotNetCK.GUI
         private Guna.UI2.WinForms.Guna2Button btnOK;
         private Guna.UI2.WinForms.Guna2TextBox tbIDProduct;
         private System.Windows.Forms.Label lblIDProduct;
+        private Guna.UI2.WinForms.Guna2TextBox tbCategory;
+        private System.Windows.Forms.Label lblCategory;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BTDotNetCK.GUI
 {
-    public partial class FormQLKHNV : Form
+    public partial class FormAddKH : Form
     {
-        public FormQLKHNV()
+        public FormAddKH()
         {
             InitializeComponent();
         }

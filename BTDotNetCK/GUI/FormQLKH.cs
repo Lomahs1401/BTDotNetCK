@@ -46,5 +46,12 @@ namespace BTDotNetCK.GUI
         {
             btnTTKH.BackColor = RGBColors.color4;
         }
+
+        private void FormQLKH_Load(object sender, EventArgs e)
+        {
+            dgvQLKH.BorderStyle = BorderStyle.FixedSingle;
+            dgvQLKH.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dgvQLKH.RowHeadersVisible = true;
+        }
     }
 }

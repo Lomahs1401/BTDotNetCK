@@ -35,7 +35,8 @@ namespace BTDotNetCK.GUI
 
         private void FormSettingAccount_Load(object sender, EventArgs e)
         {
-            pbAvatar.ImageLocation = BLL_QLNV.Instance.GetImage(accountUsername);
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            pbAvatar.Image = Image.FromFile(Path.Combine(projectDirectory, BLL_QLNV.Instance.GetImage(accountUsername)));
         }
 
         private void BtnEditImg_Click(object sender, EventArgs e)
@@ -62,6 +63,12 @@ namespace BTDotNetCK.GUI
 
         private void BtnSaveChange_Click(object sender, EventArgs e)
         {
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            string path;
+            if (BLL_QLNV.Instance.GetImage(accountUsername) == DBNull.Value.ToString())
+                path = null;
+            else
+                path = pbAvatar.ImageLocation.Remove(0, projectDirectory.Length + 1);
             string newPassword = tbPassword.Text;
             string confirmPassword = tbConfirmPassword.Text;
             bool isEqualToOldPassword, isConfirmPassMatchToNewPass, isNewAvatar;
@@ -92,7 +99,7 @@ namespace BTDotNetCK.GUI
                 }
                 else
                 {
-                    msgValidateConfirmPassword.ForeColor = Color.White;
+                    msgValidateConfirmPassword.ForeColor = Color.Black;
                     msgValidateConfirmPassword.Text = "";
                     isConfirmPassMatchToNewPass = true;
                 }
@@ -102,7 +109,7 @@ namespace BTDotNetCK.GUI
                     DialogResult dialogResult = MessageBox.Show("Xác nhận lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        Account account = new Account(accountUsername, newPassword, role, pbAvatar.Image == null ? null : pbAvatar.ImageLocation);
+                        Account account = new Account(accountUsername, newPassword, role, pbAvatar.Image == null ? null : path);
                         if (BLL_QLTK.Instance.SaveNewInfo(account))
                         {
                             MessageBox.Show("Lưu mới dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

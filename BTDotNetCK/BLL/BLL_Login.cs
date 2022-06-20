@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BTDotNetCK.BLL
 {
+    // Quản lý đăng nhập
     class BLL_Login
     {
         private static BLL_Login _Instance;

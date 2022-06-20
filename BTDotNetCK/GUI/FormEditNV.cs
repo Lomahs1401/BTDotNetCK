@@ -41,7 +41,13 @@ namespace BTDotNetCK.GUI
             tbCMNDNV.Text = staff.ID_Card;
             tbAddressNV.Text = staff.Address;
             tbSDTNV.Text = staff.Phone;
-            avatar.Image = Image.FromFile(Path.Combine(projectDirectory, staff.Image));
+            if (staff.Image == DBNull.Value.ToString())
+                avatar.Image = null;
+            else
+            {
+                avatar.ImageLocation = staff.Image;
+                avatar.Image = Image.FromFile(Path.Combine(projectDirectory, staff.Image));
+            }
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -244,7 +250,7 @@ namespace BTDotNetCK.GUI
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             bool isNewName, isNewEmail, isNewDateOfBirth, isNewStartDate, isNewGender, 
-                isNewPhone, isNewID_Card, isNewAddress, isNewImage;
+                isNewPhone, isNewID_Card, isNewAddress, isNewImage = false;
             Staff oldStaff = BLL_QLNV.Instance.GetStaffByID(ID_Staff);
             isNewName = oldStaff.NameStaff != tbNameNV.Text;
             isNewEmail = oldStaff.Email != tbEmailNV.Text;
@@ -254,7 +260,16 @@ namespace BTDotNetCK.GUI
             isNewPhone = oldStaff.Phone != tbSDTNV.Text;
             isNewID_Card = oldStaff.ID_Card != tbCMNDNV.Text;
             isNewAddress = oldStaff.Address != tbAddressNV.Text;
-            isNewImage = oldStaff.Image != avatar.ImageLocation;
+            if (oldStaff.Image == DBNull.Value.ToString())
+            {
+                if (avatar.Image != null)
+                    isNewImage = true;
+            }
+            else
+            {
+                if (avatar.ImageLocation != oldStaff.Image)
+                    isNewImage = true;
+            }
             if (isNewName || isNewEmail || isNewDateOfBirth || isNewStartDate || isNewGender
                 || isNewPhone || isNewID_Card || isNewAddress || isNewImage)
             {
@@ -292,6 +307,12 @@ namespace BTDotNetCK.GUI
 
         private Staff GetAllInfo(string ID_Staff, string username)
         {
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            string path;
+            if (avatar.Image == null)
+                path = null;
+            else
+                path = avatar.ImageLocation.Remove(0, projectDirectory.Length + 1);
             return new Staff
             {
                 ID_Staff = ID_Staff,
@@ -312,7 +333,7 @@ namespace BTDotNetCK.GUI
                 Phone = tbSDTNV.Text,
                 ID_Card = tbCMNDNV.Text,
                 Address = tbAddressNV.Text,
-                Image = avatar.ImageLocation,
+                Image = path,
                 AccountUsername = username
             };
         }

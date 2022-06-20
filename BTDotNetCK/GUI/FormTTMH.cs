@@ -35,9 +35,10 @@ namespace BTDotNetCK.GUI
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             tbIDProduct.Text = product.ID_Product;
             tbNameProduct.Text = product.NameProduct;
+            tbCategory.Text = product.Category;
             tbQuantitySold.Text = product.QuantitySold.ToString();
-            tbPrice.Text = product.Price.ToString() + "VNĐ";
-            if (product.Image == null)
+            tbPrice.Text = product.Price.ToString("##,#") + "VNĐ";
+            if (product.Image == DBNull.Value.ToString())
                 productImg.Image = null;
             else
                 productImg.Image = Image.FromFile(Path.Combine(projectDirectory, product.Image));

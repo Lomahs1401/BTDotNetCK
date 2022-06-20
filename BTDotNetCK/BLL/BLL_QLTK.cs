@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BTDotNetCK.BLL
 {
+    // Quản lý tài khoản
     class BLL_QLTK
     {
         private static BLL_QLTK _Instance;

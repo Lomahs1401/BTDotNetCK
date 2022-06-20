@@ -193,6 +193,16 @@ namespace BTDotNetCK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bill {
+            get {
+                object obj = ResourceManager.GetObject("bill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blue_eye_icon {
             get {
                 object obj = ResourceManager.GetObject("blue eye icon", resourceCulture);
@@ -463,6 +473,16 @@ namespace BTDotNetCK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cookies {
+            get {
+                object obj = ResourceManager.GetObject("cookies", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cookies_da_xay {
             get {
                 object obj = ResourceManager.GetObject("cookies da xay", resourceCulture);
@@ -693,6 +713,16 @@ namespace BTDotNetCK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap food {
+            get {
+                object obj = ResourceManager.GetObject("food", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ganyu {
             get {
                 object obj = ResourceManager.GetObject("ganyu", resourceCulture);
@@ -766,6 +796,16 @@ namespace BTDotNetCK.Properties {
         internal static System.Drawing.Bitmap icons8_picture_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_picture_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_math_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_plus_math_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1196,6 +1236,16 @@ namespace BTDotNetCK.Properties {
         internal static System.Drawing.Bitmap package2 {
             get {
                 object obj = ResourceManager.GetObject("package2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paimon {
+            get {
+                object obj = ResourceManager.GetObject("paimon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

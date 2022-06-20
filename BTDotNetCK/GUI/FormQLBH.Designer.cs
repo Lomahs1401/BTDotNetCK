@@ -34,99 +34,104 @@ namespace BTDotNetCK.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLBH));
-            this.remainingQuantity = new System.Windows.Forms.Label();
-            this.lblRemainingQuantity = new System.Windows.Forms.Label();
-            this.quantitySold = new System.Windows.Forms.Label();
-            this.lblQuantitySold = new System.Windows.Forms.Label();
-            this.totalProduct = new System.Windows.Forms.Label();
+            this.drinkCategory = new System.Windows.Forms.Label();
+            this.lblDrinkCategory = new System.Windows.Forms.Label();
+            this.foodCategory = new System.Windows.Forms.Label();
+            this.lblFoodCategory = new System.Windows.Forms.Label();
+            this.totalCategory = new System.Windows.Forms.Label();
             this.lblTotalProduct = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSXS = new FontAwesome.Sharp.IconButton();
-            this.btnHDTN = new FontAwesome.Sharp.IconButton();
             this.tbTK = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dgvQLBH = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rjDropDownMenuSXMH = new BTDotNetCK.GUI.RJDropDownMenu(this.components);
+            this.giáMặtHàngTăngDầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giáMặtHàngGiảmDầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnTK = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSXS = new FontAwesome.Sharp.IconButton();
+            this.btnHDTN = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLBH)).BeginInit();
+            this.rjDropDownMenuSXMH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQLBH)).BeginInit();
             this.SuspendLayout();
             // 
-            // remainingQuantity
+            // drinkCategory
             // 
-            this.remainingQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.remainingQuantity.AutoSize = true;
-            this.remainingQuantity.BackColor = System.Drawing.Color.Transparent;
-            this.remainingQuantity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remainingQuantity.ForeColor = System.Drawing.Color.Black;
-            this.remainingQuantity.Location = new System.Drawing.Point(787, 55);
-            this.remainingQuantity.Name = "remainingQuantity";
-            this.remainingQuantity.Size = new System.Drawing.Size(29, 16);
-            this.remainingQuantity.TabIndex = 44;
-            this.remainingQuantity.Text = "100";
+            this.drinkCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.drinkCategory.AutoSize = true;
+            this.drinkCategory.BackColor = System.Drawing.Color.Transparent;
+            this.drinkCategory.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drinkCategory.ForeColor = System.Drawing.Color.Black;
+            this.drinkCategory.Location = new System.Drawing.Point(787, 55);
+            this.drinkCategory.Name = "drinkCategory";
+            this.drinkCategory.Size = new System.Drawing.Size(29, 16);
+            this.drinkCategory.TabIndex = 44;
+            this.drinkCategory.Text = "100";
             // 
-            // lblRemainingQuantity
+            // lblDrinkCategory
             // 
-            this.lblRemainingQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRemainingQuantity.AutoSize = true;
-            this.lblRemainingQuantity.BackColor = System.Drawing.Color.Transparent;
-            this.lblRemainingQuantity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRemainingQuantity.ForeColor = System.Drawing.Color.Black;
-            this.lblRemainingQuantity.Location = new System.Drawing.Point(695, 24);
-            this.lblRemainingQuantity.Name = "lblRemainingQuantity";
-            this.lblRemainingQuantity.Size = new System.Drawing.Size(190, 16);
-            this.lblRemainingQuantity.TabIndex = 43;
-            this.lblRemainingQuantity.Text = "Số mặt hàng chưa được bán";
+            this.lblDrinkCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDrinkCategory.AutoSize = true;
+            this.lblDrinkCategory.BackColor = System.Drawing.Color.Transparent;
+            this.lblDrinkCategory.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDrinkCategory.ForeColor = System.Drawing.Color.Black;
+            this.lblDrinkCategory.Location = new System.Drawing.Point(729, 24);
+            this.lblDrinkCategory.Name = "lblDrinkCategory";
+            this.lblDrinkCategory.Size = new System.Drawing.Size(145, 16);
+            this.lblDrinkCategory.TabIndex = 43;
+            this.lblDrinkCategory.Text = "Số mặt hàng đồ uống";
             // 
-            // quantitySold
+            // foodCategory
             // 
-            this.quantitySold.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.quantitySold.AutoSize = true;
-            this.quantitySold.BackColor = System.Drawing.Color.Transparent;
-            this.quantitySold.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantitySold.ForeColor = System.Drawing.Color.Black;
-            this.quantitySold.Location = new System.Drawing.Point(437, 55);
-            this.quantitySold.Name = "quantitySold";
-            this.quantitySold.Size = new System.Drawing.Size(29, 16);
-            this.quantitySold.TabIndex = 42;
-            this.quantitySold.Text = "100";
+            this.foodCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.foodCategory.AutoSize = true;
+            this.foodCategory.BackColor = System.Drawing.Color.Transparent;
+            this.foodCategory.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foodCategory.ForeColor = System.Drawing.Color.Black;
+            this.foodCategory.Location = new System.Drawing.Point(437, 55);
+            this.foodCategory.Name = "foodCategory";
+            this.foodCategory.Size = new System.Drawing.Size(29, 16);
+            this.foodCategory.TabIndex = 42;
+            this.foodCategory.Text = "100";
             // 
-            // lblQuantitySold
+            // lblFoodCategory
             // 
-            this.lblQuantitySold.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblQuantitySold.AutoSize = true;
-            this.lblQuantitySold.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuantitySold.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantitySold.ForeColor = System.Drawing.Color.Black;
-            this.lblQuantitySold.Location = new System.Drawing.Point(373, 24);
-            this.lblQuantitySold.Name = "lblQuantitySold";
-            this.lblQuantitySold.Size = new System.Drawing.Size(152, 16);
-            this.lblQuantitySold.TabIndex = 41;
-            this.lblQuantitySold.Text = "Số lượng đã bán được";
+            this.lblFoodCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFoodCategory.AutoSize = true;
+            this.lblFoodCategory.BackColor = System.Drawing.Color.Transparent;
+            this.lblFoodCategory.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoodCategory.ForeColor = System.Drawing.Color.Black;
+            this.lblFoodCategory.Location = new System.Drawing.Point(381, 24);
+            this.lblFoodCategory.Name = "lblFoodCategory";
+            this.lblFoodCategory.Size = new System.Drawing.Size(141, 16);
+            this.lblFoodCategory.TabIndex = 41;
+            this.lblFoodCategory.Text = "Số mặt hàng thức ăn";
             // 
-            // totalProduct
+            // totalCategory
             // 
-            this.totalProduct.AutoSize = true;
-            this.totalProduct.BackColor = System.Drawing.Color.Transparent;
-            this.totalProduct.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalProduct.ForeColor = System.Drawing.Color.Black;
-            this.totalProduct.Location = new System.Drawing.Point(88, 55);
-            this.totalProduct.Name = "totalProduct";
-            this.totalProduct.Size = new System.Drawing.Size(29, 16);
-            this.totalProduct.TabIndex = 40;
-            this.totalProduct.Text = "100";
+            this.totalCategory.AutoSize = true;
+            this.totalCategory.BackColor = System.Drawing.Color.Transparent;
+            this.totalCategory.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCategory.ForeColor = System.Drawing.Color.Black;
+            this.totalCategory.Location = new System.Drawing.Point(88, 55);
+            this.totalCategory.Name = "totalCategory";
+            this.totalCategory.Size = new System.Drawing.Size(29, 16);
+            this.totalCategory.TabIndex = 40;
+            this.totalCategory.Text = "100";
             // 
             // lblTotalProduct
             // 
@@ -152,55 +157,6 @@ namespace BTDotNetCK.GUI
             this.panel1.Size = new System.Drawing.Size(143, 118);
             this.panel1.TabIndex = 48;
             // 
-            // btnSXS
-            // 
-            this.btnSXS.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSXS.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSXS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSXS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
-            this.btnSXS.FlatAppearance.BorderSize = 0;
-            this.btnSXS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSXS.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSXS.ForeColor = System.Drawing.Color.White;
-            this.btnSXS.IconChar = FontAwesome.Sharp.IconChar.SortAmountDownAlt;
-            this.btnSXS.IconColor = System.Drawing.Color.White;
-            this.btnSXS.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSXS.IconSize = 30;
-            this.btnSXS.Location = new System.Drawing.Point(0, 3);
-            this.btnSXS.Name = "btnSXS";
-            this.btnSXS.Size = new System.Drawing.Size(142, 47);
-            this.btnSXS.TabIndex = 12;
-            this.btnSXS.Text = "Sắp xếp";
-            this.btnSXS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSXS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSXS.UseVisualStyleBackColor = false;
-            this.btnSXS.MouseEnter += new System.EventHandler(this.BtnSXS_MouseEnter);
-            this.btnSXS.MouseLeave += new System.EventHandler(this.BtnSXS_MouseLeave);
-            // 
-            // btnHDTN
-            // 
-            this.btnHDTN.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnHDTN.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnHDTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHDTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
-            this.btnHDTN.FlatAppearance.BorderSize = 0;
-            this.btnHDTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHDTN.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHDTN.ForeColor = System.Drawing.Color.White;
-            this.btnHDTN.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
-            this.btnHDTN.IconColor = System.Drawing.Color.White;
-            this.btnHDTN.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHDTN.IconSize = 30;
-            this.btnHDTN.Location = new System.Drawing.Point(0, 67);
-            this.btnHDTN.Name = "btnHDTN";
-            this.btnHDTN.Size = new System.Drawing.Size(142, 47);
-            this.btnHDTN.TabIndex = 13;
-            this.btnHDTN.Text = "  Hóa đơn trong ngày";
-            this.btnHDTN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHDTN.UseVisualStyleBackColor = false;
-            this.btnHDTN.MouseEnter += new System.EventHandler(this.BtnHDTN_MouseEnter);
-            this.btnHDTN.MouseLeave += new System.EventHandler(this.BtnHDTN_MouseLeave);
-            // 
             // tbTK
             // 
             this.tbTK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
@@ -223,6 +179,7 @@ namespace BTDotNetCK.GUI
             this.tbTK.SelectedText = "";
             this.tbTK.Size = new System.Drawing.Size(250, 31);
             this.tbTK.TabIndex = 49;
+            this.tbTK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbTK_KeyPress);
             // 
             // guna2Elipse1
             // 
@@ -240,51 +197,19 @@ namespace BTDotNetCK.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHeader.BackColor = System.Drawing.Color.Gainsboro;
             this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHeader.Controls.Add(this.lblQuantitySold);
+            this.panelHeader.Controls.Add(this.lblFoodCategory);
             this.panelHeader.Controls.Add(this.lblTotalProduct);
-            this.panelHeader.Controls.Add(this.totalProduct);
-            this.panelHeader.Controls.Add(this.quantitySold);
+            this.panelHeader.Controls.Add(this.totalCategory);
+            this.panelHeader.Controls.Add(this.foodCategory);
             this.panelHeader.Controls.Add(this.pictureBox3);
-            this.panelHeader.Controls.Add(this.lblRemainingQuantity);
+            this.panelHeader.Controls.Add(this.lblDrinkCategory);
             this.panelHeader.Controls.Add(this.pictureBox1);
-            this.panelHeader.Controls.Add(this.remainingQuantity);
+            this.panelHeader.Controls.Add(this.drinkCategory);
             this.panelHeader.Controls.Add(this.pictureBox2);
             this.panelHeader.Location = new System.Drawing.Point(11, 12);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(957, 95);
             this.panelHeader.TabIndex = 59;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::BTDotNetCK.Properties.Resources.Set_Product;
-            this.pictureBox3.Location = new System.Drawing.Point(168, 18);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 33);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 47;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.product;
-            this.pictureBox1.Location = new System.Drawing.Point(891, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.Image = global::BTDotNetCK.Properties.Resources.quantity;
-            this.pictureBox2.Location = new System.Drawing.Point(541, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 45;
-            this.pictureBox2.TabStop = false;
             // 
             // dgvQLBH
             // 
@@ -315,6 +240,7 @@ namespace BTDotNetCK.GUI
             this.dgvQLBH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NameProduct,
+            this.Category,
             this.Quantity,
             this.Price});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -373,6 +299,14 @@ namespace BTDotNetCK.GUI
             this.NameProduct.Name = "NameProduct";
             this.NameProduct.ReadOnly = true;
             // 
+            // Category
+            // 
+            this.Category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Category.DataPropertyName = "Category";
+            this.Category.HeaderText = "Loại";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            // 
             // Quantity
             // 
             this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -388,6 +322,70 @@ namespace BTDotNetCK.GUI
             this.Price.HeaderText = "Giá tiền";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
+            // 
+            // rjDropDownMenuSXMH
+            // 
+            this.rjDropDownMenuSXMH.IsMainMenu = false;
+            this.rjDropDownMenuSXMH.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.giáMặtHàngTăngDầnToolStripMenuItem,
+            this.giáMặtHàngGiảmDầnToolStripMenuItem});
+            this.rjDropDownMenuSXMH.MenuItemHeight = 25;
+            this.rjDropDownMenuSXMH.MenuItemTextColor = System.Drawing.Color.Empty;
+            this.rjDropDownMenuSXMH.Name = "rjDropDownMenuSXMH";
+            this.rjDropDownMenuSXMH.PrimaryColor = System.Drawing.Color.Empty;
+            this.rjDropDownMenuSXMH.Size = new System.Drawing.Size(204, 48);
+            // 
+            // giáMặtHàngTăngDầnToolStripMenuItem
+            // 
+            this.giáMặtHàngTăngDầnToolStripMenuItem.BackColor = System.Drawing.Color.MediumPurple;
+            this.giáMặtHàngTăngDầnToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.giáMặtHàngTăngDầnToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.giáMặtHàngTăngDầnToolStripMenuItem.Name = "giáMặtHàngTăngDầnToolStripMenuItem";
+            this.giáMặtHàngTăngDầnToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.giáMặtHàngTăngDầnToolStripMenuItem.Text = "Giá mặt hàng tăng dần";
+            this.giáMặtHàngTăngDầnToolStripMenuItem.Click += new System.EventHandler(this.GiáMặtHàngTăngDầnToolStripMenuItem_Click);
+            // 
+            // giáMặtHàngGiảmDầnToolStripMenuItem
+            // 
+            this.giáMặtHàngGiảmDầnToolStripMenuItem.BackColor = System.Drawing.Color.MediumPurple;
+            this.giáMặtHàngGiảmDầnToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.giáMặtHàngGiảmDầnToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.giáMặtHàngGiảmDầnToolStripMenuItem.Name = "giáMặtHàngGiảmDầnToolStripMenuItem";
+            this.giáMặtHàngGiảmDầnToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.giáMặtHàngGiảmDầnToolStripMenuItem.Text = "Giá mặt hàng giảm dần";
+            this.giáMặtHàngGiảmDầnToolStripMenuItem.Click += new System.EventHandler(this.GiáMặtHàngGiảmDầnToolStripMenuItem_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::BTDotNetCK.Properties.Resources.Set_Product;
+            this.pictureBox3.Location = new System.Drawing.Point(168, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(38, 33);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 47;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.product;
+            this.pictureBox1.Location = new System.Drawing.Point(880, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Image = global::BTDotNetCK.Properties.Resources.cookies;
+            this.pictureBox2.Location = new System.Drawing.Point(528, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 45;
+            this.pictureBox2.TabStop = false;
             // 
             // btnTK
             // 
@@ -406,6 +404,57 @@ namespace BTDotNetCK.GUI
             this.btnTK.Size = new System.Drawing.Size(141, 31);
             this.btnTK.TabIndex = 50;
             this.btnTK.Text = "Tìm kiếm";
+            this.btnTK.Click += new System.EventHandler(this.BtnTK_Click);
+            // 
+            // btnSXS
+            // 
+            this.btnSXS.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSXS.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSXS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSXS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
+            this.btnSXS.FlatAppearance.BorderSize = 0;
+            this.btnSXS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSXS.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSXS.ForeColor = System.Drawing.Color.White;
+            this.btnSXS.IconChar = FontAwesome.Sharp.IconChar.SortAmountDownAlt;
+            this.btnSXS.IconColor = System.Drawing.Color.White;
+            this.btnSXS.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSXS.IconSize = 30;
+            this.btnSXS.Location = new System.Drawing.Point(0, 3);
+            this.btnSXS.Name = "btnSXS";
+            this.btnSXS.Size = new System.Drawing.Size(142, 47);
+            this.btnSXS.TabIndex = 12;
+            this.btnSXS.Text = "Sắp xếp";
+            this.btnSXS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSXS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSXS.UseVisualStyleBackColor = false;
+            this.btnSXS.Click += new System.EventHandler(this.BtnSXMH_Click);
+            this.btnSXS.MouseEnter += new System.EventHandler(this.BtnSXS_MouseEnter);
+            this.btnSXS.MouseLeave += new System.EventHandler(this.BtnSXS_MouseLeave);
+            // 
+            // btnHDTN
+            // 
+            this.btnHDTN.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnHDTN.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnHDTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHDTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
+            this.btnHDTN.FlatAppearance.BorderSize = 0;
+            this.btnHDTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHDTN.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDTN.ForeColor = System.Drawing.Color.White;
+            this.btnHDTN.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
+            this.btnHDTN.IconColor = System.Drawing.Color.White;
+            this.btnHDTN.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHDTN.IconSize = 30;
+            this.btnHDTN.Location = new System.Drawing.Point(0, 67);
+            this.btnHDTN.Name = "btnHDTN";
+            this.btnHDTN.Size = new System.Drawing.Size(142, 47);
+            this.btnHDTN.TabIndex = 13;
+            this.btnHDTN.Text = "  Hóa đơn trong ngày";
+            this.btnHDTN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHDTN.UseVisualStyleBackColor = false;
+            this.btnHDTN.MouseEnter += new System.EventHandler(this.BtnHDTN_MouseEnter);
+            this.btnHDTN.MouseLeave += new System.EventHandler(this.BtnHDTN_MouseLeave);
             // 
             // FormQLBH
             // 
@@ -427,10 +476,11 @@ namespace BTDotNetCK.GUI
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLBH)).EndInit();
+            this.rjDropDownMenuSXMH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQLBH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,11 +489,11 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label remainingQuantity;
-        private System.Windows.Forms.Label lblRemainingQuantity;
-        private System.Windows.Forms.Label quantitySold;
-        private System.Windows.Forms.Label lblQuantitySold;
-        private System.Windows.Forms.Label totalProduct;
+        private System.Windows.Forms.Label drinkCategory;
+        private System.Windows.Forms.Label lblDrinkCategory;
+        private System.Windows.Forms.Label foodCategory;
+        private System.Windows.Forms.Label lblFoodCategory;
+        private System.Windows.Forms.Label totalCategory;
         private System.Windows.Forms.Label lblTotalProduct;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnSXS;
@@ -456,7 +506,11 @@ namespace BTDotNetCK.GUI
         private Guna.UI2.WinForms.Guna2DataGridView dgvQLBH;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private RJDropDownMenu rjDropDownMenuSXMH;
+        private System.Windows.Forms.ToolStripMenuItem giáMặtHàngTăngDầnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem giáMặtHàngGiảmDầnToolStripMenuItem;
     }
 }

@@ -26,8 +26,10 @@ namespace BTDotNetCK.GUI
         public FormMainMenuNV(string accountUsername, string password, string nameStaff)
         {
             InitializeComponent();
-            btnLeftBorder = new Panel();
-            btnLeftBorder.Size = new Size(7, 77);
+            btnLeftBorder = new Panel
+            {
+                Size = new Size(7, 77)
+            };
             panelMenu.Controls.Add(btnLeftBorder);
             this.accountUsername = accountUsername;
             this.password = password;
@@ -118,7 +120,7 @@ namespace BTDotNetCK.GUI
         private void BtnQLMH_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormQLMH());
+            OpenChildForm(new FormQLMH(password));
         }
 
         private void BtnBH_Click(object sender, EventArgs e)
@@ -130,7 +132,7 @@ namespace BTDotNetCK.GUI
         private void BtnQLKH_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new FormQLKHNV());
+            OpenChildForm(new FormQLKH());
         }
 
         private void BtnHome_Click(object sender, EventArgs e)

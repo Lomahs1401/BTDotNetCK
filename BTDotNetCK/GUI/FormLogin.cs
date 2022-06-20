@@ -45,9 +45,9 @@ namespace BTDotNetCK.GUI
                 txtPassword.Text = Properties.Settings.Default.password;
             }
             if (Properties.Settings.Default.role == "Quản Trị")
-                radioEmployee.Checked = true;
-            else
                 radioAdmin.Checked = true;
+            else
+                radioEmployee.Checked = true;
         }
 
         private void ExitIcon_Click(object sender, EventArgs e)

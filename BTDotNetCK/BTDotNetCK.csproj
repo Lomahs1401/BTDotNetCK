@@ -100,17 +100,41 @@
     <Compile Include="DTO\Product.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\Table.cs" />
+    <Compile Include="GUI\FormAddHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddHang.Designer.cs">
+      <DependentUpon>FormAddHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAddKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddKH.Designer.cs">
+      <DependentUpon>FormAddKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormAddNV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FormAddNV.Designer.cs">
       <DependentUpon>FormAddNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormEditHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormEditHang.Designer.cs">
+      <DependentUpon>FormEditHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FormForgotPassword.Designer.cs">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormHoaDonDatMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormHoaDonDatMon.Designer.cs">
+      <DependentUpon>FormHoaDonDatMon.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormIdentify.cs">
       <SubType>Form</SubType>
@@ -136,6 +160,12 @@
     <Compile Include="GUI\FormMainMenuQTV.Designer.cs">
       <DependentUpon>FormMainMenuQTV.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMon.Designer.cs">
+      <DependentUpon>FormMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormQLBH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,12 +189,6 @@
     </Compile>
     <Compile Include="GUI\FormQLKH.Designer.cs">
       <DependentUpon>FormQLKH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FormQLKHNV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormQLKHNV.Designer.cs">
-      <DependentUpon>FormQLKHNV.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormQLNV.cs">
       <SubType>Form</SubType>
@@ -214,8 +238,14 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Validator\Validator.cs" />
+    <EmbeddedResource Include="GUI\FormAddHang.resx">
+      <DependentUpon>FormAddHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAddNV.resx">
       <DependentUpon>FormAddNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormEditHang.resx">
+      <DependentUpon>FormEditHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
@@ -243,9 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormQLKH.resx">
       <DependentUpon>FormQLKH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormQLKHNV.resx">
-      <DependentUpon>FormQLKHNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormQLNV.resx">
       <DependentUpon>FormQLNV.cs</DependentUpon>
@@ -410,7 +437,11 @@
     <None Include="Img\GI\noelle.png" />
     <None Include="Img\GI\ningguang.png" />
     <None Include="Img\GI\kujou sara.png" />
+    <None Include="Img\Icon\bill.png" />
+    <None Include="Img\Icon\cookies.png" />
+    <None Include="Img\GI\paimon.png" />
     <Content Include="Img\Icon\error.png" />
+    <None Include="Img\Icon\food.png" />
     <Content Include="Img\Icon\icons8_cancel_45px.png" />
     <None Include="Img\Icon\icons8_Close_30px.png" />
     <None Include="Img\Icon\icons8_Logout_30px.png" />
@@ -418,6 +449,7 @@
     <None Include="Img\Icon\icons8_reserve_30px_1.png" />
     <None Include="Img\Icon\icons8_search_20px.png" />
     <None Include="Img\Icon\icons8_user_settings_30px.png" />
+    <None Include="Img\Icon\icons8_plus_math_30px.png" />
     <Content Include="Img\Icon\info.png" />
     <None Include="Img\Icon\package2.png" />
     <None Include="Img\Icon\payment.png" />
