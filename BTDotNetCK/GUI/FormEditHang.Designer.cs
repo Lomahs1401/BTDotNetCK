@@ -368,7 +368,6 @@ namespace BTDotNetCK.GUI
             // guna2ShadowForm1
             // 
             this.guna2ShadowForm1.BorderRadius = 10;
-            this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.White;
             this.guna2ShadowForm1.TargetForm = this;
             // 
             // guna2DragControl1

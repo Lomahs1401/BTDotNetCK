@@ -29,6 +29,7 @@ namespace BTDotNetCK.GUI
             this.password = password;
             this.email = email;
             this.emailPassword = emailPassword;
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace BTDotNetCK.GUI
         {
             DialogResult dialog = MessageBox.Show("Xác nhận thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
-                Dispose();
+                Application.Exit();
             else
                 return;
         }

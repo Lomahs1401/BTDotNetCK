@@ -61,7 +61,6 @@ namespace BTDotNetCK.GUI
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.rjStaffUserSettingMenu = new BTDotNetCK.GUI.RJDropDownMenu(this.components);
             this.chỉnhSửaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ghiChúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -504,11 +503,17 @@ namespace BTDotNetCK.GUI
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this;
+            this.guna2DragControl1.TargetControl = this.panelTitleBar;
             this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.BorderRadius = 10;
+            this.guna2ShadowForm1.TargetForm = this;
             // 
             // guna2Elipse1
             // 
+            this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this;
             // 
             // rjStaffUserSettingMenu
@@ -519,13 +524,12 @@ namespace BTDotNetCK.GUI
             this.rjStaffUserSettingMenu.IsMainMenu = false;
             this.rjStaffUserSettingMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chỉnhSửaTàiKhoảnToolStripMenuItem,
-            this.ghiChúToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.rjStaffUserSettingMenu.MenuItemHeight = 25;
             this.rjStaffUserSettingMenu.MenuItemTextColor = System.Drawing.Color.DimGray;
             this.rjStaffUserSettingMenu.Name = "rjddmAdminSettingMenu";
             this.rjStaffUserSettingMenu.PrimaryColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjStaffUserSettingMenu.Size = new System.Drawing.Size(208, 82);
+            this.rjStaffUserSettingMenu.Size = new System.Drawing.Size(208, 56);
             this.rjStaffUserSettingMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.RjddmUserSettingMenu_ItemClicked);
             // 
             // chỉnhSửaTàiKhoảnToolStripMenuItem
@@ -537,15 +541,6 @@ namespace BTDotNetCK.GUI
             this.chỉnhSửaTàiKhoảnToolStripMenuItem.Name = "chỉnhSửaTàiKhoảnToolStripMenuItem";
             this.chỉnhSửaTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.chỉnhSửaTàiKhoảnToolStripMenuItem.Text = "Chỉnh sửa tài khoản";
-            // 
-            // ghiChúToolStripMenuItem
-            // 
-            this.ghiChúToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ghiChúToolStripMenuItem.Image = global::BTDotNetCK.Properties.Resources.icons8_reserve_30px_1;
-            this.ghiChúToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ghiChúToolStripMenuItem.Name = "ghiChúToolStripMenuItem";
-            this.ghiChúToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
-            this.ghiChúToolStripMenuItem.Text = "Ghi chú";
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -612,7 +607,6 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.Timer timer1;
         private RJDropDownMenu rjStaffUserSettingMenu;
         private System.Windows.Forms.ToolStripMenuItem chỉnhSửaTàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ghiChúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Label lblStaffName;

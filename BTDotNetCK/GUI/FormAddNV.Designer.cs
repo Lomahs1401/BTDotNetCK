@@ -66,6 +66,7 @@ namespace BTDotNetCK.GUI
             this.lblNameNV = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContainer.SuspendLayout();
@@ -611,8 +612,13 @@ namespace BTDotNetCK.GUI
             // guna2ShadowForm1
             // 
             this.guna2ShadowForm1.BorderRadius = 10;
-            this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.White;
             this.guna2ShadowForm1.TargetForm = this;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.panelTitleBar;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // FormAddNV
             // 
@@ -673,5 +679,6 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.Label msgValidateStartDate;
         private Guna.UI2.WinForms.Guna2TextBox tbStartDate;
         private System.Windows.Forms.Label lblStartDate;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

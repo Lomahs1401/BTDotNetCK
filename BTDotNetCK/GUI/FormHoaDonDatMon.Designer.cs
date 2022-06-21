@@ -31,6 +31,7 @@ namespace BTDotNetCK.GUI
         {
             this.components = new System.ComponentModel.Container();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
@@ -43,7 +44,7 @@ namespace BTDotNetCK.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnAddMon = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,18 @@ namespace BTDotNetCK.GUI
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(862, 41);
             this.panelTitleBar.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.bill;
+            this.pictureBox1.Location = new System.Drawing.Point(89, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -113,9 +126,10 @@ namespace BTDotNetCK.GUI
             // 
             // panelMon
             // 
-            this.panelMon.Location = new System.Drawing.Point(12, 115);
+            this.panelMon.AutoScroll = true;
+            this.panelMon.Location = new System.Drawing.Point(0, 115);
             this.panelMon.Name = "panelMon";
-            this.panelMon.Size = new System.Drawing.Size(838, 267);
+            this.panelMon.Size = new System.Drawing.Size(862, 267);
             this.panelMon.TabIndex = 60;
             // 
             // guna2ShadowForm1
@@ -207,17 +221,11 @@ namespace BTDotNetCK.GUI
             this.btnAddMon.Text = "Thêm món";
             this.btnAddMon.Click += new System.EventHandler(this.BtnAddMon_Click);
             // 
-            // pictureBox1
+            // guna2DragControl1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.bill;
-            this.pictureBox1.Location = new System.Drawing.Point(89, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.panelTitleBar;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // FormHoaDonDatMon
             // 
@@ -261,5 +269,6 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox tbSL;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

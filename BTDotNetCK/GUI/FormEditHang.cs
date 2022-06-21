@@ -29,6 +29,7 @@ namespace BTDotNetCK.GUI
         private void FormEditHang_Load(object sender, EventArgs e)
         {
             ShowInfo(BLL_QLBH.Instance.GetProductByID(ID_Product));
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void ShowInfo(Product product)

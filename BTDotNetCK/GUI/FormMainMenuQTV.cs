@@ -42,6 +42,7 @@ namespace BTDotNetCK.GUI
             this.password = password;
             this.nameStaff = nameStaff;
             ShowUserInfo();
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void ShowUserInfo()
@@ -151,7 +152,7 @@ namespace BTDotNetCK.GUI
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Application.Exit();
         }
 
         private void BtnMaximize_Click(object sender, EventArgs e)
