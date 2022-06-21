@@ -164,7 +164,7 @@ namespace BTDotNetCK.GUI
             this.lblSNVNu.ForeColor = System.Drawing.Color.Black;
             this.lblSNVNu.Location = new System.Drawing.Point(815, 49);
             this.lblSNVNu.Name = "lblSNVNu";
-            this.lblSNVNu.Size = new System.Drawing.Size(29, 16);
+            this.lblSNVNu.Size = new System.Drawing.Size(36, 19);
             this.lblSNVNu.TabIndex = 52;
             this.lblSNVNu.Text = "100";
             // 
@@ -177,7 +177,7 @@ namespace BTDotNetCK.GUI
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(766, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 16);
+            this.label7.Size = new System.Drawing.Size(138, 19);
             this.label7.TabIndex = 51;
             this.label7.Text = "Số nhân viên nữ";
             // 
@@ -190,7 +190,7 @@ namespace BTDotNetCK.GUI
             this.lblSNVNam.ForeColor = System.Drawing.Color.Black;
             this.lblSNVNam.Location = new System.Drawing.Point(459, 49);
             this.lblSNVNam.Name = "lblSNVNam";
-            this.lblSNVNam.Size = new System.Drawing.Size(29, 16);
+            this.lblSNVNam.Size = new System.Drawing.Size(36, 19);
             this.lblSNVNam.TabIndex = 50;
             this.lblSNVNam.Text = "100";
             // 
@@ -203,7 +203,7 @@ namespace BTDotNetCK.GUI
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(410, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 16);
+            this.label5.Size = new System.Drawing.Size(149, 19);
             this.label5.TabIndex = 49;
             this.label5.Text = "Số nhân viên nam";
             // 
@@ -215,7 +215,7 @@ namespace BTDotNetCK.GUI
             this.lblTSNV.ForeColor = System.Drawing.Color.Black;
             this.lblTSNV.Location = new System.Drawing.Point(97, 49);
             this.lblTSNV.Name = "lblTSNV";
-            this.lblTSNV.Size = new System.Drawing.Size(29, 16);
+            this.lblTSNV.Size = new System.Drawing.Size(36, 19);
             this.lblTSNV.TabIndex = 48;
             this.lblTSNV.Text = "100";
             // 
@@ -227,7 +227,7 @@ namespace BTDotNetCK.GUI
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(45, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 16);
+            this.label2.Size = new System.Drawing.Size(154, 19);
             this.label2.TabIndex = 47;
             this.label2.Text = "Tổng số nhân viên";
             // 
@@ -383,10 +383,11 @@ namespace BTDotNetCK.GUI
             this.dgvQLNV.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvQLNV.EnableHeadersVisualStyles = false;
             this.dgvQLNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.dgvQLNV.Location = new System.Drawing.Point(11, 170);
+            this.dgvQLNV.Location = new System.Drawing.Point(12, 174);
             this.dgvQLNV.Name = "dgvQLNV";
             this.dgvQLNV.ReadOnly = true;
             this.dgvQLNV.RowHeadersVisible = false;
+            this.dgvQLNV.RowHeadersWidth = 51;
             this.dgvQLNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQLNV.Size = new System.Drawing.Size(816, 413);
             this.dgvQLNV.TabIndex = 59;
@@ -418,6 +419,7 @@ namespace BTDotNetCK.GUI
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
@@ -426,6 +428,7 @@ namespace BTDotNetCK.GUI
             this.NameStaff.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NameStaff.DataPropertyName = "NameStaff";
             this.NameStaff.HeaderText = "Họ và tên";
+            this.NameStaff.MinimumWidth = 6;
             this.NameStaff.Name = "NameStaff";
             this.NameStaff.ReadOnly = true;
             // 
@@ -434,6 +437,7 @@ namespace BTDotNetCK.GUI
             this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Email.DataPropertyName = "Email";
             this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
@@ -442,6 +446,7 @@ namespace BTDotNetCK.GUI
             this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Gender.DataPropertyName = "Gender";
             this.Gender.HeaderText = "Giới tính";
+            this.Gender.MinimumWidth = 6;
             this.Gender.Name = "Gender";
             this.Gender.ReadOnly = true;
             // 
@@ -450,6 +455,7 @@ namespace BTDotNetCK.GUI
             this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Phone.DataPropertyName = "Phone";
             this.Phone.HeaderText = "Số điện thoại";
+            this.Phone.MinimumWidth = 6;
             this.Phone.Name = "Phone";
             this.Phone.ReadOnly = true;
             // 

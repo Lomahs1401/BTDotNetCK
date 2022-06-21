@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BTDotNetCK.DAL
 {
@@ -32,38 +33,64 @@ namespace BTDotNetCK.DAL
 
         public List<Staff> GetListStaffs()
         {
-            List<Staff> staffs = new List<Staff>();
-            string queryGetAllStaffs = @"select * from NhanVienQuanLy where TenDangNhap in 
-                                            (select TenDangNhap from TAIKHOAN where Quyen = '1');";
-            DataTable data = DataProvider.Instance.GetRecords(queryGetAllStaffs);
-            if (data.Rows.Count > 0)
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
             {
-                foreach (DataRow r in data.Rows)
+                List<Staff> staffs = new List<Staff>();
+                SqlCommand command = new SqlCommand
                 {
-                    staffs.Add(GetStaff(r));
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "HienThiToanBoNhanVien",
+                    Connection = connection
+                };
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                connection.Open();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+                if (data.Rows.Count > 0)
+                {
+                    foreach (DataRow r in data.Rows)
+                    {
+                        staffs.Add(GetStaff(r));
+                    }
+                    return staffs;
                 }
-                return staffs;
+                else
+                    return null;
             }
-            else
-                return null;
         }
 
         public List<Staff> GetListStaffByName(string nameStaff)
         {
-            List<Staff> staffs = new List<Staff>();
-            string queryGetAllStaffsByName = @"select * from NhanVienQuanLy where HoVaTen like N'%" + nameStaff + "%' " +
-                                                "and TenDangNhap in (select TenDangNhap from TAIKHOAN where Quyen = '1');";
-            DataTable data = DataProvider.Instance.GetRecords(queryGetAllStaffsByName);
-            if (data.Rows.Count > 0)
+
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
             {
-                foreach (DataRow r in data.Rows)
+                List<Staff> staffs = new List<Staff>();
+                SqlCommand command = new SqlCommand
                 {
-                    staffs.Add(GetStaff(r));
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetInforWithName",
+                    Connection = connection
+                };
+                command.Parameters.AddWithValue("@Name", nameStaff);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                connection.Open();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+                if (data.Rows.Count > 0)
+                {
+                    foreach (DataRow r in data.Rows)
+                    {
+                        staffs.Add(GetStaff(r));
+                    }
+                    return staffs;
                 }
-                return staffs;
+                else
+                    return null;
             }
-            else
-                return null;
         }
 
         public Staff GetStaffByID(string id)
@@ -73,7 +100,7 @@ namespace BTDotNetCK.DAL
                 SqlCommand command = new SqlCommand
                 {
                     CommandType = CommandType.StoredProcedure,
-                    CommandText = "LayNhanVienTheoID",
+                    CommandText = "GetInforWithID",
                     Connection = connection
                 };
                 command.Parameters.AddWithValue("@ID_QuanLy", id);
@@ -93,20 +120,52 @@ namespace BTDotNetCK.DAL
 
         public Staff GetStaffByPhone(string phone)
         {
-            string queryGetAllStaffsByPhone = @"select * from NhanVienQuanLy where SDT = '" + phone + "' " +
-                                                "and TenDangNhap in (select TenDangNhap from TAIKHOAN where Quyen = '1');";
-            DataTable data = DataProvider.Instance.GetRecords(queryGetAllStaffsByPhone);
-            if (data.Rows.Count > 0)
-                return GetStaff(data.Rows[0]);
-            else
-                return null;
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetInforWithPhoneNumber",
+                    Connection = connection
+                };
+                command.Parameters.AddWithValue("@Phone_Number", phone);
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                connection.Open();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+                if (data.Rows.Count > 0)
+                    return GetStaff(data.Rows[0]);
+                else
+                    return null;
+            }
         }
 
         public string GetAccountUsernameStaffByID(string ID_Staff)
         {
-            string queryGetAccountUsernameByID = @"select TenDangNhap from NhanVienQuanLy where ID_QuanLy = '" + ID_Staff + "';";
-            DataTable accountUsername = DataProvider.Instance.GetRecords(queryGetAccountUsernameByID);
-            return accountUsername.Rows[0]["TenDangNhap"].ToString();
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetAccountUsernameByID",
+                    Connection = connection
+                };
+                command.Parameters.AddWithValue("@ID_Staff", ID_Staff);
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                connection.Open();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+                if (data.Rows.Count > 0)
+                    return data.Rows[0].ToString();
+                else
+                    return null;
+            }
         }
 
         public string GetImage(string accountUsername)
@@ -171,37 +230,102 @@ namespace BTDotNetCK.DAL
 
         public bool AddStaff(Staff staff, string username, string password)
         {
-            string queryAddNewStaffAccount = @"insert into TAIKHOAN (TenDangNhap, MatKhau, Quyen) " +
-                "values ('" + username + "', '" + password + "', '1')";
-            string queryAddNewStaff = @"insert into NhanVienQuanLy (ID_QuanLy, HoVaTen, Email, NgaySinh, NgayVaoLam, NgayNghiViec, GioiTinh, SDT, SoCCCD, DiaChi, Anh, TenDangNhap) " +
-                "values ('" + staff.ID_Staff + "', N'" + staff.NameStaff + "', '" + staff.Email + "', '" + staff.DateOfBirth + "', '" 
-                            + staff.StartDate + "', '" + staff.EndDate + "', N'" + staff.Gender + "', '" + staff.Phone + "', '"
-                            + staff.ID_Card + "', N'" + staff.Address + "', '" + staff.Image + "', '" + username + "')";
-            if (DataProvider.Instance.ExecuteDB(queryAddNewStaffAccount) != -1 && DataProvider.Instance.ExecuteDB(queryAddNewStaff) != -1)
-                return true;
-            else
-                return false;
+            //MessageBox.Show(staff.EndDate.ToString());
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    Connection = connection
+                };
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                command.CommandText = "ADD_NEW_STAFF";
+                command.Parameters.AddWithValue("@ID_Staff", staff.ID_Staff);
+                command.Parameters.AddWithValue("@Name", staff.NameStaff);
+                command.Parameters.AddWithValue("@Email", staff.Email);
+                command.Parameters.AddWithValue("@DOB", staff.DateOfBirth);
+                command.Parameters.AddWithValue("@StartDate", staff.StartDate);
+                command.Parameters.AddWithValue("@DateEnd", staff.EndDate.ToString());
+                command.Parameters.AddWithValue("@Gender", staff.Gender);
+                command.Parameters.AddWithValue("@Phone", staff.Phone);
+                command.Parameters.AddWithValue("@ID_Card", staff.ID_Card);
+                command.Parameters.AddWithValue("@Address", staff.Address);
+                command.Parameters.AddWithValue("@Image", staff.Image);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                int ret = command.ExecuteNonQuery();
+                if (ret > 0)
+                    return true;
+                else
+                    return false;
+            }
+            //string queryAddNewStaffAccount = @"insert into TAIKHOAN (TenDangNhap, MatKhau, Quyen) " +
+            //    "values ('" + username + "', '" + password + "', '1')";
+            //string queryAddNewStaff = @"insert into NhanVienQuanLy (ID_QuanLy, HoVaTen, Email, NgaySinh, NgayVaoLam, NgayNghiViec, GioiTinh, SDT, SoCCCD, DiaChi, Anh, TenDangNhap) " +
+            //    "values ('" + staff.ID_Staff + "', N'" + staff.NameStaff + "', '" + staff.Email + "', '" + staff.DateOfBirth + "', '"
+            //                + staff.StartDate + "', '" + staff.EndDate + "', N'" + staff.Gender + "', '" + staff.Phone + "', '"
+            //                + staff.ID_Card + "', N'" + staff.Address + "', '" + staff.Image + "', '" + username + "')";
+            //if (DataProvider.Instance.ExecuteDB(queryAddNewStaffAccount) != -1 && DataProvider.Instance.ExecuteDB(queryAddNewStaff) != -1)
+            //    return true;
+            //else
+            //    return false;
         }
 
         public bool UpdateStaff(Staff staff)
         {
-            string queryUpdateStaff = @"update NhanVienQuanLy set HoVaTen = N'" + staff.NameStaff + "', Email = '" + staff.Email + 
-                "', NgaySinh = '" + staff.DateOfBirth + "', GioiTinh = N'" + staff.Gender + "', SDT = '" + staff.Phone + 
-                "', SoCCCD = '" + staff.ID_Card + "', DiaChi = N'" + staff.Address + "', Anh = '" + staff.Image + 
-                "' where ID_QuanLy = '" + staff.ID_Staff + "';";
-            if (DataProvider.Instance.ExecuteDB(queryUpdateStaff) != -1)
-                return true;
-            else
-                return false;
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "UPDATE_STAFF",
+                    Connection = connection
+                };
+                if(connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                command.Parameters.AddWithValue("@Name", staff.NameStaff);
+                command.Parameters.AddWithValue("@Email", staff.Email);
+                command.Parameters.AddWithValue("@DOB", staff.DateOfBirth);
+                command.Parameters.AddWithValue("@Gender", staff.Gender);
+                command.Parameters.AddWithValue("@Phone", staff.Phone);
+                command.Parameters.AddWithValue("@SoCCCD", staff.ID_Card);
+                command.Parameters.AddWithValue("@Address", staff.Address);
+                command.Parameters.AddWithValue("@Image", staff.Image);
+                command.Parameters.AddWithValue("@ID_QuanLy", staff.ID_Staff);
+                int ret = command.ExecuteNonQuery();
+                if (ret > 0)
+                    return true;
+                else
+                    return false;
+            }
         }
 
         public bool DelelteStaff(string accountUsername)
         {
-            string queryDeleteAccount = @"delete from TAIKHOAN where TenDangNhap = '" + accountUsername + "';";
-            if (DataProvider.Instance.ExecuteDB(queryDeleteAccount) != -1)
-                return true;
-            else
-                return false;
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "DelelteStaff",
+                    Connection = connection
+                };
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                command.Parameters.AddWithValue("@accountUsername", accountUsername);
+                int ret = command.ExecuteNonQuery();
+                if (ret > 0)
+                    return true;
+                else
+                    return false;
+            }
         }
     }
 }
