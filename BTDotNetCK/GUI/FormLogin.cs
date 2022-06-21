@@ -54,7 +54,7 @@ namespace BTDotNetCK.GUI
         {
             DialogResult dialog = MessageBox.Show("Xác nhận thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
-                Dispose();
+                Application.Exit();
             else
                 return;
         }

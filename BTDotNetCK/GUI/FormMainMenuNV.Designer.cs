@@ -46,6 +46,7 @@ namespace BTDotNetCK.GUI
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.CoffeeShopIcon = new Guna.UI2.WinForms.Guna2PictureBox();
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
@@ -61,7 +62,6 @@ namespace BTDotNetCK.GUI
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.rjStaffUserSettingMenu = new BTDotNetCK.GUI.RJDropDownMenu(this.components);
             this.chỉnhSửaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ghiChúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,6 +73,7 @@ namespace BTDotNetCK.GUI
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.panelDesktop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CoffeeShopIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
@@ -338,7 +339,11 @@ namespace BTDotNetCK.GUI
             // 
             // panelDesktop
             // 
+            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDesktop.Controls.Add(this.CoffeeShopIcon);
             this.panelDesktop.Controls.Add(this.iconPictureBox6);
             this.panelDesktop.Controls.Add(this.lblUserName);
             this.panelDesktop.Controls.Add(this.iconPictureBox5);
@@ -348,12 +353,24 @@ namespace BTDotNetCK.GUI
             this.panelDesktop.Controls.Add(this.label1);
             this.panelDesktop.Controls.Add(this.label2);
             this.panelDesktop.Controls.Add(this.iconPictureBox2);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(217, 77);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(2);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(983, 591);
             this.panelDesktop.TabIndex = 4;
+            // 
+            // CoffeeShopIcon
+            // 
+            this.CoffeeShopIcon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CoffeeShopIcon.Image = global::BTDotNetCK.Properties.Resources.coffee_shop;
+            this.CoffeeShopIcon.ImageRotate = 0F;
+            this.CoffeeShopIcon.Location = new System.Drawing.Point(93, 56);
+            this.CoffeeShopIcon.Name = "CoffeeShopIcon";
+            this.CoffeeShopIcon.Size = new System.Drawing.Size(759, 424);
+            this.CoffeeShopIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CoffeeShopIcon.TabIndex = 36;
+            this.CoffeeShopIcon.TabStop = false;
             // 
             // iconPictureBox6
             // 
@@ -519,13 +536,12 @@ namespace BTDotNetCK.GUI
             this.rjStaffUserSettingMenu.IsMainMenu = false;
             this.rjStaffUserSettingMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chỉnhSửaTàiKhoảnToolStripMenuItem,
-            this.ghiChúToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.rjStaffUserSettingMenu.MenuItemHeight = 25;
             this.rjStaffUserSettingMenu.MenuItemTextColor = System.Drawing.Color.DimGray;
             this.rjStaffUserSettingMenu.Name = "rjddmAdminSettingMenu";
             this.rjStaffUserSettingMenu.PrimaryColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjStaffUserSettingMenu.Size = new System.Drawing.Size(208, 82);
+            this.rjStaffUserSettingMenu.Size = new System.Drawing.Size(208, 78);
             this.rjStaffUserSettingMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.RjddmUserSettingMenu_ItemClicked);
             // 
             // chỉnhSửaTàiKhoảnToolStripMenuItem
@@ -537,15 +553,6 @@ namespace BTDotNetCK.GUI
             this.chỉnhSửaTàiKhoảnToolStripMenuItem.Name = "chỉnhSửaTàiKhoảnToolStripMenuItem";
             this.chỉnhSửaTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.chỉnhSửaTàiKhoảnToolStripMenuItem.Text = "Chỉnh sửa tài khoản";
-            // 
-            // ghiChúToolStripMenuItem
-            // 
-            this.ghiChúToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ghiChúToolStripMenuItem.Image = global::BTDotNetCK.Properties.Resources.icons8_reserve_30px_1;
-            this.ghiChúToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ghiChúToolStripMenuItem.Name = "ghiChúToolStripMenuItem";
-            this.ghiChúToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
-            this.ghiChúToolStripMenuItem.Text = "Ghi chú";
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -581,6 +588,7 @@ namespace BTDotNetCK.GUI
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CoffeeShopIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
@@ -612,7 +620,6 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.Timer timer1;
         private RJDropDownMenu rjStaffUserSettingMenu;
         private System.Windows.Forms.ToolStripMenuItem chỉnhSửaTàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ghiChúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Label lblStaffName;
@@ -625,5 +632,6 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox CoffeeShopIcon;
     }
 }

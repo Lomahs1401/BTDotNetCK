@@ -15,6 +15,7 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormEditNV : Form
     {
+        private string oldPath;
         public delegate void LoadData(object sender, EventArgs e);
         public LoadData RefreshData { get; set; }
         private readonly string ID_Staff;
@@ -46,6 +47,7 @@ namespace BTDotNetCK.GUI
             else
             {
                 avatar.ImageLocation = staff.Image;
+                oldPath = avatar.ImageLocation;
                 avatar.Image = Image.FromFile(Path.Combine(projectDirectory, staff.Image));
             }
         }
@@ -236,6 +238,7 @@ namespace BTDotNetCK.GUI
                     if (BLL_QLNV.Instance.UpdateStaff(GetAllInfo(ID_Staff, username)))
                     {
                         MessageBox.Show("Sửa thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshData(sender, e);
                         Dispose();
                     }
                     else
@@ -313,7 +316,12 @@ namespace BTDotNetCK.GUI
             if (avatar.Image == null)
                 path = null;
             else
-                path = avatar.ImageLocation.Remove(0, projectDirectory.Length + 1);
+            {
+                if (oldPath == avatar.ImageLocation)
+                    path = oldPath;
+                else
+                    path = avatar.ImageLocation.Remove(0, projectDirectory.Length + 1);
+            }
             return new Staff
             {
                 ID_Staff = ID_Staff,

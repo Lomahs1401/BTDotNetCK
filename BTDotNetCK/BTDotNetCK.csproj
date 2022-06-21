@@ -454,6 +454,7 @@
     <None Include="Img\Icon\bill.png" />
     <None Include="Img\Icon\cookies.png" />
     <None Include="Img\GI\paimon.png" />
+    <None Include="Img\Icon\coffee-shop.png" />
     <Content Include="Img\Icon\error.png" />
     <None Include="Img\Icon\food.png" />
     <Content Include="Img\Icon\icons8_cancel_45px.png" />

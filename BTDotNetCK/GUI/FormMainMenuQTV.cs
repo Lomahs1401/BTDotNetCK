@@ -109,8 +109,8 @@ namespace BTDotNetCK.GUI
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
+            CoffeeShopIcon.Controls.Add(childForm);
+            CoffeeShopIcon.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
             lblTitleChildForm.Text = childForm.Text;
@@ -151,7 +151,7 @@ namespace BTDotNetCK.GUI
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Application.Exit();
         }
 
         private void BtnMaximize_Click(object sender, EventArgs e)
