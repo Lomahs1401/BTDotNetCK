@@ -225,6 +225,7 @@ namespace BTDotNetCK.GUI
                 msgValidateAddress.ForeColor = Color.Red;
                 isValidAddress = false;
             }
+            
             if (isValidName && isValidEmail && isValidDateOfBirth && isValidStartDate &&
                 isValidGender && isValidIdCard && isValidPhone && isValidAddress)
             {

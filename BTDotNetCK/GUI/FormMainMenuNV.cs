@@ -126,7 +126,7 @@ namespace BTDotNetCK.GUI
         private void BtnBH_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new FormQLBHNV());
+            OpenChildForm(new FormQLBHNV(accountUsername));
         }
 
         private void BtnQLKH_Click(object sender, EventArgs e)

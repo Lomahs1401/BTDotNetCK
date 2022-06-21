@@ -40,15 +40,15 @@ namespace BTDotNetCK.GUI
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblTSNV = new System.Windows.Forms.Label();
+            this.lblMaleCustomer = new System.Windows.Forms.Label();
+            this.lblTotalCustomer = new System.Windows.Forms.Label();
+            this.totalCustomer = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.lblSNVNam = new System.Windows.Forms.Label();
+            this.maleCustomer = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblFemaleCustomer = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.lblSNVNu = new System.Windows.Forms.Label();
+            this.femaleCustomer = new System.Windows.Forms.Label();
             this.dgvQLKH = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,6 +145,7 @@ namespace BTDotNetCK.GUI
             this.tbTK.SelectedText = "";
             this.tbTK.Size = new System.Drawing.Size(250, 31);
             this.tbTK.TabIndex = 50;
+            this.tbTK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbTK_KeyPress);
             // 
             // guna2Elipse1
             // 
@@ -162,56 +163,56 @@ namespace BTDotNetCK.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHeader.BackColor = System.Drawing.Color.Gainsboro;
             this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHeader.Controls.Add(this.label1);
-            this.panelHeader.Controls.Add(this.label3);
-            this.panelHeader.Controls.Add(this.lblTSNV);
+            this.panelHeader.Controls.Add(this.lblMaleCustomer);
+            this.panelHeader.Controls.Add(this.lblTotalCustomer);
+            this.panelHeader.Controls.Add(this.totalCustomer);
             this.panelHeader.Controls.Add(this.pictureBox4);
-            this.panelHeader.Controls.Add(this.lblSNVNam);
+            this.panelHeader.Controls.Add(this.maleCustomer);
             this.panelHeader.Controls.Add(this.pictureBox5);
-            this.panelHeader.Controls.Add(this.label4);
+            this.panelHeader.Controls.Add(this.lblFemaleCustomer);
             this.panelHeader.Controls.Add(this.pictureBox6);
-            this.panelHeader.Controls.Add(this.lblSNVNu);
+            this.panelHeader.Controls.Add(this.femaleCustomer);
             this.panelHeader.Location = new System.Drawing.Point(11, 12);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(957, 95);
             this.panelHeader.TabIndex = 59;
             // 
-            // label1
+            // lblMaleCustomer
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(403, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 16);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Số khách hàng nam";
+            this.lblMaleCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMaleCustomer.AutoSize = true;
+            this.lblMaleCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.lblMaleCustomer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaleCustomer.ForeColor = System.Drawing.Color.Black;
+            this.lblMaleCustomer.Location = new System.Drawing.Point(403, 18);
+            this.lblMaleCustomer.Name = "lblMaleCustomer";
+            this.lblMaleCustomer.Size = new System.Drawing.Size(135, 16);
+            this.lblMaleCustomer.TabIndex = 49;
+            this.lblMaleCustomer.Text = "Số khách hàng nam";
             // 
-            // label3
+            // lblTotalCustomer
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(45, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 16);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "Tổng số khách hàng";
+            this.lblTotalCustomer.AutoSize = true;
+            this.lblTotalCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalCustomer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCustomer.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalCustomer.Location = new System.Drawing.Point(45, 18);
+            this.lblTotalCustomer.Name = "lblTotalCustomer";
+            this.lblTotalCustomer.Size = new System.Drawing.Size(136, 16);
+            this.lblTotalCustomer.TabIndex = 47;
+            this.lblTotalCustomer.Text = "Tổng số khách hàng";
             // 
-            // lblTSNV
+            // totalCustomer
             // 
-            this.lblTSNV.AutoSize = true;
-            this.lblTSNV.BackColor = System.Drawing.Color.Transparent;
-            this.lblTSNV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTSNV.ForeColor = System.Drawing.Color.Black;
-            this.lblTSNV.Location = new System.Drawing.Point(97, 49);
-            this.lblTSNV.Name = "lblTSNV";
-            this.lblTSNV.Size = new System.Drawing.Size(29, 16);
-            this.lblTSNV.TabIndex = 48;
-            this.lblTSNV.Text = "100";
+            this.totalCustomer.AutoSize = true;
+            this.totalCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.totalCustomer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCustomer.ForeColor = System.Drawing.Color.Black;
+            this.totalCustomer.Location = new System.Drawing.Point(97, 49);
+            this.totalCustomer.Name = "totalCustomer";
+            this.totalCustomer.Size = new System.Drawing.Size(29, 16);
+            this.totalCustomer.TabIndex = 48;
+            this.totalCustomer.Text = "100";
             // 
             // pictureBox4
             // 
@@ -223,18 +224,18 @@ namespace BTDotNetCK.GUI
             this.pictureBox4.TabIndex = 55;
             this.pictureBox4.TabStop = false;
             // 
-            // lblSNVNam
+            // maleCustomer
             // 
-            this.lblSNVNam.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblSNVNam.AutoSize = true;
-            this.lblSNVNam.BackColor = System.Drawing.Color.Transparent;
-            this.lblSNVNam.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSNVNam.ForeColor = System.Drawing.Color.Black;
-            this.lblSNVNam.Location = new System.Drawing.Point(452, 49);
-            this.lblSNVNam.Name = "lblSNVNam";
-            this.lblSNVNam.Size = new System.Drawing.Size(29, 16);
-            this.lblSNVNam.TabIndex = 50;
-            this.lblSNVNam.Text = "100";
+            this.maleCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.maleCustomer.AutoSize = true;
+            this.maleCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.maleCustomer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maleCustomer.ForeColor = System.Drawing.Color.Black;
+            this.maleCustomer.Location = new System.Drawing.Point(452, 49);
+            this.maleCustomer.Name = "maleCustomer";
+            this.maleCustomer.Size = new System.Drawing.Size(29, 16);
+            this.maleCustomer.TabIndex = 50;
+            this.maleCustomer.Text = "100";
             // 
             // pictureBox5
             // 
@@ -248,18 +249,18 @@ namespace BTDotNetCK.GUI
             this.pictureBox5.TabIndex = 54;
             this.pictureBox5.TabStop = false;
             // 
-            // label4
+            // lblFemaleCustomer
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(747, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 16);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "Số khách hàng nữ";
+            this.lblFemaleCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFemaleCustomer.AutoSize = true;
+            this.lblFemaleCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.lblFemaleCustomer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFemaleCustomer.ForeColor = System.Drawing.Color.Black;
+            this.lblFemaleCustomer.Location = new System.Drawing.Point(747, 18);
+            this.lblFemaleCustomer.Name = "lblFemaleCustomer";
+            this.lblFemaleCustomer.Size = new System.Drawing.Size(124, 16);
+            this.lblFemaleCustomer.TabIndex = 51;
+            this.lblFemaleCustomer.Text = "Số khách hàng nữ";
             // 
             // pictureBox6
             // 
@@ -273,18 +274,18 @@ namespace BTDotNetCK.GUI
             this.pictureBox6.TabIndex = 53;
             this.pictureBox6.TabStop = false;
             // 
-            // lblSNVNu
+            // femaleCustomer
             // 
-            this.lblSNVNu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSNVNu.AutoSize = true;
-            this.lblSNVNu.BackColor = System.Drawing.Color.Transparent;
-            this.lblSNVNu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSNVNu.ForeColor = System.Drawing.Color.Black;
-            this.lblSNVNu.Location = new System.Drawing.Point(796, 49);
-            this.lblSNVNu.Name = "lblSNVNu";
-            this.lblSNVNu.Size = new System.Drawing.Size(29, 16);
-            this.lblSNVNu.TabIndex = 52;
-            this.lblSNVNu.Text = "100";
+            this.femaleCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.femaleCustomer.AutoSize = true;
+            this.femaleCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.femaleCustomer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.femaleCustomer.ForeColor = System.Drawing.Color.Black;
+            this.femaleCustomer.Location = new System.Drawing.Point(796, 49);
+            this.femaleCustomer.Name = "femaleCustomer";
+            this.femaleCustomer.Size = new System.Drawing.Size(29, 16);
+            this.femaleCustomer.TabIndex = 52;
+            this.femaleCustomer.Text = "100";
             // 
             // dgvQLKH
             // 
@@ -356,6 +357,7 @@ namespace BTDotNetCK.GUI
             this.dgvQLKH.ThemeStyle.RowsStyle.Height = 22;
             this.dgvQLKH.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvQLKH.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvQLKH.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvQLKH_RowHeaderMouseClick);
             // 
             // ID
             // 
@@ -413,6 +415,7 @@ namespace BTDotNetCK.GUI
             this.btnTK.Size = new System.Drawing.Size(141, 31);
             this.btnTK.TabIndex = 51;
             this.btnTK.Text = "Tìm kiếm";
+            this.btnTK.Click += new System.EventHandler(this.BtnTK_Click);
             // 
             // FormQLKH
             // 
@@ -449,15 +452,15 @@ namespace BTDotNetCK.GUI
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblTSNV;
+        private System.Windows.Forms.Label lblMaleCustomer;
+        private System.Windows.Forms.Label lblTotalCustomer;
+        private System.Windows.Forms.Label totalCustomer;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label lblSNVNam;
+        private System.Windows.Forms.Label maleCustomer;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFemaleCustomer;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label lblSNVNu;
+        private System.Windows.Forms.Label femaleCustomer;
         private Guna.UI2.WinForms.Guna2DataGridView dgvQLKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameCustomer;

@@ -63,20 +63,30 @@ namespace BTDotNetCK.GUI
                 new DataColumn("QuantitySold", typeof(int)),
                 new DataColumn("Price", typeof(int)),
             });
-            for (int i = 0; i < listProducts.Count; i++)
+            if (listProducts != null)
             {
-                DataRow dataRow = data.NewRow();
-                dataRow["ID"] = listProducts[i].ID_Product;
-                dataRow["NameProduct"] = listProducts[i].NameProduct;
-                dataRow["Category"] = listProducts[i].Category;
-                dataRow["QuantitySold"] = listProducts[i].QuantitySold;
-                dataRow["Price"] = listProducts[i].Price;
-                data.Rows.Add(dataRow);
+                for (int i = 0; i < listProducts.Count; i++)
+                {
+                    DataRow dataRow = data.NewRow();
+                    dataRow["ID"] = listProducts[i].ID_Product;
+                    dataRow["NameProduct"] = listProducts[i].NameProduct;
+                    dataRow["Category"] = listProducts[i].Category;
+                    dataRow["QuantitySold"] = listProducts[i].QuantitySold;
+                    dataRow["Price"] = listProducts[i].Price;
+                    data.Rows.Add(dataRow);
+                }
+                dgvQLBH.DataSource = data;
+                totalCategory.Text = BLL_QLBH.Instance.GetNumberTotalCategory().ToString();
+                foodCategory.Text = BLL_QLBH.Instance.GetNumberTotalFoodCategory().ToString();
+                drinkCategory.Text = BLL_QLBH.Instance.GetNumberTotalDrinkCategory().ToString();
             }
-            dgvQLBH.DataSource = data;
-            totalCategory.Text = BLL_QLBH.Instance.GetNumberTotalCategory().ToString();
-            foodCategory.Text = BLL_QLBH.Instance.GetNumberTotalFoodCategory().ToString();
-            drinkCategory.Text = BLL_QLBH.Instance.GetNumberTotalDrinkCategory().ToString();
+            else
+            {
+                dgvQLBH.DataSource = null;
+                totalCategory.Text = "0";
+                foodCategory.Text = "0";
+                drinkCategory.Text = "0";
+            }
         }
 
         private void DgvQLBH_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

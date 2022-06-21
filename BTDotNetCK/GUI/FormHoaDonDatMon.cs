@@ -12,18 +12,21 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormHoaDonDatMon : Form
     {
-        public FormHoaDonDatMon()
+        private readonly string accountUsername;
+
+        public FormHoaDonDatMon(string accountUsername)
         {
+            this.accountUsername = accountUsername;
             InitializeComponent();
             timer1.Start();
         }
 
-        private void btnAddMon_Click(object sender, EventArgs e)
+        private void BtnAddMon_Click(object sender, EventArgs e)
         {
             panelMon.Controls.Add(new FormMon());
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             long money = 0;
             foreach (FormMon b in panelMon.Controls)
@@ -39,6 +42,16 @@ namespace BTDotNetCK.GUI
             tbSL.Text = panelMon.Controls.Count.ToString();
             tbMoney.Text = money.ToString();
 
+        }
+
+        private void BtnOK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

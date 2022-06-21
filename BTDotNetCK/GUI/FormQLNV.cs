@@ -25,9 +25,6 @@ namespace BTDotNetCK.GUI
 
         private void FormQLNV_Load(object sender, EventArgs e)
         {
-            lblTSNV.Text = BLL_QLNV.Instance.GetNumberTotalStaff().ToString();
-            lblSNVNam.Text = BLL_QLNV.Instance.GetNumberTotalMaleStaff().ToString();
-            lblSNVNu.Text = BLL_QLNV.Instance.GetNumberTotalFemaleStaff().ToString();
             dgvQLNV.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             dgvQLNV.RowHeadersVisible = true;
             dgvQLNV.BorderStyle = BorderStyle.FixedSingle;
@@ -41,17 +38,30 @@ namespace BTDotNetCK.GUI
                 new DataColumn("Gender", typeof(string)),
                 new DataColumn("Phone", typeof(string)),
             });
-            for (int i = 0; i < listStaffs.Count; i++)
+            if (listStaffs != null)
             {
-                DataRow dataRow = data.NewRow();
-                dataRow["ID"] = listStaffs[i].ID_Staff;
-                dataRow["NameStaff"] = listStaffs[i].NameStaff;
-                dataRow["Email"] = listStaffs[i].Email;
-                dataRow["Gender"] = listStaffs[i].Gender;
-                dataRow["Phone"] = listStaffs[i].Phone;
-                data.Rows.Add(dataRow);
+                for (int i = 0; i < listStaffs.Count; i++)
+                {
+                    DataRow dataRow = data.NewRow();
+                    dataRow["ID"] = listStaffs[i].ID_Staff;
+                    dataRow["NameStaff"] = listStaffs[i].NameStaff;
+                    dataRow["Email"] = listStaffs[i].Email;
+                    dataRow["Gender"] = listStaffs[i].Gender;
+                    dataRow["Phone"] = listStaffs[i].Phone;
+                    data.Rows.Add(dataRow);
+                }
+                dgvQLNV.DataSource = data;
+                lblTSNV.Text = BLL_QLNV.Instance.GetNumberTotalStaff().ToString();
+                lblSNVNam.Text = BLL_QLNV.Instance.GetNumberTotalMaleStaff().ToString();
+                lblSNVNu.Text = BLL_QLNV.Instance.GetNumberTotalFemaleStaff().ToString();
             }
-            dgvQLNV.DataSource = data;
+            else
+            {
+                dgvQLNV.DataSource = null;
+                lblTSNV.Text = "0";
+                lblSNVNam.Text = "0";
+                lblSNVNu.Text = "0";
+            }
         }
 
         private void BtnAddNV_Click(object sender, EventArgs e)
@@ -116,11 +126,11 @@ namespace BTDotNetCK.GUI
             DataTable data = new DataTable();
             data.Columns.AddRange(new DataColumn[]
             {
-                        new DataColumn("ID", typeof(string)),
-                        new DataColumn("NameStaff", typeof(string)),
-                        new DataColumn("Email", typeof(string)),
-                        new DataColumn("Gender", typeof(string)),
-                        new DataColumn("Phone", typeof(string)),
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("NameStaff", typeof(string)),
+                new DataColumn("Email", typeof(string)),
+                new DataColumn("Gender", typeof(string)),
+                new DataColumn("Phone", typeof(string)),
             });
             if (tbTK.Text.Trim() == "")
             {

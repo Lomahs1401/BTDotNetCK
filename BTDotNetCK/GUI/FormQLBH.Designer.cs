@@ -45,6 +45,9 @@ namespace BTDotNetCK.GUI
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dgvQLBH = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,19 +57,16 @@ namespace BTDotNetCK.GUI
             this.rjDropDownMenuSXMH = new BTDotNetCK.GUI.RJDropDownMenu(this.components);
             this.giáMặtHàngTăngDầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giáMặtHàngGiảmDầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnTK = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSXS = new FontAwesome.Sharp.IconButton();
             this.btnHDTN = new FontAwesome.Sharp.IconButton();
+            this.btnSXS = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQLBH)).BeginInit();
-            this.rjDropDownMenuSXMH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLBH)).BeginInit();
+            this.rjDropDownMenuSXMH.SuspendLayout();
             this.SuspendLayout();
             // 
             // drinkCategory
@@ -210,6 +210,38 @@ namespace BTDotNetCK.GUI
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(957, 95);
             this.panelHeader.TabIndex = 59;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::BTDotNetCK.Properties.Resources.Set_Product;
+            this.pictureBox3.Location = new System.Drawing.Point(168, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(38, 33);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 47;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.product;
+            this.pictureBox1.Location = new System.Drawing.Point(880, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Image = global::BTDotNetCK.Properties.Resources.cookies;
+            this.pictureBox2.Location = new System.Drawing.Point(528, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 45;
+            this.pictureBox2.TabStop = false;
             // 
             // dgvQLBH
             // 
@@ -355,38 +387,6 @@ namespace BTDotNetCK.GUI
             this.giáMặtHàngGiảmDầnToolStripMenuItem.Text = "Giá mặt hàng giảm dần";
             this.giáMặtHàngGiảmDầnToolStripMenuItem.Click += new System.EventHandler(this.GiáMặtHàngGiảmDầnToolStripMenuItem_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::BTDotNetCK.Properties.Resources.Set_Product;
-            this.pictureBox3.Location = new System.Drawing.Point(168, 18);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 33);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 47;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.product;
-            this.pictureBox1.Location = new System.Drawing.Point(880, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.Image = global::BTDotNetCK.Properties.Resources.cookies;
-            this.pictureBox2.Location = new System.Drawing.Point(528, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 45;
-            this.pictureBox2.TabStop = false;
-            // 
             // btnTK
             // 
             this.btnTK.BorderRadius = 15;
@@ -405,6 +405,30 @@ namespace BTDotNetCK.GUI
             this.btnTK.TabIndex = 50;
             this.btnTK.Text = "Tìm kiếm";
             this.btnTK.Click += new System.EventHandler(this.BtnTK_Click);
+            // 
+            // btnHDTN
+            // 
+            this.btnHDTN.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnHDTN.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnHDTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHDTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
+            this.btnHDTN.FlatAppearance.BorderSize = 0;
+            this.btnHDTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHDTN.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDTN.ForeColor = System.Drawing.Color.White;
+            this.btnHDTN.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
+            this.btnHDTN.IconColor = System.Drawing.Color.White;
+            this.btnHDTN.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHDTN.IconSize = 30;
+            this.btnHDTN.Location = new System.Drawing.Point(0, 67);
+            this.btnHDTN.Name = "btnHDTN";
+            this.btnHDTN.Size = new System.Drawing.Size(142, 47);
+            this.btnHDTN.TabIndex = 13;
+            this.btnHDTN.Text = "  Hóa đơn trong ngày";
+            this.btnHDTN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHDTN.UseVisualStyleBackColor = false;
+            this.btnHDTN.MouseEnter += new System.EventHandler(this.BtnHDTN_MouseEnter);
+            this.btnHDTN.MouseLeave += new System.EventHandler(this.BtnHDTN_MouseLeave);
             // 
             // btnSXS
             // 
@@ -432,30 +456,6 @@ namespace BTDotNetCK.GUI
             this.btnSXS.MouseEnter += new System.EventHandler(this.BtnSXS_MouseEnter);
             this.btnSXS.MouseLeave += new System.EventHandler(this.BtnSXS_MouseLeave);
             // 
-            // btnHDTN
-            // 
-            this.btnHDTN.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnHDTN.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnHDTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHDTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
-            this.btnHDTN.FlatAppearance.BorderSize = 0;
-            this.btnHDTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHDTN.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHDTN.ForeColor = System.Drawing.Color.White;
-            this.btnHDTN.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
-            this.btnHDTN.IconColor = System.Drawing.Color.White;
-            this.btnHDTN.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHDTN.IconSize = 30;
-            this.btnHDTN.Location = new System.Drawing.Point(0, 67);
-            this.btnHDTN.Name = "btnHDTN";
-            this.btnHDTN.Size = new System.Drawing.Size(142, 47);
-            this.btnHDTN.TabIndex = 13;
-            this.btnHDTN.Text = "  Hóa đơn trong ngày";
-            this.btnHDTN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHDTN.UseVisualStyleBackColor = false;
-            this.btnHDTN.MouseEnter += new System.EventHandler(this.BtnHDTN_MouseEnter);
-            this.btnHDTN.MouseLeave += new System.EventHandler(this.BtnHDTN_MouseLeave);
-            // 
             // FormQLBH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,11 +476,11 @@ namespace BTDotNetCK.GUI
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQLBH)).EndInit();
-            this.rjDropDownMenuSXMH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLBH)).EndInit();
+            this.rjDropDownMenuSXMH.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -496,8 +496,6 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.Label totalCategory;
         private System.Windows.Forms.Label lblTotalProduct;
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton btnSXS;
-        private FontAwesome.Sharp.IconButton btnHDTN;
         private Guna.UI2.WinForms.Guna2TextBox tbTK;
         private Guna.UI2.WinForms.Guna2Button btnTK;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
@@ -512,5 +510,7 @@ namespace BTDotNetCK.GUI
         private RJDropDownMenu rjDropDownMenuSXMH;
         private System.Windows.Forms.ToolStripMenuItem giáMặtHàngTăngDầnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giáMặtHàngGiảmDầnToolStripMenuItem;
+        private FontAwesome.Sharp.IconButton btnSXS;
+        private FontAwesome.Sharp.IconButton btnHDTN;
     }
 }

@@ -35,11 +35,16 @@ namespace BTDotNetCK.DAL
             List<Product> products = new List<Product>();
             string queryGetAllProducts = @"select * from HANGHOA;";
             DataTable data = DataProvider.Instance.GetRecords(queryGetAllProducts);
-            foreach (DataRow r in data.Rows)
+            if (data.Rows.Count > 0)
             {
-                products.Add(GetProduct(r));
+                foreach (DataRow r in data.Rows)
+                {
+                    products.Add(GetProduct(r));
+                }
+                return products;
             }
-            return products;
+            else
+                return null;
         }
 
         public List<Product> GetProductsByName(string nameProduct)

@@ -36,11 +36,16 @@ namespace BTDotNetCK.DAL
             string queryGetAllStaffs = @"select * from NhanVienQuanLy where TenDangNhap in 
                                             (select TenDangNhap from TAIKHOAN where Quyen = '1');";
             DataTable data = DataProvider.Instance.GetRecords(queryGetAllStaffs);
-            foreach (DataRow r in data.Rows)
+            if (data.Rows.Count > 0)
             {
-                staffs.Add(GetStaff(r));
+                foreach (DataRow r in data.Rows)
+                {
+                    staffs.Add(GetStaff(r));
+                }
+                return staffs;
             }
-            return staffs;
+            else
+                return null;
         }
 
         public List<Staff> GetListStaffByName(string nameStaff)

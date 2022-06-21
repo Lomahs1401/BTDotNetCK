@@ -82,12 +82,14 @@
     <Compile Include="BLL\BLL_ForgotPassword.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_QLBH.cs" />
+    <Compile Include="BLL\BLL_QLKH.cs" />
     <Compile Include="BLL\BLL_QLNV.cs" />
     <Compile Include="BLL\BLL_QLTK.cs" />
     <Compile Include="DAL\DAL_ForgotPassword.cs" />
     <Compile Include="DAL\DAL_Login.cs" />
     <Compile Include="DAL\DAL_QLBH.cs" />
     <Compile Include="DAL\DAL_QLDT.cs" />
+    <Compile Include="DAL\DAL_QLKH.cs" />
     <Compile Include="DAL\DAL_QLNV.cs" />
     <Compile Include="DAL\DAL_QLTK.cs" />
     <Compile Include="DAL\DataProvider.cs" />
@@ -214,6 +216,12 @@
     <Compile Include="GUI\FormEditNV.Designer.cs">
       <DependentUpon>FormEditNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormTTKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormTTKH.Designer.cs">
+      <DependentUpon>FormTTKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormTTMH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +258,9 @@
     <EmbeddedResource Include="GUI\FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormHoaDonDatMon.resx">
+      <DependentUpon>FormHoaDonDatMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormIdentify.resx">
       <DependentUpon>FormIdentify.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormEditNV.resx">
       <DependentUpon>FormEditNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormTTKH.resx">
+      <DependentUpon>FormTTKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormTTMH.resx">
       <DependentUpon>FormTTMH.cs</DependentUpon>

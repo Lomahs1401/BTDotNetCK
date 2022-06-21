@@ -31,19 +31,19 @@ namespace BTDotNetCK.GUI
         {
             this.components = new System.ComponentModel.Container();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnOK = new Guna.UI2.WinForms.Guna2Button();
             this.panelMon = new System.Windows.Forms.Panel();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.btnAddMon = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbSL = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbMoney = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnAddMon = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,18 +59,6 @@ namespace BTDotNetCK.GUI
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(862, 41);
             this.panelTitleBar.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.bill;
-            this.pictureBox1.Location = new System.Drawing.Point(89, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -99,11 +87,12 @@ namespace BTDotNetCK.GUI
             this.btnCancel.FillColor = System.Drawing.Color.DimGray;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(471, 448);
+            this.btnCancel.Location = new System.Drawing.Point(463, 448);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(145, 36);
             this.btnCancel.TabIndex = 58;
             this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnOK
             // 
@@ -115,11 +104,12 @@ namespace BTDotNetCK.GUI
             this.btnOK.FillColor = System.Drawing.Color.SeaGreen;
             this.btnOK.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(298, 448);
+            this.btnOK.Location = new System.Drawing.Point(265, 448);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(145, 36);
             this.btnOK.TabIndex = 57;
             this.btnOK.Text = "Đặt";
+            this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // panelMon
             // 
@@ -132,27 +122,6 @@ namespace BTDotNetCK.GUI
             // 
             this.guna2ShadowForm1.BorderRadius = 10;
             this.guna2ShadowForm1.TargetForm = this;
-            // 
-            // btnAddMon
-            // 
-            this.btnAddMon.BorderRadius = 15;
-            this.btnAddMon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddMon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddMon.FillColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAddMon.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddMon.ForeColor = System.Drawing.Color.White;
-            this.btnAddMon.Image = global::BTDotNetCK.Properties.Resources.icons8_plus_math_30px;
-            this.btnAddMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnAddMon.ImageOffset = new System.Drawing.Point(7, 0);
-            this.btnAddMon.Location = new System.Drawing.Point(675, 61);
-            this.btnAddMon.Name = "btnAddMon";
-            this.btnAddMon.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnAddMon.Size = new System.Drawing.Size(145, 36);
-            this.btnAddMon.TabIndex = 59;
-            this.btnAddMon.Text = "Thêm món";
-            this.btnAddMon.Click += new System.EventHandler(this.btnAddMon_Click);
             // 
             // label2
             // 
@@ -215,7 +184,40 @@ namespace BTDotNetCK.GUI
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // btnAddMon
+            // 
+            this.btnAddMon.BorderRadius = 15;
+            this.btnAddMon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddMon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddMon.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddMon.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnAddMon.ForeColor = System.Drawing.Color.White;
+            this.btnAddMon.Image = global::BTDotNetCK.Properties.Resources.icons8_plus_math_30px;
+            this.btnAddMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAddMon.ImageOffset = new System.Drawing.Point(7, 0);
+            this.btnAddMon.Location = new System.Drawing.Point(675, 61);
+            this.btnAddMon.Name = "btnAddMon";
+            this.btnAddMon.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnAddMon.Size = new System.Drawing.Size(145, 36);
+            this.btnAddMon.TabIndex = 59;
+            this.btnAddMon.Text = "Thêm món";
+            this.btnAddMon.Click += new System.EventHandler(this.BtnAddMon_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.bill;
+            this.pictureBox1.Location = new System.Drawing.Point(89, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // FormHoaDonDatMon
             // 
@@ -233,6 +235,7 @@ namespace BTDotNetCK.GUI
             this.Controls.Add(this.panelTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHoaDonDatMon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHoaDon";
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
