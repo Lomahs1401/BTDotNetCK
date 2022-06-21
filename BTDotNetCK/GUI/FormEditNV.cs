@@ -23,12 +23,15 @@ namespace BTDotNetCK.GUI
         public FormEditNV(string ID_Staff)
         {
             this.ID_Staff = ID_Staff;
+           
             InitializeComponent();
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void FormEditNV_Load(object sender, EventArgs e)
         {
             ShowInfo(BLL_QLNV.Instance.GetStaffByID(ID_Staff));
+            
         }
 
         private void ShowInfo(Staff staff)

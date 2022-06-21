@@ -51,6 +51,8 @@ namespace BTDotNetCK.GUI
             this.CoffeeShopIcon = new System.Windows.Forms.PictureBox();
             this.picUserIcon = new System.Windows.Forms.PictureBox();
             this.picPasswordIcon = new System.Windows.Forms.PictureBox();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HidePass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPass)).BeginInit();
@@ -287,6 +289,16 @@ namespace BTDotNetCK.GUI
             this.picPasswordIcon.TabIndex = 12;
             this.picPasswordIcon.TabStop = false;
             // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.BorderRadius = 6;
+            this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.MediumSeaGreen;
+            this.guna2ShadowForm1.TargetForm = this;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +363,8 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.PictureBox HidePass;
         private System.Windows.Forms.PictureBox exitIcon;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
 

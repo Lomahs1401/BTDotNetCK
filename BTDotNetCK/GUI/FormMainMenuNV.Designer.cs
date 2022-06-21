@@ -521,11 +521,17 @@ namespace BTDotNetCK.GUI
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this;
+            this.guna2DragControl1.TargetControl = this.panelTitleBar;
             this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.BorderRadius = 10;
+            this.guna2ShadowForm1.TargetForm = this;
             // 
             // guna2Elipse1
             // 
+            this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this;
             // 
             // rjStaffUserSettingMenu

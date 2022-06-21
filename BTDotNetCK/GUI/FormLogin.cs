@@ -29,6 +29,7 @@ namespace BTDotNetCK.GUI
             this.password = password;
             this.email = email;
             this.emailPassword = emailPassword;
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

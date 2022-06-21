@@ -42,6 +42,7 @@ namespace BTDotNetCK.GUI
             this.password = password;
             this.nameStaff = nameStaff;
             ShowUserInfo();
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void ShowUserInfo()

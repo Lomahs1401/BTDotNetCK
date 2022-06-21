@@ -19,11 +19,18 @@ namespace BTDotNetCK.GUI
             this.accountUsername = accountUsername;
             InitializeComponent();
             timer1.Start();
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void BtnAddMon_Click(object sender, EventArgs e)
         {
-            panelMon.Controls.Add(new FormMon());
+            FormMon b = new FormMon();
+            b.TopLevel = false;
+            b.FormBorderStyle = FormBorderStyle.None;
+            b.Dock = DockStyle.Top;
+            panelMon.Controls.Add(b);
+            b.BringToFront();
+            b.Show();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)

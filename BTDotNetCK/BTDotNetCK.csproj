@@ -249,6 +249,9 @@
     <EmbeddedResource Include="GUI\FormAddHang.resx">
       <DependentUpon>FormAddHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAddKH.resx">
+      <DependentUpon>FormAddKH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAddNV.resx">
       <DependentUpon>FormAddNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormMainMenuQTV.resx">
       <DependentUpon>FormMainMenuQTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMon.resx">
+      <DependentUpon>FormMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormQLBH.resx">
       <DependentUpon>FormQLBH.cs</DependentUpon>

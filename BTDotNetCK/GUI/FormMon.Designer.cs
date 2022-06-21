@@ -113,6 +113,7 @@ namespace BTDotNetCK.GUI
             this.tbID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbID.ForeColor = System.Drawing.Color.Black;
             this.tbID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbID.Location = new System.Drawing.Point(67, 16);
             this.tbID.Name = "tbID";
@@ -132,6 +133,7 @@ namespace BTDotNetCK.GUI
             this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbName.ForeColor = System.Drawing.Color.Black;
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbName.Location = new System.Drawing.Point(196, 16);
             this.tbName.Name = "tbName";
@@ -171,6 +173,7 @@ namespace BTDotNetCK.GUI
             this.tbQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbQuantity.ForeColor = System.Drawing.Color.Black;
             this.tbQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbQuantity.Location = new System.Drawing.Point(562, 17);
             this.tbQuantity.Name = "tbQuantity";

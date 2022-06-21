@@ -15,6 +15,7 @@ namespace BTDotNetCK.GUI
         public FormAddKH()
         {
             InitializeComponent();
+            guna2ShadowForm1.SetShadowForm(this);
         }
     }
 }

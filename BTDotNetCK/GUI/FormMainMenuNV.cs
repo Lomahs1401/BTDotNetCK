@@ -40,6 +40,7 @@ namespace BTDotNetCK.GUI
             DoubleBuffered = true;
             MaximizedBounds = Screen.FromHandle(Handle).WorkingArea;
             ShowUserInfo();
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void ShowUserInfo()

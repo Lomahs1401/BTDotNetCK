@@ -31,11 +31,15 @@ namespace BTDotNetCK.GUI
         {
             this.components = new System.ComponentModel.Container();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnOK = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteImg = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNVImg = new Guna.UI2.WinForms.Guna2Button();
             this.cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.avatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.msgValidateAddress = new System.Windows.Forms.Label();
             this.msgValidateIDCard = new System.Windows.Forms.Label();
             this.msgValidatePhone = new System.Windows.Forms.Label();
@@ -59,14 +63,10 @@ namespace BTDotNetCK.GUI
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.btnDeleteImg = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNVImg = new Guna.UI2.WinForms.Guna2Button();
-            this.avatar = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitleBar
@@ -80,6 +80,18 @@ namespace BTDotNetCK.GUI
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(833, 41);
             this.panelTitleBar.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.shopping1;
+            this.pictureBox1.Location = new System.Drawing.Point(187, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -162,6 +174,40 @@ namespace BTDotNetCK.GUI
             this.btnOK.TabIndex = 55;
             this.btnOK.Text = "OK";
             // 
+            // btnDeleteImg
+            // 
+            this.btnDeleteImg.BorderRadius = 20;
+            this.btnDeleteImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteImg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteImg.FillColor = System.Drawing.Color.Crimson;
+            this.btnDeleteImg.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteImg.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteImg.Image = global::BTDotNetCK.Properties.Resources.icons8_Close_30px;
+            this.btnDeleteImg.Location = new System.Drawing.Point(142, 313);
+            this.btnDeleteImg.Name = "btnDeleteImg";
+            this.btnDeleteImg.Size = new System.Drawing.Size(110, 40);
+            this.btnDeleteImg.TabIndex = 54;
+            this.btnDeleteImg.Text = "Xóa ảnh";
+            // 
+            // btnNVImg
+            // 
+            this.btnNVImg.BorderRadius = 20;
+            this.btnNVImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNVImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNVImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNVImg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNVImg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnNVImg.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnNVImg.ForeColor = System.Drawing.Color.White;
+            this.btnNVImg.Image = global::BTDotNetCK.Properties.Resources.icons8_picture_30px;
+            this.btnNVImg.Location = new System.Drawing.Point(10, 313);
+            this.btnNVImg.Name = "btnNVImg";
+            this.btnNVImg.Size = new System.Drawing.Size(110, 40);
+            this.btnNVImg.TabIndex = 53;
+            this.btnNVImg.Text = "Chọn ảnh";
+            // 
             // cbGender
             // 
             this.cbGender.BackColor = System.Drawing.Color.Transparent;
@@ -186,6 +232,17 @@ namespace BTDotNetCK.GUI
             this.cbGender.Size = new System.Drawing.Size(409, 36);
             this.cbGender.TabIndex = 52;
             this.cbGender.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // avatar
+            // 
+            this.avatar.BackColor = System.Drawing.Color.Transparent;
+            this.avatar.ImageRotate = 0F;
+            this.avatar.Location = new System.Drawing.Point(10, 44);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(242, 240);
+            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.avatar.TabIndex = 51;
+            this.avatar.TabStop = false;
             // 
             // msgValidateAddress
             // 
@@ -493,65 +550,7 @@ namespace BTDotNetCK.GUI
             // guna2ShadowForm1
             // 
             this.guna2ShadowForm1.BorderRadius = 10;
-            this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.White;
             this.guna2ShadowForm1.TargetForm = this;
-            // 
-            // btnDeleteImg
-            // 
-            this.btnDeleteImg.BorderRadius = 20;
-            this.btnDeleteImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDeleteImg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeleteImg.FillColor = System.Drawing.Color.Crimson;
-            this.btnDeleteImg.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteImg.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteImg.Image = global::BTDotNetCK.Properties.Resources.icons8_Close_30px;
-            this.btnDeleteImg.Location = new System.Drawing.Point(142, 313);
-            this.btnDeleteImg.Name = "btnDeleteImg";
-            this.btnDeleteImg.Size = new System.Drawing.Size(110, 40);
-            this.btnDeleteImg.TabIndex = 54;
-            this.btnDeleteImg.Text = "Xóa ảnh";
-            // 
-            // btnNVImg
-            // 
-            this.btnNVImg.BorderRadius = 20;
-            this.btnNVImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNVImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNVImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNVImg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNVImg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnNVImg.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnNVImg.ForeColor = System.Drawing.Color.White;
-            this.btnNVImg.Image = global::BTDotNetCK.Properties.Resources.icons8_picture_30px;
-            this.btnNVImg.Location = new System.Drawing.Point(10, 313);
-            this.btnNVImg.Name = "btnNVImg";
-            this.btnNVImg.Size = new System.Drawing.Size(110, 40);
-            this.btnNVImg.TabIndex = 53;
-            this.btnNVImg.Text = "Chọn ảnh";
-            // 
-            // avatar
-            // 
-            this.avatar.BackColor = System.Drawing.Color.Transparent;
-            this.avatar.ImageRotate = 0F;
-            this.avatar.Location = new System.Drawing.Point(10, 44);
-            this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(242, 240);
-            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.avatar.TabIndex = 51;
-            this.avatar.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::BTDotNetCK.Properties.Resources.shopping1;
-            this.pictureBox1.Location = new System.Drawing.Point(187, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // FormAddKH
             // 
@@ -565,10 +564,10 @@ namespace BTDotNetCK.GUI
             this.Text = "FormAddKH";
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
