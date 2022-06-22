@@ -72,7 +72,7 @@ namespace BTDotNetCK.DAL
                 DataTable data = new DataTable();
                 sqlDataAdapter.Fill(data);
                 if (data.Rows.Count > 0)
-                    return data.Rows[0].ToString();
+                    return data.Rows[0]["HoVaTen"].ToString();
                 else
                     return null;
             }

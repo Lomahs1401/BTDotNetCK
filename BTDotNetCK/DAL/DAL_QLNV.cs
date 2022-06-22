@@ -322,7 +322,9 @@ namespace BTDotNetCK.DAL
                 {
                     connection.Open();
                 }
-                command.Parameters.AddWithValue("@accountUsername", accountUsername);
+                command.Parameters.AddWithValue("@UserName", accountUsername);
+                command.Parameters.AddWithValue("@DateEnd", DateTime.Now);
+
                 int ret = command.ExecuteNonQuery();
                 if (ret > 0)
                     return true;
