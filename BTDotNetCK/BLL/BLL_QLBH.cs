@@ -92,6 +92,14 @@ namespace BTDotNetCK.BLL
                 return false;
         }
 
+        public bool UpdateQuantityProduct(string ID_Product, int quantity)
+        {
+            if (DAL_QLBH.Instance.UpdateQuantityProduct(ID_Product, quantity))
+                return true;
+            else
+                return false;
+        }
+
         public bool DeleteProduct(string ID_Product)
         {
             if (DAL_QLBH.Instance.DeleteProduct(ID_Product))

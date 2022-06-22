@@ -61,6 +61,11 @@ namespace BTDotNetCK.BLL
             return DAL_QLNV.Instance.GetAccountUsernameStaffByID(ID_Staff);
         }
 
+        public string GetIDByAccountUsername(string accountUsername)
+        {
+            return DAL_QLNV.Instance.GetIDByAccountUsername(accountUsername);
+        }
+
         public int GetNumberTotalStaff()
         {
             return DAL_QLNV.Instance.GetNumberTotalStaff();

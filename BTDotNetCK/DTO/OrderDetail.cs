@@ -10,20 +10,20 @@ namespace BTDotNetCK.DTO
     {
         public string ID_Order { get; set; }
         public string ID_Product { get; set; }
-        public int Quantity { get; set; }
-        public int Amount { get; set; }
+        public int QuantitySold { get; set; }
+        public int TotalAmount { get; set; }
 
         public OrderDetail()
         {
 
         }
 
-        public OrderDetail(string ID_Order, string ID_Product, int quantity, int amount)
+        public OrderDetail(string ID_Order, string ID_Product, int quantitySold, int totalAmount)
         {
             this.ID_Order = ID_Order;
             this.ID_Product = ID_Product;
-            Quantity = quantity;
-            Amount = amount;
+            QuantitySold = quantitySold;
+            TotalAmount = totalAmount;
         }
     }
 }

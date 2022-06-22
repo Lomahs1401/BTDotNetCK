@@ -99,6 +99,16 @@ namespace BTDotNetCK.DAL
                 return null;
         }
 
+        public string GetLastID()
+        {
+            string queryGetLastIDCustomer = @"select top 1 ID_KhachHang from KHACHHANG order by ID_KhachHang desc;";
+            DataTable lastID = DataProvider.Instance.GetRecords(queryGetLastIDCustomer);
+            if (lastID.Rows.Count > 0)
+                return lastID.Rows[0]["ID_KhachHang"].ToString();
+            else
+                return null;
+        }
+
         public int GetNumberTotalCustomer()
         {
             string queryGetNumberCustomer = @"select count(ID_KhachHang) as TongKhachHang from KHACHHANG;";
@@ -130,6 +140,16 @@ namespace BTDotNetCK.DAL
                 Phone = r["SDT"].ToString(),
                 Address = r["DiaChi"].ToString(),
             };
+        }
+
+        public bool AddCustomer(Customer customer)
+        {
+            string queryAddNewCustomer = @"insert into KHACHHANG (ID_KhachHang, HoVaTen, GioiTinh, DiaChi, SDT) " +
+            "values ('" + customer.ID_Customer + "', N'" + customer.NameCustomer + "', N'" + customer.Gender + "', N'" + customer.Address + "', '" + customer.Phone + "')";
+            if (DataProvider.Instance.ExecuteDB(queryAddNewCustomer) != -1)
+                return true;
+            else
+                return false;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace BTDotNetCK.DAL
 {
     public class DBConnection
     {
-        private static readonly string connectionString = @"Data Source=LAPTOP-ST8FT10G\SQLEXPRESS;Initial Catalog=COFFEE_MANAGEMENT;Integrated Security=True";
+        private static readonly string connectionString = @"Data Source=DESKTOP-MLK4B1V\SQLEXPRESS;Initial Catalog=COFFEE_MANAGEMENT;Integrated Security=True";
 
         public DBConnection()
         {

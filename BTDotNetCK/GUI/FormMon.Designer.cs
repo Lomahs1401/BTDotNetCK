@@ -41,13 +41,14 @@ namespace BTDotNetCK.GUI
             this.tbQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbSum = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.Index = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(125, 17);
+            this.label1.Location = new System.Drawing.Point(170, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 21);
             this.label1.TabIndex = 0;
@@ -57,7 +58,7 @@ namespace BTDotNetCK.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 16);
+            this.label2.Location = new System.Drawing.Point(48, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 21);
             this.label2.TabIndex = 1;
@@ -67,7 +68,7 @@ namespace BTDotNetCK.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(337, 17);
+            this.label3.Location = new System.Drawing.Point(382, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 21);
             this.label3.TabIndex = 2;
@@ -77,7 +78,7 @@ namespace BTDotNetCK.GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(486, 17);
+            this.label4.Location = new System.Drawing.Point(531, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 21);
             this.label4.TabIndex = 3;
@@ -87,7 +88,7 @@ namespace BTDotNetCK.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(464, 17);
+            this.label5.Location = new System.Drawing.Point(509, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 21);
             this.label5.TabIndex = 4;
@@ -97,7 +98,7 @@ namespace BTDotNetCK.GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(614, 19);
+            this.label6.Location = new System.Drawing.Point(659, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(21, 21);
             this.label6.TabIndex = 5;
@@ -115,27 +116,29 @@ namespace BTDotNetCK.GUI
             this.tbID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbID.ForeColor = System.Drawing.Color.Black;
             this.tbID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbID.Location = new System.Drawing.Point(67, 16);
+            this.tbID.Location = new System.Drawing.Point(112, 16);
             this.tbID.Name = "tbID";
             this.tbID.PasswordChar = '\0';
             this.tbID.PlaceholderText = "";
             this.tbID.SelectedText = "";
             this.tbID.Size = new System.Drawing.Size(50, 25);
             this.tbID.TabIndex = 6;
+            this.tbID.TextChanged += new System.EventHandler(this.TbID_TextChanged);
             // 
             // tbName
             // 
             this.tbName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbName.DefaultText = "";
-            this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.tbName.DisabledState.FillColor = System.Drawing.Color.White;
+            this.tbName.DisabledState.ForeColor = System.Drawing.Color.Black;
             this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.Enabled = false;
             this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbName.ForeColor = System.Drawing.Color.Black;
+            this.tbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.Location = new System.Drawing.Point(196, 16);
+            this.tbName.Location = new System.Drawing.Point(241, 16);
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
             this.tbName.PlaceholderText = "";
@@ -155,7 +158,7 @@ namespace BTDotNetCK.GUI
             this.tbPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPrice.Location = new System.Drawing.Point(371, 16);
+            this.tbPrice.Location = new System.Drawing.Point(416, 16);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.PasswordChar = '\0';
             this.tbPrice.PlaceholderText = "";
@@ -175,14 +178,14 @@ namespace BTDotNetCK.GUI
             this.tbQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbQuantity.ForeColor = System.Drawing.Color.Black;
             this.tbQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbQuantity.Location = new System.Drawing.Point(562, 17);
+            this.tbQuantity.Location = new System.Drawing.Point(607, 17);
             this.tbQuantity.Name = "tbQuantity";
             this.tbQuantity.PasswordChar = '\0';
             this.tbQuantity.PlaceholderText = "";
             this.tbQuantity.SelectedText = "";
             this.tbQuantity.Size = new System.Drawing.Size(50, 25);
             this.tbQuantity.TabIndex = 9;
-            this.tbQuantity.TextChanged += new System.EventHandler(this.tbQuantity_TextChanged);
+            this.tbQuantity.TextChanged += new System.EventHandler(this.TbQuantity_TextChanged);
             // 
             // tbSum
             // 
@@ -196,7 +199,7 @@ namespace BTDotNetCK.GUI
             this.tbSum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSum.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbSum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSum.Location = new System.Drawing.Point(641, 17);
+            this.tbSum.Location = new System.Drawing.Point(686, 17);
             this.tbSum.Name = "tbSum";
             this.tbSum.PasswordChar = '\0';
             this.tbSum.PlaceholderText = "";
@@ -208,6 +211,7 @@ namespace BTDotNetCK.GUI
             // 
             this.btnClose.Animated = true;
             this.btnClose.BorderThickness = 1;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -216,18 +220,29 @@ namespace BTDotNetCK.GUI
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = global::BTDotNetCK.Properties.Resources.icons8_Close_30px;
-            this.btnClose.Location = new System.Drawing.Point(800, 13);
+            this.btnClose.Location = new System.Drawing.Point(845, 13);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(35, 32);
             this.btnClose.TabIndex = 11;
-            this.btnClose.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnClose.Click += new System.EventHandler(this.Guna2Button1_Click);
+            // 
+            // Index
+            // 
+            this.Index.AutoSize = true;
+            this.Index.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Index.Location = new System.Drawing.Point(2, 16);
+            this.Index.Name = "Index";
+            this.Index.Size = new System.Drawing.Size(51, 21);
+            this.Index.TabIndex = 12;
+            this.Index.Text = "Index";
             // 
             // FormMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(838, 56);
+            this.ClientSize = new System.Drawing.Size(885, 56);
+            this.Controls.Add(this.Index);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbSum);
             this.Controls.Add(this.tbQuantity);
@@ -262,5 +277,6 @@ namespace BTDotNetCK.GUI
         private Guna.UI2.WinForms.Guna2TextBox tbQuantity;
         private Guna.UI2.WinForms.Guna2TextBox tbSum;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private System.Windows.Forms.Label Index;
     }
 }

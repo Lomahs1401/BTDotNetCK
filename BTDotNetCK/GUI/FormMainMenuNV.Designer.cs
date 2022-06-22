@@ -361,7 +361,8 @@ namespace BTDotNetCK.GUI
             // 
             // CoffeeShopIcon
             // 
-            this.CoffeeShopIcon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CoffeeShopIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CoffeeShopIcon.Image = global::BTDotNetCK.Properties.Resources.coffee_shop;
             this.CoffeeShopIcon.ImageRotate = 0F;
@@ -547,7 +548,7 @@ namespace BTDotNetCK.GUI
             this.rjStaffUserSettingMenu.MenuItemTextColor = System.Drawing.Color.DimGray;
             this.rjStaffUserSettingMenu.Name = "rjddmAdminSettingMenu";
             this.rjStaffUserSettingMenu.PrimaryColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjStaffUserSettingMenu.Size = new System.Drawing.Size(208, 78);
+            this.rjStaffUserSettingMenu.Size = new System.Drawing.Size(208, 56);
             this.rjStaffUserSettingMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.RjddmUserSettingMenu_ItemClicked);
             // 
             // chỉnhSửaTàiKhoảnToolStripMenuItem

@@ -43,8 +43,10 @@ namespace BTDotNetCK.GUI
             this.tbMoney = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnAddMon = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.btnAddMon = new Guna.UI2.WinForms.Guna2Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblTable = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@ namespace BTDotNetCK.GUI
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(862, 41);
+            this.panelTitleBar.Size = new System.Drawing.Size(905, 41);
             this.panelTitleBar.TabIndex = 6;
             // 
             // pictureBox1
@@ -93,6 +95,7 @@ namespace BTDotNetCK.GUI
             // btnCancel
             // 
             this.btnCancel.BorderRadius = 15;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -100,7 +103,7 @@ namespace BTDotNetCK.GUI
             this.btnCancel.FillColor = System.Drawing.Color.DimGray;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(463, 448);
+            this.btnCancel.Location = new System.Drawing.Point(486, 448);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(145, 36);
             this.btnCancel.TabIndex = 58;
@@ -110,6 +113,7 @@ namespace BTDotNetCK.GUI
             // btnOK
             // 
             this.btnOK.BorderRadius = 15;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -117,7 +121,7 @@ namespace BTDotNetCK.GUI
             this.btnOK.FillColor = System.Drawing.Color.SeaGreen;
             this.btnOK.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(265, 448);
+            this.btnOK.Location = new System.Drawing.Point(272, 448);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(145, 36);
             this.btnOK.TabIndex = 57;
@@ -129,8 +133,11 @@ namespace BTDotNetCK.GUI
             this.panelMon.AutoScroll = true;
             this.panelMon.Location = new System.Drawing.Point(0, 115);
             this.panelMon.Name = "panelMon";
-            this.panelMon.Size = new System.Drawing.Size(862, 267);
+            this.panelMon.Size = new System.Drawing.Size(905, 267);
             this.panelMon.TabIndex = 60;
+            this.panelMon.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelMon_ControlAdded);
+            this.panelMon.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.PanelMon_ControlRemoved);
+            this.panelMon.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMon_Paint);
             // 
             // guna2ShadowForm1
             // 
@@ -166,6 +173,7 @@ namespace BTDotNetCK.GUI
             this.tbSL.SelectedText = "";
             this.tbSL.Size = new System.Drawing.Size(70, 28);
             this.tbSL.TabIndex = 62;
+            this.tbSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbMoney
             // 
@@ -173,24 +181,26 @@ namespace BTDotNetCK.GUI
             this.tbMoney.DefaultText = "";
             this.tbMoney.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbMoney.DisabledState.FillColor = System.Drawing.Color.White;
-            this.tbMoney.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.tbMoney.DisabledState.ForeColor = System.Drawing.Color.Black;
             this.tbMoney.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbMoney.Enabled = false;
             this.tbMoney.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbMoney.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbMoney.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMoney.Location = new System.Drawing.Point(661, 409);
+            this.tbMoney.Location = new System.Drawing.Point(705, 409);
             this.tbMoney.Name = "tbMoney";
             this.tbMoney.PasswordChar = '\0';
             this.tbMoney.PlaceholderText = "";
             this.tbMoney.SelectedText = "";
-            this.tbMoney.Size = new System.Drawing.Size(155, 28);
+            this.tbMoney.Size = new System.Drawing.Size(159, 28);
             this.tbMoney.TabIndex = 64;
+            this.tbMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(701, 385);
+            this.label3.Location = new System.Drawing.Point(742, 385);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 21);
             this.label3.TabIndex = 63;
@@ -200,9 +210,16 @@ namespace BTDotNetCK.GUI
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.panelTitleBar;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
             // btnAddMon
             // 
             this.btnAddMon.BorderRadius = 15;
+            this.btnAddMon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddMon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddMon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -213,7 +230,7 @@ namespace BTDotNetCK.GUI
             this.btnAddMon.Image = global::BTDotNetCK.Properties.Resources.icons8_plus_math_30px;
             this.btnAddMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAddMon.ImageOffset = new System.Drawing.Point(7, 0);
-            this.btnAddMon.Location = new System.Drawing.Point(675, 61);
+            this.btnAddMon.Location = new System.Drawing.Point(368, 58);
             this.btnAddMon.Name = "btnAddMon";
             this.btnAddMon.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnAddMon.Size = new System.Drawing.Size(145, 36);
@@ -221,17 +238,31 @@ namespace BTDotNetCK.GUI
             this.btnAddMon.Text = "Thêm món";
             this.btnAddMon.Click += new System.EventHandler(this.BtnAddMon_Click);
             // 
-            // guna2DragControl1
+            // comboBox1
             // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.panelTitleBar;
-            this.guna2DragControl1.UseTransparentDrag = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(638, 65);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 65;
+            // 
+            // lblTable
+            // 
+            this.lblTable.AutoSize = true;
+            this.lblTable.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTable.Location = new System.Drawing.Point(581, 65);
+            this.lblTable.Name = "lblTable";
+            this.lblTable.Size = new System.Drawing.Size(37, 21);
+            this.lblTable.TabIndex = 66;
+            this.lblTable.Text = "Bàn";
             // 
             // FormHoaDonDatMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 496);
+            this.ClientSize = new System.Drawing.Size(905, 510);
+            this.Controls.Add(this.lblTable);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.tbMoney);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbSL);
@@ -245,6 +276,7 @@ namespace BTDotNetCK.GUI
             this.Name = "FormHoaDonDatMon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHoaDon";
+            this.Load += new System.EventHandler(this.FormHoaDonDatMon_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -270,5 +302,7 @@ namespace BTDotNetCK.GUI
         private Guna.UI2.WinForms.Guna2TextBox tbSL;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblTable;
     }
 }

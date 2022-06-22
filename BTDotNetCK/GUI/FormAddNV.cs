@@ -211,9 +211,9 @@ namespace BTDotNetCK.GUI
             {
                 StringBuilder newStaffId; // S0006
                 string ID_Staff = BLL_QLNV.Instance.GetLastID();
-                if (ID_Staff == "S0000")
+                if (ID_Staff == null)
                 {
-                    newStaffId = new StringBuilder(ID_Staff);
+                    newStaffId = new StringBuilder("S0000");
                 }
                 else
                 {

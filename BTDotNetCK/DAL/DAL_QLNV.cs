@@ -109,6 +109,13 @@ namespace BTDotNetCK.DAL
             return accountUsername.Rows[0]["TenDangNhap"].ToString();
         }
 
+        public string GetIDByAccountUsername(string accountUsername)
+        {
+            string queryGetIDByAccountUsername = @"select ID_QuanLy from NhanVienQuanLy where TenDangNhap = '" + accountUsername + "';";
+            DataTable id = DataProvider.Instance.GetRecords(queryGetIDByAccountUsername);
+            return id.Rows[0]["ID_QuanLy"].ToString();
+        }
+
         public string GetImage(string accountUsername)
         {
             string queryGetImage = @"select Anh from TAIKHOAN where TenDangNhap = '" + accountUsername + "';";
@@ -144,10 +151,10 @@ namespace BTDotNetCK.DAL
         {
             string queryGetLastIDStaff = @"select top 1 ID_QuanLy from NhanVienQuanLy order by ID_QuanLy desc;";
             DataTable lastID = DataProvider.Instance.GetRecords(queryGetLastIDStaff);
-            if (lastID.Rows[0]["ID_QuanLy"] != null)
+            if (lastID.Rows.Count > 0)
                 return lastID.Rows[0]["ID_QuanLy"].ToString();
             else
-                return "S0000";
+                return null;
         }
 
         public Staff GetStaff(DataRow r)

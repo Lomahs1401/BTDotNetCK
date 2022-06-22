@@ -116,7 +116,7 @@ namespace BTDotNetCK.GUI
             {
                 MessageBox.Show("Vui lòng điền thông tin khách hàng cần tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (tbTK.Text.Length == 6)
+            else if (tbTK.Text.Contains("KH0"))
             {
                 Customer customer = BLL_QLKH.Instance.GetCustomerByID(tbTK.Text);
                 if (customer == null)

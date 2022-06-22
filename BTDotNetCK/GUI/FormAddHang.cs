@@ -116,6 +116,11 @@ namespace BTDotNetCK.GUI
         private Product GetAllInfo(string newID_Product)
         {
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            string path;
+            if (foodAvatar.Image == null)
+                path = null;
+            else
+                path = foodAvatar.ImageLocation.Remove(0, projectDirectory.Length + 1);
             return new Product
             {
                 ID_Product = newID_Product,
@@ -123,7 +128,7 @@ namespace BTDotNetCK.GUI
                 Category = cbCategory.SelectedItem.ToString(),
                 QuantitySold = 0,
                 Price = Convert.ToInt32(tbPrice.Text),
-                Image = foodAvatar.ImageLocation.Remove(0, projectDirectory.Length + 1)
+                Image = path
             };
         }
 

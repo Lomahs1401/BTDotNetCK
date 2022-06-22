@@ -82,6 +82,7 @@
     <Compile Include="BLL\BLL_ForgotPassword.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_QLBH.cs" />
+    <Compile Include="BLL\BLL_QLHD.cs" />
     <Compile Include="BLL\BLL_QLKH.cs" />
     <Compile Include="BLL\BLL_QLNV.cs" />
     <Compile Include="BLL\BLL_QLTK.cs" />
@@ -89,12 +90,14 @@
     <Compile Include="DAL\DAL_Login.cs" />
     <Compile Include="DAL\DAL_QLBH.cs" />
     <Compile Include="DAL\DAL_QLDT.cs" />
+    <Compile Include="DAL\DAL_QLHD.cs" />
     <Compile Include="DAL\DAL_QLKH.cs" />
     <Compile Include="DAL\DAL_QLNV.cs" />
     <Compile Include="DAL\DAL_QLTK.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\CBB_TableItem.cs" />
     <Compile Include="DTO\Customer.cs" />
     <Compile Include="DTO\Dashboard.cs" />
     <Compile Include="DTO\Order.cs" />
@@ -119,6 +122,12 @@
     </Compile>
     <Compile Include="GUI\FormAddNV.Designer.cs">
       <DependentUpon>FormAddNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAuthenticateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAuthenticateCustomer.Designer.cs">
+      <DependentUpon>FormAuthenticateCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormEditHang.cs">
       <SubType>Form</SubType>
@@ -254,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAddNV.resx">
       <DependentUpon>FormAddNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAuthenticateCustomer.resx">
+      <DependentUpon>FormAuthenticateCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormEditHang.resx">
       <DependentUpon>FormEditHang.cs</DependentUpon>

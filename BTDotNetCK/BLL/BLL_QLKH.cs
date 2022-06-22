@@ -1,5 +1,6 @@
 ﻿using BTDotNetCK.DAL;
 using BTDotNetCK.DTO;
+using BTDotNetCK.Validator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,11 @@ namespace BTDotNetCK.BLL
             return DAL_QLKH.Instance.GetCustomerByID(ID_Customer);
         }
 
+        public string GetLastID()
+        {
+            return DAL_QLKH.Instance.GetLastID();
+        }
+
         public Customer GetCustomerByPhone(string phone)
         {
             return DAL_QLKH.Instance.GetCustomerByPhone(phone);
@@ -62,6 +68,43 @@ namespace BTDotNetCK.BLL
         public int GetNumberTotalFemaleCustomer()
         {
             return DAL_QLKH.Instance.GetNumberTotalFemaleCustomer();
+        }
+
+        public bool AddCustomer(Customer customer)
+        {
+            return DAL_QLKH.Instance.AddCustomer(customer);
+        }
+
+        public bool ValidateName(string name)
+        {
+            if (name == "")
+                return false;
+            else
+                return true;
+        }
+
+        public bool ValidateGender(object gender)
+        {
+            if (gender == null)
+                return false;
+            else
+                return true;
+        }
+
+        public bool ValidatePhone(string phone)
+        {
+            if (!Validators.IsValidPhoneNumber(phone, Validators.PHONE_REGEX))
+                return false;
+            else
+                return true;
+        }
+
+        public bool ValidateAddress(string address)
+        {
+            if (address == "")
+                return false;
+            else
+                return true;
         }
     }
 }

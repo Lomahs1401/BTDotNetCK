@@ -136,7 +136,7 @@ namespace BTDotNetCK.GUI
             {
                 MessageBox.Show("Vui lòng điền thông tin nhân viên cần tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (tbTK.Text.Length == 5)
+            else if (tbTK.Text.Contains("S0"))
             {
                 Staff staff = BLL_QLNV.Instance.GetStaffByID(tbTK.Text);
                 if (staff == null)

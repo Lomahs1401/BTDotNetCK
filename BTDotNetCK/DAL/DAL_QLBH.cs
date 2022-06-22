@@ -138,7 +138,7 @@ namespace BTDotNetCK.DAL
         {
             string queryGetLastIDProduct = @"select top 1 ID_HangHoa from HANGHOA order by ID_HangHoa desc;";
             DataTable lastID = DataProvider.Instance.GetRecords(queryGetLastIDProduct);
-            if (lastID.Rows[0]["ID_HangHoa"] != null)
+            if (lastID.Rows.Count > 0)
                 return lastID.Rows[0]["ID_HangHoa"].ToString();
             else
                 return "H0000";
@@ -172,8 +172,17 @@ namespace BTDotNetCK.DAL
         {
             string queryUpdateProduct = @"update HANGHOA set TenHangHoa = N'" + product.NameProduct + 
                                             "', Loai = N'" + product.Category + "', GiaTien = '" + product.Price + 
-                                            "' where ID_HangHoa = '" + product.ID_Product + "';";
+                                            "', Anh = '" + product.Image + "' where ID_HangHoa = '" + product.ID_Product + "';";
             if (DataProvider.Instance.ExecuteDB(queryUpdateProduct) != -1)
+                return true;
+            else
+                return false;
+        }
+
+        public bool UpdateQuantityProduct(string ID_Product, int quantity)
+        {
+            string queryUpdateQuantityProduct = @"update HANGHOA set SoLuongDaBan = '" + quantity + "' where ID_HangHoa = '" + ID_Product + "';";
+            if (DataProvider.Instance.ExecuteDB(queryUpdateQuantityProduct) != -1)
                 return true;
             else
                 return false;

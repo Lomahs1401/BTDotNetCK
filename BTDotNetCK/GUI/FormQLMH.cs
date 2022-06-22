@@ -186,7 +186,7 @@ namespace BTDotNetCK.GUI
             {
                 MessageBox.Show("Vui lòng điền thông tin mặt hàng cần tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (tbTK.Text.Length == 5)
+            else if (tbTK.Text.Contains("P0"))
             {
                 Product product = BLL_QLBH.Instance.GetProductByID(tbTK.Text);
                 if (product == null)
