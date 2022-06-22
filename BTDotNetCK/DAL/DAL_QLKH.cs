@@ -33,7 +33,7 @@ namespace BTDotNetCK.DAL
         public List<Customer> GetListCustomers()
         {
             List<Customer> customers = new List<Customer>();
-            string queryGetAllCustomers = @"select * from KHACHHANG;";
+            string queryGetAllCustomers = "GetAllCustomer";
             DataTable data = DataProvider.Instance.GetRecords(queryGetAllCustomers);
             if (data.Rows.Count > 0)
             {
@@ -49,19 +49,38 @@ namespace BTDotNetCK.DAL
 
         public List<Customer> GetCustomersByName(string nameCustomer)
         {
-            List<Customer> customers = new List<Customer>();
-            string queryGetAllCustomersByName = @"select * from KHACHHANG where HoVaTen like N'%" + nameCustomer + "%';";
-            DataTable data = DataProvider.Instance.GetRecords(queryGetAllCustomersByName);
-            if (data.Rows.Count > 0)
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
             {
-                foreach (DataRow r in data.Rows)
+                List<Customer> customers = new List<Customer>();
+                SqlCommand command = new SqlCommand
                 {
-                    customers.Add(GetCustomer(r));
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetCustomersWithName",
+                    Connection = connection
+                };
+                if(connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
                 }
-                return customers;
+                command.Parameters.AddWithValue("@NAME", nameCustomer);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+                if (data.Rows.Count > 0)
+                {
+                    foreach (DataRow r in data.Rows)
+                    {
+                        customers.Add(GetCustomer(r));
+                    }
+                    return customers;
+                }
+                else
+                    return null;
+
             }
-            else
-                return null;
+            
         }
 
         public Customer GetCustomerByID(string ID_Customer)
@@ -91,31 +110,45 @@ namespace BTDotNetCK.DAL
 
         public Customer GetCustomerByPhone(string phone)
         {
-            string queryGetCustomerByPhone = @"select * from KHACHHANG where SDT = '" + phone + "';";
-            DataTable data = DataProvider.Instance.GetRecords(queryGetCustomerByPhone);
-            if (data.Rows.Count > 0)
-                return GetCustomer(data.Rows[0]);
-            else
-                return null;
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetCustomersWithPhone",
+                    Connection = connection
+                };
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Parameters.AddWithValue("@Phone", phone);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                dataAdapter.Fill(data);
+                if (data.Rows.Count > 0)
+                    return GetCustomer(data.Rows[0]);
+                else
+                    return null;
+            }
+            
         }
 
         public int GetNumberTotalCustomer()
         {
-            string queryGetNumberCustomer = @"select count(ID_KhachHang) as TongKhachHang from KHACHHANG;";
+            string queryGetNumberCustomer = "GetTotalCustomer";
             DataTable totalCustomer = DataProvider.Instance.GetRecords(queryGetNumberCustomer);
             return Convert.ToInt32(totalCustomer.Rows[0]["TongKhachHang"].ToString());
         }
 
         public int GetNumberTotalMaleCustomer()
         {
-            string queryGetNumberMaleCustomer = @"select count(ID_KhachHang) as TongKhachHangNam from KHACHHANG where GioiTinh = N'Nam';";
+            string queryGetNumberMaleCustomer = @"GetTotalMaleCustomer";
             DataTable totalMaleCustomer = DataProvider.Instance.GetRecords(queryGetNumberMaleCustomer);
             return Convert.ToInt32(totalMaleCustomer.Rows[0]["TongKhachHangNam"].ToString());
         }
 
         public int GetNumberTotalFemaleCustomer()
         {
-            string queryGetNumberFemaleCustomer = @"select count(ID_KhachHang) as TongKhachHangNu from KHACHHANG where GioiTinh = N'Nữ';";
+            string queryGetNumberFemaleCustomer = @"GetTotalFemaleCustomer";
             DataTable totalFemaleCustomer = DataProvider.Instance.GetRecords(queryGetNumberFemaleCustomer);
             return Convert.ToInt32(totalFemaleCustomer.Rows[0]["TongKhachHangNu"].ToString());
         }

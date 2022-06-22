@@ -57,9 +57,25 @@ namespace BTDotNetCK.DAL
 
         public string GetNameStaff(Account account)
         {
-            string queryGetNameStaff = "select HoVaTen from NhanVienQuanLy where TenDangNhap = '" + account.UserName + "'";
-            DataTable nameStaff = DataProvider.Instance.GetRecords(queryGetNameStaff);
-            return nameStaff.Rows[0]["HoVaTen"].ToString();
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetNameStaff",
+                    Connection = connection
+                };
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Parameters.AddWithValue("@UserName", account.UserName);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                sqlDataAdapter.Fill(data);
+                if (data.Rows.Count > 0)
+                    return data.Rows[0].ToString();
+                else
+                    return null;
+            }
         }
     }
 }

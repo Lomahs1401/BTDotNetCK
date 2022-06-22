@@ -33,7 +33,7 @@ namespace BTDotNetCK.DAL
         public List<Product> GetListProducts()
         {
             List<Product> products = new List<Product>();
-            string queryGetAllProducts = @"select * from HANGHOA;";
+            string queryGetAllProducts = "GetListProduct";
             DataTable data = DataProvider.Instance.GetRecords(queryGetAllProducts);
             if (data.Rows.Count > 0)
             {
@@ -49,25 +49,52 @@ namespace BTDotNetCK.DAL
 
         public List<Product> GetProductsByName(string nameProduct)
         {
-            List<Product> products = new List<Product>();
-            string queryGetAllProducts = @"select * from HANGHOA where TenHangHoa like N'%" + nameProduct + "%';";
-            DataTable data = DataProvider.Instance.GetRecords(queryGetAllProducts);
-            if (data.Rows.Count > 0)
+           
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
             {
-                foreach (DataRow r in data.Rows)
+                List<Product> products = new List<Product>();
+                SqlCommand command = new SqlCommand
                 {
-                    products.Add(GetProduct(r));
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetProductWithName",
+                    Connection = connection
+                };
+                command.Parameters.AddWithValue("@Name", nameProduct);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                connection.Open();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+                if (data.Rows.Count > 0)
+                {
+                    foreach (DataRow r in data.Rows)
+                    {
+                        products.Add(GetProduct(r));
+                    }
+                    return products;
                 }
-                return products;
+                else
+                    return null;
             }
-            else
-                return null;
+            //string queryGetAllProducts = "GetProductWithName";
+            //DataTable data = DataProvider.Instance.GetRecords(queryGetAllProducts);
+            //if (data.Rows.Count > 0)
+            //{
+            //    foreach (DataRow r in data.Rows)
+            //    {
+            //        products.Add(GetProduct(r));
+            //    }
+            //    return products;
+            //}
+            //else
+            //    return null;
         }
 
         public List<Product> SortProductsByPriceAscending()
         {
             List<Product> products = new List<Product>();
-            string queryGetAllProductsByPriceAscending = @"select * from HANGHOA order by GiaTien;";
+            string queryGetAllProductsByPriceAscending ="SortByPriceASC";
             DataTable data = DataProvider.Instance.GetRecords(queryGetAllProductsByPriceAscending);
             foreach (DataRow r in data.Rows)
             {
@@ -79,7 +106,7 @@ namespace BTDotNetCK.DAL
         public List<Product> SortProductsByPriceDescending()
         {
             List<Product> products = new List<Product>();
-            string queryGetAllProductsByPriceDescending = @"select * from HANGHOA order by GiaTien desc;";
+            string queryGetAllProductsByPriceDescending = "SortByPriceDESC";
             DataTable data = DataProvider.Instance.GetRecords(queryGetAllProductsByPriceDescending);
             foreach (DataRow r in data.Rows)
             {
@@ -115,21 +142,21 @@ namespace BTDotNetCK.DAL
 
         public int GetNumberTotalCategory()
         {
-            string query = @"select count(ID_HangHoa) as TongMatHang from HANGHOA;";
+            string query = "GetTotalCategory";
             DataTable totalCategory = DataProvider.Instance.GetRecords(query);
             return Convert.ToInt32(totalCategory.Rows[0]["TongMatHang"].ToString());
         }
 
         public int GetNumberTotalFoodCategory()
         {
-            string query = @"select count(ID_HangHoa) as TongMatHangThucAn from HANGHOA where Loai = N'Thức ăn';";
+            string query = "GetTotalFood";
             DataTable totalFoodCategory = DataProvider.Instance.GetRecords(query);
             return Convert.ToInt32(totalFoodCategory.Rows[0]["TongMatHangThucAn"].ToString());
         }
 
         public int GetNumberTotalDrinkCategory()
         {
-            string query = @"select count(ID_HangHoa) as TongMatHangDoUong from HANGHOA where Loai = N'Đồ uống';";
+            string query = "GetTotalDrink";
             DataTable totalDrinkCategory = DataProvider.Instance.GetRecords(query);
             return Convert.ToInt32(totalDrinkCategory.Rows[0]["TongMatHangDoUong"].ToString());
         }
@@ -159,33 +186,93 @@ namespace BTDotNetCK.DAL
 
         public bool AddProduct(Product product)
         {
-            string queryAddNewProduct = @"insert into HANGHOA (ID_HangHoa, TenHangHoa, Loai, SoLuongDaBan, GiaTien, Anh) " +
-                "values ('" + product.ID_Product + "', N'" + product.NameProduct + "', N'" + product.Category + "', " + 
-                            product.QuantitySold + ", " + product.Price + ", '" + product.Image + "')";
-            if (DataProvider.Instance.ExecuteDB(queryAddNewProduct) != -1)
-                return true;
-            else
-                return false;
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "Add_New_Product",
+                    Connection = connection
+                };
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                command.Parameters.AddWithValue("@ID_Product", product.ID_Product);
+                command.Parameters.AddWithValue("@NameProduct", product.NameProduct);
+                command.Parameters.AddWithValue("@Category", product.Category);
+                command.Parameters.AddWithValue("@QuantitySold", product.QuantitySold);
+                command.Parameters.AddWithValue("@Price", product.Price);
+                command.Parameters.AddWithValue("@Image", product.Image);
+                int ret = command.ExecuteNonQuery();
+                if (ret > 0)
+                    return true;
+                else
+                    return false;
+            }
+            //string queryAddNewProduct = Add_New_Product +
+            //    "values ('" + product.ID_Product + "', N'" + product.NameProduct + "', N'" + product.Category + "', " + 
+            //                product.QuantitySold + ", " + product.Price + ", '" + product.Image + "')";
+            //if (DataProvider.Instance.ExecuteDB(queryAddNewProduct) != -1)
+            //    return true;
+            //else
+            //    return false;
         }
 
         public bool UpdateProduct(Product product)
         {
-            string queryUpdateProduct = @"update HANGHOA set TenHangHoa = N'" + product.NameProduct + 
-                                            "', Loai = N'" + product.Category + "', GiaTien = '" + product.Price + 
-                                            "' where ID_HangHoa = '" + product.ID_Product + "';";
-            if (DataProvider.Instance.ExecuteDB(queryUpdateProduct) != -1)
-                return true;
-            else
-                return false;
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "UPDATE_PRODUCT",
+                    Connection = connection
+                };
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                command.Parameters.AddWithValue("@ID_Product", product.ID_Product);
+                command.Parameters.AddWithValue("@NameProduct", product.NameProduct);
+                command.Parameters.AddWithValue("@Category", product.Category);
+                command.Parameters.AddWithValue("@Price", product.Price);
+                int ret = command.ExecuteNonQuery();
+                if (ret > 0)
+                    return true;
+                else
+                    return false;
+            }
+            //string queryUpdateProduct = @"update HANGHOA set TenHangHoa = N'" + product.NameProduct + 
+            //                                "', Loai = N'" + product.Category + "', GiaTien = '" + product.Price + 
+            //                                "' where ID_HangHoa = '" + product.ID_Product + "';";
+            //if (DataProvider.Instance.ExecuteDB(queryUpdateProduct) != -1)
+            //    return true;
+            //else
+            //    return false;
         }
 
         public bool DeleteProduct(string ID_Product)
         {
-            string queryDeleteProduct = @"delete from HANGHOA where ID_HangHoa = '" + ID_Product + "';";
-            if (DataProvider.Instance.ExecuteDB(queryDeleteProduct) != -1)
-                return true;
-            else
-                return false;
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "DELETE_PRODUCT",
+                    Connection = connection
+                };
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                command.Parameters.AddWithValue("@ID_PRODUCT", ID_Product);
+                int ret = command.ExecuteNonQuery();
+                if (ret > 0)
+                    return true;
+                else
+                    return false;
+            }
         }
     }
 }

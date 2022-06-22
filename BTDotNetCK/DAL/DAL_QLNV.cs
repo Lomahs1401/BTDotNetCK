@@ -170,38 +170,51 @@ namespace BTDotNetCK.DAL
 
         public string GetImage(string accountUsername)
         {
-            string queryGetImage = @"select Anh from TAIKHOAN where TenDangNhap = '" + accountUsername + "';";
-            DataTable image = DataProvider.Instance.GetRecords(queryGetImage);
-            return image.Rows[0]["Anh"].ToString();
+            using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "GetImg",
+                    Connection = connection
+                };
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Parameters.AddWithValue("@Account", accountUsername);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                sqlDataAdapter.Fill(data);
+                if (data.Rows.Count > 0)
+                    return data.Rows[0]["Anh"].ToString();
+                else
+                    return null;
+            }
         }
 
         public int GetNumberTotalStaff()
         {
-            string queryGetNumberStaff = @"select count(ID_QuanLy) as TongNhanVien from NhanVienQuanLy 
-                                            where TenDangNhap in (select TenDangNhap from TAIKHOAN where Quyen = '1');";
+            string queryGetNumberStaff = @"GetTotalStaff";
             DataTable totalStaff = DataProvider.Instance.GetRecords(queryGetNumberStaff);
             return Convert.ToInt32(totalStaff.Rows[0]["TongNhanVien"].ToString());
         }
 
         public int GetNumberTotalMaleStaff()
         {
-            string queryGetNumberMaleStaff = @"select count(ID_QuanLy) as TongNhanVienNam from NhanVienQuanLy where GioiTinh = 'Nam' 
-                                                and TenDangNhap in (select TenDangNhap from TAIKHOAN where Quyen = '1');";
+            string queryGetNumberMaleStaff = @"GetTotalMaleStaff";
             DataTable totalMaleStaff = DataProvider.Instance.GetRecords(queryGetNumberMaleStaff);
             return Convert.ToInt32(totalMaleStaff.Rows[0]["TongNhanVienNam"].ToString());
         }
 
         public int GetNumberTotalFemaleStaff()
         {
-            string queryGetNumberFemaleStaff = @"select count(ID_QuanLy) as TongNhanVienNu from NhanVienQuanLy where GioiTinh = N'Nữ' 
-                                                and TenDangNhap in (select TenDangNhap from TAIKHOAN where Quyen = '1');";
+            string queryGetNumberFemaleStaff = @"GetTotalFemaleStaff";
             DataTable totalFemaleStaff = DataProvider.Instance.GetRecords(queryGetNumberFemaleStaff);
             return Convert.ToInt32(totalFemaleStaff.Rows[0]["TongNhanVienNu"].ToString());
         }
 
         public string GetLastID()
         {
-            string queryGetLastIDStaff = @"select top 1 ID_QuanLy from NhanVienQuanLy order by ID_QuanLy desc;";
+            string queryGetLastIDStaff = @"GetLastID_NV";
             DataTable lastID = DataProvider.Instance.GetRecords(queryGetLastIDStaff);
             if (lastID.Rows[0]["ID_QuanLy"] != null)
                 return lastID.Rows[0]["ID_QuanLy"].ToString();
@@ -262,16 +275,6 @@ namespace BTDotNetCK.DAL
                 else
                     return false;
             }
-            //string queryAddNewStaffAccount = @"insert into TAIKHOAN (TenDangNhap, MatKhau, Quyen) " +
-            //    "values ('" + username + "', '" + password + "', '1')";
-            //string queryAddNewStaff = @"insert into NhanVienQuanLy (ID_QuanLy, HoVaTen, Email, NgaySinh, NgayVaoLam, NgayNghiViec, GioiTinh, SDT, SoCCCD, DiaChi, Anh, TenDangNhap) " +
-            //    "values ('" + staff.ID_Staff + "', N'" + staff.NameStaff + "', '" + staff.Email + "', '" + staff.DateOfBirth + "', '"
-            //                + staff.StartDate + "', '" + staff.EndDate + "', N'" + staff.Gender + "', '" + staff.Phone + "', '"
-            //                + staff.ID_Card + "', N'" + staff.Address + "', '" + staff.Image + "', '" + username + "')";
-            //if (DataProvider.Instance.ExecuteDB(queryAddNewStaffAccount) != -1 && DataProvider.Instance.ExecuteDB(queryAddNewStaff) != -1)
-            //    return true;
-            //else
-            //    return false;
         }
 
         public bool UpdateStaff(Staff staff)
