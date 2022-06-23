@@ -82,6 +82,7 @@
     <Compile Include="BLL\BLL_ForgotPassword.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_QLBH.cs" />
+    <Compile Include="BLL\BLL_QLDT.cs" />
     <Compile Include="BLL\BLL_QLHD.cs" />
     <Compile Include="BLL\BLL_QLKH.cs" />
     <Compile Include="BLL\BLL_QLNV.cs" />
@@ -103,8 +104,10 @@
     <Compile Include="DTO\Order.cs" />
     <Compile Include="DTO\OrderDetail.cs" />
     <Compile Include="DTO\Product.cs" />
+    <Compile Include="DTO\Revenue.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\Table.cs" />
+    <Compile Include="DTO\TopProduct.cs" />
     <Compile Include="GUI\FormAddHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +353,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Coffee-icon.ico" />
+    <Content Include="Order\Order.txt" />
     <None Include="Img\Product\tra sua dau nhieu thach.jpg" />
     <None Include="Img\Product\tra sua dau do.jpg" />
     <None Include="Img\Product\thom ep.jpg" />
@@ -473,6 +477,7 @@
     <None Include="Img\Icon\cookies.png" />
     <None Include="Img\GI\paimon.png" />
     <None Include="Img\Icon\coffee-shop.png" />
+    <None Include="Img\Icon\default.jpg" />
     <Content Include="Img\Icon\error.png" />
     <None Include="Img\Icon\food.png" />
     <Content Include="Img\Icon\icons8_cancel_45px.png" />
@@ -568,5 +573,6 @@
   <ItemGroup>
     <None Include="Img\Icon\user icon.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -250,7 +250,6 @@ namespace BTDotNetCK.DAL
 
         public bool AddStaff(Staff staff, string username, string password)
         {
-            //MessageBox.Show(staff.EndDate.ToString());
             using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
             {
                 SqlCommand command = new SqlCommand
@@ -273,7 +272,7 @@ namespace BTDotNetCK.DAL
                 command.Parameters.AddWithValue("@Phone", staff.Phone);
                 command.Parameters.AddWithValue("@ID_Card", staff.ID_Card);
                 command.Parameters.AddWithValue("@Address", staff.Address);
-                command.Parameters.AddWithValue("@Image", staff.Image);
+                command.Parameters.AddWithValue("@Image", staff.Image ?? Convert.DBNull);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);
                 int ret = command.ExecuteNonQuery();
@@ -305,7 +304,7 @@ namespace BTDotNetCK.DAL
                 command.Parameters.AddWithValue("@Phone", staff.Phone);
                 command.Parameters.AddWithValue("@SoCCCD", staff.ID_Card);
                 command.Parameters.AddWithValue("@Address", staff.Address);
-                command.Parameters.AddWithValue("@Image", staff.Image);
+                command.Parameters.AddWithValue("@Image", staff.Image ?? Convert.DBNull);
                 command.Parameters.AddWithValue("@ID_QuanLy", staff.ID_Staff);
                 int ret = command.ExecuteNonQuery();
                 if (ret > 0)

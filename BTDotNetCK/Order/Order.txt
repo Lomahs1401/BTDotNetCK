@@ -1,0 +1,14 @@
+			THANH TOÁN HÓA ĐƠN
+		==================================
+	 Mã hóa đơn: HD0016
+	 Tên nhân viên: Đào Thủy Trang
+	 Ngày đặt món: 6/23/2022 11:39:49 AM
+	 Tên khách hàng: Ngô Tấn Dũng
+		==================================
+	 Tên món: Cà phê đen máy	Số lượng: 2	Giá tiền: 17000VNĐ	Thành tiền: 34000VNĐ
+	 Tên món: Sữa tươi nóng	Số lượng: 1	Giá tiền: 23000VNĐ	Thành tiền: 23000VNĐ
+	 Tên món: Kem ly dâu	Số lượng: 3	Giá tiền: 30000VNĐ	Thành tiền: 90000VNĐ
+	 Mã bàn: T0028
+	 Tầng: 3
+		==================================
+	 Tổng tiền: 147000VNĐ

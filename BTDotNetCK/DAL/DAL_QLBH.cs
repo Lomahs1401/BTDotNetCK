@@ -49,7 +49,6 @@ namespace BTDotNetCK.DAL
 
         public List<Product> GetProductsByName(string nameProduct)
         {
-           
             using (SqlConnection connection = new SqlConnection(DBConnection.GetConnection()))
             {
                 List<Product> products = new List<Product>();
@@ -77,18 +76,6 @@ namespace BTDotNetCK.DAL
                 else
                     return null;
             }
-            //string queryGetAllProducts = "GetProductWithName";
-            //DataTable data = DataProvider.Instance.GetRecords(queryGetAllProducts);
-            //if (data.Rows.Count > 0)
-            //{
-            //    foreach (DataRow r in data.Rows)
-            //    {
-            //        products.Add(GetProduct(r));
-            //    }
-            //    return products;
-            //}
-            //else
-            //    return null;
         }
 
         public List<Product> SortProductsByPriceAscending()
@@ -168,7 +155,7 @@ namespace BTDotNetCK.DAL
             if (lastID.Rows.Count > 0)
                 return lastID.Rows[0]["ID_HangHoa"].ToString();
             else
-                return "H0000";
+                return null;
         }
 
         public Product GetProduct(DataRow r)
@@ -203,20 +190,13 @@ namespace BTDotNetCK.DAL
                 command.Parameters.AddWithValue("@Category", product.Category);
                 command.Parameters.AddWithValue("@QuantitySold", product.QuantitySold);
                 command.Parameters.AddWithValue("@Price", product.Price);
-                command.Parameters.AddWithValue("@Image", product.Image);
+                command.Parameters.AddWithValue("@Image", product.Image ?? Convert.DBNull);
                 int ret = command.ExecuteNonQuery();
                 if (ret > 0)
                     return true;
                 else
                     return false;
             }
-            //string queryAddNewProduct = Add_New_Product +
-            //    "values ('" + product.ID_Product + "', N'" + product.NameProduct + "', N'" + product.Category + "', " + 
-            //                product.QuantitySold + ", " + product.Price + ", '" + product.Image + "')";
-            //if (DataProvider.Instance.ExecuteDB(queryAddNewProduct) != -1)
-            //    return true;
-            //else
-            //    return false;
         }
 
         public bool UpdateProduct(Product product)
@@ -237,19 +217,13 @@ namespace BTDotNetCK.DAL
                 command.Parameters.AddWithValue("@NameProduct", product.NameProduct);
                 command.Parameters.AddWithValue("@Category", product.Category);
                 command.Parameters.AddWithValue("@Price", product.Price);
+                command.Parameters.AddWithValue("@Image", product.Image ?? Convert.DBNull);
                 int ret = command.ExecuteNonQuery();
                 if (ret > 0)
                     return true;
                 else
                     return false;
             }
-            //string queryUpdateProduct = @"update HANGHOA set TenHangHoa = N'" + product.NameProduct + 
-            //                                "', Loai = N'" + product.Category + "', GiaTien = '" + product.Price + 
-            //                                "' where ID_HangHoa = '" + product.ID_Product + "';";
-            //if (DataProvider.Instance.ExecuteDB(queryUpdateProduct) != -1)
-            //    return true;
-            //else
-            //    return false;
         }
 
         public bool UpdateQuantityProduct(string ID_Product, int quantity)

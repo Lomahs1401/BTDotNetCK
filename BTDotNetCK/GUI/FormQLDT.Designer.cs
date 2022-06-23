@@ -51,38 +51,35 @@ namespace BTDotNetCK.GUI
             this.btnCustomDate = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numberOrder = new System.Windows.Forms.Label();
             this.lblNumberOrder = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.totalRevenue = new System.Windows.Forms.Label();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.totalProfit = new System.Windows.Forms.Label();
             this.lblTotalProfit = new System.Windows.Forms.Label();
             this.chartGrossRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartTopFiveBooks = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartTopFiveProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.lblSellBook = new System.Windows.Forms.Label();
-            this.sellBook = new System.Windows.Forms.Label();
-            this.lblRemainingBook = new System.Windows.Forms.Label();
-            this.remainingBook = new System.Windows.Forms.Label();
+            this.lblQuantitySold = new System.Windows.Forms.Label();
+            this.quantitySold = new System.Windows.Forms.Label();
+            this.lblTotalCategory = new System.Windows.Forms.Label();
+            this.totalCategory = new System.Windows.Forms.Label();
             this.lblNumberCustomer = new System.Windows.Forms.Label();
             this.numberCustomer = new System.Windows.Forms.Label();
             this.lblStatistic = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dgvHHTLI = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvMHBI = new Guna.UI2.WinForms.Guna2DataGridView();
             this.NameBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblUnderstockBook = new System.Windows.Forms.Label();
+            this.lblUnderstockProduct = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblEndDate = new System.Windows.Forms.Label();
@@ -95,13 +92,13 @@ namespace BTDotNetCK.GUI
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTopFiveBooks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTopFiveProducts)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHHTLI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMHBI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +129,7 @@ namespace BTDotNetCK.GUI
             // 
             this.btnThisQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThisQuarter.BackColor = System.Drawing.Color.Transparent;
+            this.btnThisQuarter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThisQuarter.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnThisQuarter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThisQuarter.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,11 +141,13 @@ namespace BTDotNetCK.GUI
             this.btnThisQuarter.Text = "Quý này";
             this.btnThisQuarter.UseVisualStyleBackColor = false;
             this.btnThisQuarter.Click += new System.EventHandler(this.BtnThisQuarter_Click);
+            this.btnThisQuarter.MouseLeave += new System.EventHandler(this.BtnThisQuarter_MouseLeave);
             // 
             // btnThisMonth
             // 
             this.btnThisMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThisMonth.BackColor = System.Drawing.Color.Transparent;
+            this.btnThisMonth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThisMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnThisMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThisMonth.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,11 +159,13 @@ namespace BTDotNetCK.GUI
             this.btnThisMonth.Text = "Tháng này";
             this.btnThisMonth.UseVisualStyleBackColor = false;
             this.btnThisMonth.Click += new System.EventHandler(this.BtnThisMonth_Click);
+            this.btnThisMonth.MouseLeave += new System.EventHandler(this.BtnThisMonth_MouseLeave);
             // 
             // btnLast7Days
             // 
             this.btnLast7Days.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLast7Days.BackColor = System.Drawing.Color.Transparent;
+            this.btnLast7Days.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLast7Days.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnLast7Days.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast7Days.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,11 +177,13 @@ namespace BTDotNetCK.GUI
             this.btnLast7Days.Text = "7 ngày qua";
             this.btnLast7Days.UseVisualStyleBackColor = false;
             this.btnLast7Days.Click += new System.EventHandler(this.BtnLast7Days_Click);
+            this.btnLast7Days.MouseLeave += new System.EventHandler(this.BtnLast7Days_MouseLeave);
             // 
             // btnToday
             // 
             this.btnToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnToday.BackColor = System.Drawing.Color.Transparent;
+            this.btnToday.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnToday.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToday.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,11 +195,13 @@ namespace BTDotNetCK.GUI
             this.btnToday.Text = "Hôm nay";
             this.btnToday.UseVisualStyleBackColor = false;
             this.btnToday.Click += new System.EventHandler(this.BtnToday_Click);
+            this.btnToday.MouseLeave += new System.EventHandler(this.BtnToday_MouseLeave);
             // 
             // btnCustomDate
             // 
             this.btnCustomDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCustomDate.BackColor = System.Drawing.Color.Transparent;
+            this.btnCustomDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomDate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnCustomDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomDate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,11 +213,13 @@ namespace BTDotNetCK.GUI
             this.btnCustomDate.Text = "Tùy chọn";
             this.btnCustomDate.UseVisualStyleBackColor = false;
             this.btnCustomDate.Click += new System.EventHandler(this.BtnCustomDate_Click);
+            this.btnCustomDate.MouseLeave += new System.EventHandler(this.BtnCustomDate_MouseLeave);
             // 
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOK.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,12 +231,12 @@ namespace BTDotNetCK.GUI
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
+            this.btnOK.MouseLeave += new System.EventHandler(this.BtnOK_MouseLeave);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(200)))), ((int)(((byte)(210)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.numberOrder);
             this.panel1.Controls.Add(this.lblNumberOrder);
@@ -236,18 +244,6 @@ namespace BTDotNetCK.GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(225, 75);
             this.panel1.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(180, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 16);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "+0%";
             // 
             // pictureBox1
             // 
@@ -287,7 +283,6 @@ namespace BTDotNetCK.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(200)))), ((int)(((byte)(210)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.totalRevenue);
             this.panel2.Controls.Add(this.lblTotalRevenue);
@@ -295,18 +290,6 @@ namespace BTDotNetCK.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(348, 75);
             this.panel2.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(300, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 16);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "+0%";
             // 
             // pictureBox2
             // 
@@ -349,7 +332,6 @@ namespace BTDotNetCK.GUI
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(200)))), ((int)(((byte)(210)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.totalProfit);
             this.panel3.Controls.Add(this.lblTotalProfit);
@@ -357,17 +339,6 @@ namespace BTDotNetCK.GUI
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(379, 75);
             this.panel3.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Fuchsia;
-            this.label5.Location = new System.Drawing.Point(325, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 16);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "+0%";
             // 
             // pictureBox3
             // 
@@ -458,11 +429,11 @@ namespace BTDotNetCK.GUI
             title1.Text = "Tổng doanh thu";
             this.chartGrossRevenue.Titles.Add(title1);
             // 
-            // chartTopFiveBooks
+            // chartTopFiveProducts
             // 
-            this.chartTopFiveBooks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.chartTopFiveProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.chartTopFiveBooks.BackColor = System.Drawing.Color.Transparent;
+            this.chartTopFiveProducts.BackColor = System.Drawing.Color.Transparent;
             chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea2.AxisX.TitleForeColor = System.Drawing.Color.BlanchedAlmond;
@@ -471,17 +442,17 @@ namespace BTDotNetCK.GUI
             chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(200)))), ((int)(((byte)(210)))));
             chartArea2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(200)))), ((int)(((byte)(210)))));
             chartArea2.Name = "ChartArea1";
-            this.chartTopFiveBooks.ChartAreas.Add(chartArea2);
+            this.chartTopFiveProducts.ChartAreas.Add(chartArea2);
             legend2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(200)))), ((int)(((byte)(210)))));
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             legend2.IsTextAutoFit = false;
             legend2.Name = "Legend1";
-            this.chartTopFiveBooks.Legends.Add(legend2);
-            this.chartTopFiveBooks.Location = new System.Drawing.Point(603, 147);
-            this.chartTopFiveBooks.Name = "chartTopFiveBooks";
-            this.chartTopFiveBooks.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            this.chartTopFiveBooks.PaletteCustomColors = new System.Drawing.Color[] {
+            this.chartTopFiveProducts.Legends.Add(legend2);
+            this.chartTopFiveProducts.Location = new System.Drawing.Point(603, 147);
+            this.chartTopFiveProducts.Name = "chartTopFiveProducts";
+            this.chartTopFiveProducts.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartTopFiveProducts.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(160)))), ((int)(((byte)(139))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(188)))), ((int)(((byte)(0))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(88)))), ((int)(((byte)(127))))),
@@ -502,15 +473,15 @@ namespace BTDotNetCK.GUI
             series2.Name = "Series1";
             series2.XValueMember = "Key";
             series2.YValueMembers = "Value";
-            this.chartTopFiveBooks.Series.Add(series2);
-            this.chartTopFiveBooks.Size = new System.Drawing.Size(376, 439);
-            this.chartTopFiveBooks.TabIndex = 22;
-            this.chartTopFiveBooks.Text = "chart2";
+            this.chartTopFiveProducts.Series.Add(series2);
+            this.chartTopFiveProducts.Size = new System.Drawing.Size(376, 439);
+            this.chartTopFiveProducts.TabIndex = 22;
+            this.chartTopFiveProducts.Text = "chart2";
             title2.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
             title2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title2.Name = "Title1";
-            title2.Text = "5 Sách bán chạy nhất";
-            this.chartTopFiveBooks.Titles.Add(title2);
+            title2.Text = "Top mặt hàng bán chạy nhất";
+            this.chartTopFiveProducts.Titles.Add(title2);
             // 
             // panel4
             // 
@@ -519,10 +490,10 @@ namespace BTDotNetCK.GUI
             this.panel4.Controls.Add(this.iconPictureBox4);
             this.panel4.Controls.Add(this.iconPictureBox3);
             this.panel4.Controls.Add(this.iconPictureBox1);
-            this.panel4.Controls.Add(this.lblSellBook);
-            this.panel4.Controls.Add(this.sellBook);
-            this.panel4.Controls.Add(this.lblRemainingBook);
-            this.panel4.Controls.Add(this.remainingBook);
+            this.panel4.Controls.Add(this.lblQuantitySold);
+            this.panel4.Controls.Add(this.quantitySold);
+            this.panel4.Controls.Add(this.lblTotalCategory);
+            this.panel4.Controls.Add(this.totalCategory);
             this.panel4.Controls.Add(this.lblNumberCustomer);
             this.panel4.Controls.Add(this.numberCustomer);
             this.panel4.Controls.Add(this.lblStatistic);
@@ -582,53 +553,53 @@ namespace BTDotNetCK.GUI
             this.iconPictureBox1.TabIndex = 26;
             this.iconPictureBox1.TabStop = false;
             // 
-            // lblSellBook
+            // lblQuantitySold
             // 
-            this.lblSellBook.AutoSize = true;
-            this.lblSellBook.BackColor = System.Drawing.Color.Transparent;
-            this.lblSellBook.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSellBook.ForeColor = System.Drawing.Color.Black;
-            this.lblSellBook.Location = new System.Drawing.Point(50, 149);
-            this.lblSellBook.Name = "lblSellBook";
-            this.lblSellBook.Size = new System.Drawing.Size(115, 16);
-            this.lblSellBook.TabIndex = 25;
-            this.lblSellBook.Text = "Số lượng đã bán";
+            this.lblQuantitySold.AutoSize = true;
+            this.lblQuantitySold.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuantitySold.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantitySold.ForeColor = System.Drawing.Color.Black;
+            this.lblQuantitySold.Location = new System.Drawing.Point(41, 147);
+            this.lblQuantitySold.Name = "lblQuantitySold";
+            this.lblQuantitySold.Size = new System.Drawing.Size(151, 16);
+            this.lblQuantitySold.TabIndex = 25;
+            this.lblQuantitySold.Text = "Số lượng hàng đã bán";
             // 
-            // sellBook
+            // quantitySold
             // 
-            this.sellBook.AutoSize = true;
-            this.sellBook.BackColor = System.Drawing.Color.Transparent;
-            this.sellBook.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sellBook.ForeColor = System.Drawing.Color.Black;
-            this.sellBook.Location = new System.Drawing.Point(55, 172);
-            this.sellBook.Name = "sellBook";
-            this.sellBook.Size = new System.Drawing.Size(63, 19);
-            this.sellBook.TabIndex = 24;
-            this.sellBook.Text = "100000";
+            this.quantitySold.AutoSize = true;
+            this.quantitySold.BackColor = System.Drawing.Color.Transparent;
+            this.quantitySold.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantitySold.ForeColor = System.Drawing.Color.Black;
+            this.quantitySold.Location = new System.Drawing.Point(49, 173);
+            this.quantitySold.Name = "quantitySold";
+            this.quantitySold.Size = new System.Drawing.Size(63, 19);
+            this.quantitySold.TabIndex = 24;
+            this.quantitySold.Text = "100000";
             // 
-            // lblRemainingBook
+            // lblTotalCategory
             // 
-            this.lblRemainingBook.AutoSize = true;
-            this.lblRemainingBook.BackColor = System.Drawing.Color.Transparent;
-            this.lblRemainingBook.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRemainingBook.ForeColor = System.Drawing.Color.Black;
-            this.lblRemainingBook.Location = new System.Drawing.Point(50, 88);
-            this.lblRemainingBook.Name = "lblRemainingBook";
-            this.lblRemainingBook.Size = new System.Drawing.Size(130, 16);
-            this.lblRemainingBook.TabIndex = 23;
-            this.lblRemainingBook.Text = "Số lượng hàng còn";
+            this.lblTotalCategory.AutoSize = true;
+            this.lblTotalCategory.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalCategory.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCategory.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalCategory.Location = new System.Drawing.Point(43, 86);
+            this.lblTotalCategory.Name = "lblTotalCategory";
+            this.lblTotalCategory.Size = new System.Drawing.Size(141, 16);
+            this.lblTotalCategory.TabIndex = 23;
+            this.lblTotalCategory.Text = "Số mặt hàng hiện tại";
             // 
-            // remainingBook
+            // totalCategory
             // 
-            this.remainingBook.AutoSize = true;
-            this.remainingBook.BackColor = System.Drawing.Color.Transparent;
-            this.remainingBook.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remainingBook.ForeColor = System.Drawing.Color.Black;
-            this.remainingBook.Location = new System.Drawing.Point(55, 109);
-            this.remainingBook.Name = "remainingBook";
-            this.remainingBook.Size = new System.Drawing.Size(63, 19);
-            this.remainingBook.TabIndex = 22;
-            this.remainingBook.Text = "100000";
+            this.totalCategory.AutoSize = true;
+            this.totalCategory.BackColor = System.Drawing.Color.Transparent;
+            this.totalCategory.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCategory.ForeColor = System.Drawing.Color.Black;
+            this.totalCategory.Location = new System.Drawing.Point(49, 112);
+            this.totalCategory.Name = "totalCategory";
+            this.totalCategory.Size = new System.Drawing.Size(63, 19);
+            this.totalCategory.TabIndex = 22;
+            this.totalCategory.Text = "100000";
             // 
             // lblNumberCustomer
             // 
@@ -636,7 +607,7 @@ namespace BTDotNetCK.GUI
             this.lblNumberCustomer.BackColor = System.Drawing.Color.Transparent;
             this.lblNumberCustomer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumberCustomer.ForeColor = System.Drawing.Color.Black;
-            this.lblNumberCustomer.Location = new System.Drawing.Point(48, 30);
+            this.lblNumberCustomer.Location = new System.Drawing.Point(43, 27);
             this.lblNumberCustomer.Name = "lblNumberCustomer";
             this.lblNumberCustomer.Size = new System.Drawing.Size(145, 16);
             this.lblNumberCustomer.TabIndex = 21;
@@ -648,7 +619,7 @@ namespace BTDotNetCK.GUI
             this.numberCustomer.BackColor = System.Drawing.Color.Transparent;
             this.numberCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberCustomer.ForeColor = System.Drawing.Color.Black;
-            this.numberCustomer.Location = new System.Drawing.Point(55, 51);
+            this.numberCustomer.Location = new System.Drawing.Point(49, 53);
             this.numberCustomer.Name = "numberCustomer";
             this.numberCustomer.Size = new System.Drawing.Size(63, 19);
             this.numberCustomer.TabIndex = 20;
@@ -672,27 +643,28 @@ namespace BTDotNetCK.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.dgvHHTLI);
-            this.panel5.Controls.Add(this.lblUnderstockBook);
+            this.panel5.Controls.Add(this.dgvMHBI);
+            this.panel5.Controls.Add(this.lblUnderstockProduct);
             this.panel5.Location = new System.Drawing.Point(203, 378);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(394, 195);
             this.panel5.TabIndex = 24;
             // 
-            // dgvHHTLI
+            // dgvMHBI
             // 
-            this.dgvHHTLI.AllowUserToAddRows = false;
-            this.dgvHHTLI.AllowUserToDeleteRows = false;
-            this.dgvHHTLI.AllowUserToResizeColumns = false;
-            this.dgvHHTLI.AllowUserToResizeRows = false;
+            this.dgvMHBI.AllowUserToAddRows = false;
+            this.dgvMHBI.AllowUserToDeleteRows = false;
+            this.dgvMHBI.AllowUserToResizeColumns = false;
+            this.dgvMHBI.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvHHTLI.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvHHTLI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvMHBI.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMHBI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvHHTLI.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHHTLI.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvHHTLI.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvHHTLI.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvMHBI.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMHBI.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvMHBI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMHBI.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvMHBI.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -700,10 +672,10 @@ namespace BTDotNetCK.GUI
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHHTLI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvHHTLI.ColumnHeadersHeight = 30;
-            this.dgvHHTLI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvHHTLI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMHBI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMHBI.ColumnHeadersHeight = 30;
+            this.dgvMHBI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMHBI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameBook,
             this.Quantity});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -713,13 +685,13 @@ namespace BTDotNetCK.GUI
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHHTLI.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvHHTLI.EnableHeadersVisualStyles = false;
-            this.dgvHHTLI.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.dgvHHTLI.Location = new System.Drawing.Point(0, 17);
-            this.dgvHHTLI.Name = "dgvHHTLI";
-            this.dgvHHTLI.ReadOnly = true;
-            this.dgvHHTLI.RowHeadersVisible = false;
+            this.dgvMHBI.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMHBI.EnableHeadersVisualStyles = false;
+            this.dgvMHBI.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.dgvMHBI.Location = new System.Drawing.Point(0, 17);
+            this.dgvMHBI.Name = "dgvMHBI";
+            this.dgvMHBI.ReadOnly = true;
+            this.dgvMHBI.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F);
@@ -727,31 +699,31 @@ namespace BTDotNetCK.GUI
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHHTLI.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvHHTLI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHHTLI.Size = new System.Drawing.Size(389, 173);
-            this.dgvHHTLI.TabIndex = 29;
-            this.dgvHHTLI.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvHHTLI.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvHHTLI.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvHHTLI.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvHHTLI.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvHHTLI.ThemeStyle.BackColor = System.Drawing.Color.Silver;
-            this.dgvHHTLI.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.dgvHHTLI.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvHHTLI.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvHHTLI.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvHHTLI.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvHHTLI.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvHHTLI.ThemeStyle.HeaderStyle.Height = 30;
-            this.dgvHHTLI.ThemeStyle.ReadOnly = true;
-            this.dgvHHTLI.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvHHTLI.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvHHTLI.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvHHTLI.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.dgvHHTLI.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvHHTLI.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvHHTLI.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvMHBI.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMHBI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMHBI.Size = new System.Drawing.Size(389, 173);
+            this.dgvMHBI.TabIndex = 29;
+            this.dgvMHBI.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMHBI.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvMHBI.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvMHBI.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvMHBI.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvMHBI.ThemeStyle.BackColor = System.Drawing.Color.Silver;
+            this.dgvMHBI.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.dgvMHBI.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvMHBI.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvMHBI.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMHBI.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvMHBI.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMHBI.ThemeStyle.HeaderStyle.Height = 30;
+            this.dgvMHBI.ThemeStyle.ReadOnly = true;
+            this.dgvMHBI.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMHBI.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvMHBI.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMHBI.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.dgvMHBI.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvMHBI.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMHBI.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // NameBook
             // 
@@ -767,20 +739,20 @@ namespace BTDotNetCK.GUI
             this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Quantity.DataPropertyName = "Value";
             this.Quantity.FillWeight = 78.17259F;
-            this.Quantity.HeaderText = "Số lượng";
+            this.Quantity.HeaderText = "Số lượng bán được";
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
             // 
-            // lblUnderstockBook
+            // lblUnderstockProduct
             // 
-            this.lblUnderstockBook.AutoSize = true;
-            this.lblUnderstockBook.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnderstockBook.ForeColor = System.Drawing.Color.Black;
-            this.lblUnderstockBook.Location = new System.Drawing.Point(17, 0);
-            this.lblUnderstockBook.Name = "lblUnderstockBook";
-            this.lblUnderstockBook.Size = new System.Drawing.Size(145, 16);
-            this.lblUnderstockBook.TabIndex = 19;
-            this.lblUnderstockBook.Text = "Hàng hóa trữ lượng ít";
+            this.lblUnderstockProduct.AutoSize = true;
+            this.lblUnderstockProduct.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnderstockProduct.ForeColor = System.Drawing.Color.Black;
+            this.lblUnderstockProduct.Location = new System.Drawing.Point(17, 0);
+            this.lblUnderstockProduct.Name = "lblUnderstockProduct";
+            this.lblUnderstockProduct.Size = new System.Drawing.Size(107, 16);
+            this.lblUnderstockProduct.TabIndex = 19;
+            this.lblUnderstockProduct.Text = "Mặt hàng bán ít";
             // 
             // dtpStartDate
             // 
@@ -862,7 +834,7 @@ namespace BTDotNetCK.GUI
             this.Controls.Add(this.dtpStartDate);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.chartTopFiveBooks);
+            this.Controls.Add(this.chartTopFiveProducts);
             this.Controls.Add(this.chartGrossRevenue);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -894,7 +866,7 @@ namespace BTDotNetCK.GUI
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTopFiveBooks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTopFiveProducts)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
@@ -902,7 +874,7 @@ namespace BTDotNetCK.GUI
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHHTLI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMHBI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -930,17 +902,17 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.Label totalProfit;
         private System.Windows.Forms.Label lblTotalProfit;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartGrossRevenue;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTopFiveBooks;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTopFiveProducts;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblSellBook;
-        private System.Windows.Forms.Label sellBook;
-        private System.Windows.Forms.Label lblRemainingBook;
-        private System.Windows.Forms.Label remainingBook;
+        private System.Windows.Forms.Label lblQuantitySold;
+        private System.Windows.Forms.Label quantitySold;
+        private System.Windows.Forms.Label lblTotalCategory;
+        private System.Windows.Forms.Label totalCategory;
         private System.Windows.Forms.Label lblNumberCustomer;
         private System.Windows.Forms.Label numberCustomer;
         private System.Windows.Forms.Label lblStatistic;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lblUnderstockBook;
+        private System.Windows.Forms.Label lblUnderstockProduct;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblEndDate;
@@ -948,13 +920,10 @@ namespace BTDotNetCK.GUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvHHTLI;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvMHBI;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }

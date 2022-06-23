@@ -45,7 +45,8 @@ namespace BTDotNetCK.GUI
                 txtUserName.Text = Properties.Settings.Default.username;
                 txtPassword.Text = Properties.Settings.Default.password;
             }
-            if (Properties.Settings.Default.role == "Quản Trị")
+            radioAdmin.Checked = true;
+            if (Properties.Settings.Default.role == "Quản trị")
                 radioAdmin.Checked = true;
             else
                 radioEmployee.Checked = true;
@@ -82,20 +83,21 @@ namespace BTDotNetCK.GUI
                     return;
             }
             string nameStaff = BLL_Login.Instance.GetNameStaff(account);
-            if (cbSaveAcc.Checked)
-            {
-                Properties.Settings.Default.username = username;
-                Properties.Settings.Default.password = password;
-                Properties.Settings.Default.role = radioAdmin.Text;
-                Properties.Settings.Default.Save();
-            }
-            else
-            {
-                Properties.Settings.Default.Reset();
-            }
+            
             // Quản trị
             if (account.Role == 0)
             {
+                if (cbSaveAcc.Checked)
+                {
+                    Properties.Settings.Default.username = username;
+                    Properties.Settings.Default.password = password;
+                    Properties.Settings.Default.role = radioAdmin.Text;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.Reset();
+                }
                 Hide();
                 new FormMainMenuQTV(account.UserName, password, nameStaff).Show();
                 Dispose();
@@ -103,6 +105,17 @@ namespace BTDotNetCK.GUI
             // Nhân viên
             else
             {
+                if (cbSaveAcc.Checked)
+                {
+                    Properties.Settings.Default.username = username;
+                    Properties.Settings.Default.password = password;
+                    Properties.Settings.Default.role = radioEmployee.Text;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.Reset();
+                }
                 Hide();
                 new FormMainMenuNV(account.UserName, password, nameStaff).Show();
                 Dispose();

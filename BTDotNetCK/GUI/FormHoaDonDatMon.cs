@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace BTDotNetCK.GUI
     public partial class FormHoaDonDatMon : Form
     {
         private int Count = 0;
+        private string ID_Table = "";
+        public static bool isConfirmPrintOrder = false;
         static int z = 0;
         private readonly string accountUsername;
         public static string ID_Customer = "";
@@ -28,8 +31,14 @@ namespace BTDotNetCK.GUI
 
         private void FormHoaDonDatMon_Load(object sender, EventArgs e)
         {
+            cbTable.DropDownStyle = ComboBoxStyle.DropDown;
             timer1.Tick += new EventHandler(Timer1_Tick);
             timer1.Start();
+            List<CBB_TableItem> list = BLL_QLHD.Instance.GetCBB_TableItems();
+            foreach (CBB_TableItem item in list)
+            {
+                cbTable.Items.Add(item);
+            }
         }
 
         private void BtnAddMon_Click(object sender, EventArgs e)
@@ -56,13 +65,15 @@ namespace BTDotNetCK.GUI
             bool check = true;
             int[] error = new int[100];
             int indexError = 0;
-            if (panelMon.Controls.Count != 0)
+            if (ID_Table == "")
+                MessageBox.Show("Vui lòng chọn bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else if (panelMon.Controls.Count != 0)
             {
-                foreach(FormMon formMon in panelMon.Controls)
+                foreach (FormMon formMon in panelMon.Controls)
                 {
                     string ID_Product = formMon.GetID_Product();
                     Product product = BLL_QLBH.Instance.GetProductByID(ID_Product);
-                    if (formMon.GetQuantityText() == "0" || formMon.GetQuantityText() == "")
+                    if (formMon.GetQuantityText() == "0" || formMon.GetQuantityText() == "" || ID_Table == "")
                     {
                         check = false;
                         error[indexError] = panelMon.Controls.Count - panelMon.Controls.GetChildIndex(formMon);
@@ -94,8 +105,8 @@ namespace BTDotNetCK.GUI
                         }
 
                         string total = tbMoney.Text;
-                        Order newOrder = new Order(newID_Order.ToString(), DateTime.Now, 0.0, 
-                            Convert.ToInt32(total.Remove(total.Length - 3, 3)), ID_Staff, ID_Customer, "T0001");
+                        Order newOrder = new Order(newID_Order.ToString(), DateTime.Now, 0.0,
+                            Convert.ToInt32(total.Remove(total.Length - 3, 3)), ID_Staff, ID_Customer, ID_Table);
                         if (BLL_QLHD.Instance.AddOrder(newOrder))
                         {
                             OrderDetail newOrderDetail;
@@ -116,8 +127,35 @@ namespace BTDotNetCK.GUI
                                     return;
                             }
 
-                            MessageBox.Show("Đặt món thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (isConfirmPrintOrder)
+                            {
+                                string[] orderInfo = BLL_QLHD.Instance.ShowOrderInfo(newID_Order.ToString());
+                                string[][] orderDetailInfo = BLL_QLHD.Instance.ShowOrderTable(newID_Order.ToString());
+                                File.WriteAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t\t\tTHANH TOÁN HÓA ĐƠN\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t\t==================================\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t Mã hóa đơn: " + orderInfo[0] + "\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t Tên nhân viên: " + orderInfo[1] + "\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t Ngày đặt món: " + orderInfo[3] + "\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t Tên khách hàng: " + orderInfo[2] + "\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t\t==================================\n");
+                                for (int i = 0; i < orderDetailInfo.Length; i++)
+                                {
+                                    File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t Tên món: " + orderDetailInfo[i][0] + "\tSố lượng: "
+                                                    + orderDetailInfo[i][1] + "\tGiá tiền: " + orderDetailInfo[i][2] + "VNĐ\tThành tiền: " + orderDetailInfo[i][3] + "VNĐ\n");
+                                }
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t Mã bàn: " + orderInfo[5] + "\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t Tầng: " + orderInfo[6] + "\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t\t==================================\n");
+                                File.AppendAllText("C:\\Users\\lelon\\Desktop\\BTDotNetCK\\BTDotNetCK\\Order\\Order.txt", "\t Tổng tiền: " + orderInfo[4] + "VNĐ\n");
+
+                                MessageBox.Show("Đặt món thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                                MessageBox.Show("Đặt món thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             panelMon.Controls.Clear();
+                            ID_Table = "";
                         }
                         else
                             MessageBox.Show("Đặt món thất bại. Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -142,7 +180,7 @@ namespace BTDotNetCK.GUI
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            if (panelMon.Controls.Count > 0)
+            if (panelMon.Controls.Count > 0 || ID_Table != "")
             {
                 DialogResult result = MessageBox.Show("Xác nhận thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
@@ -193,6 +231,14 @@ namespace BTDotNetCK.GUI
                 formMon.SetIndexText();
             }
             Tinh();
+        }
+
+        private void CbTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTable.SelectedIndex >= 0)
+            {
+                ID_Table = ((CBB_TableItem)cbTable.SelectedItem).ID_Table.ToString();
+            }
         }
     }
 }

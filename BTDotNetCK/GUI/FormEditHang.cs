@@ -1,5 +1,6 @@
 ﻿using BTDotNetCK.BLL;
 using BTDotNetCK.DTO;
+using BTDotNetCK.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormEditHang : Form
     {
+        private readonly string defaultImg = "Img\\Icon\\default.jpg";
         private readonly string ID_Product;
         private string oldPath;
         public delegate void LoadData(object sender, EventArgs e);
@@ -50,7 +52,7 @@ namespace BTDotNetCK.GUI
 
         private void BtnOKs_Click(object sender, EventArgs e)
         {
-            bool isValidNameHang, isValidCategory, isValidPrice, isNewImage = false;
+            bool isValidNameHang, isValidCategory, isValidPrice;
             isValidNameHang = BLL_QLBH.Instance.ValidateNameHang(tbNameHang.Text);
             // Validate name
             if (!isValidNameHang)
@@ -87,23 +89,25 @@ namespace BTDotNetCK.GUI
                 msgValidatePrice.Text = "";
                 msgValidatePrice.ForeColor = Color.Black;
             }
-            // Validate image
-            if (foodAvatar.ImageLocation == DBNull.Value.ToString())
-            {
-                if (foodAvatar.Image != null)
-                    isNewImage = true;
-            }
-            else
-            {
-                if (foodAvatar.ImageLocation != oldPath)
-                    isNewImage = true;
-            }
+            //// Validate image
+            //if (foodAvatar.ImageLocation == DBNull.Value.ToString())
+            //{
+            //    if (foodAvatar.Image != null)
+            //        isNewImage = true;
+            //}
+            //else
+            //{
+            //    if (foodAvatar.ImageLocation != oldPath)
+            //    {
+            //        isNewImage = true;
+            //    }
+            //}
             if (isValidNameHang && isValidCategory && isValidPrice)
             {
                 DialogResult result = MessageBox.Show("Xác nhận lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (BLL_QLBH.Instance.UpdateProduct(GetAllInfo(ID_Product, isNewImage)))
+                    if (BLL_QLBH.Instance.UpdateProduct(GetAllInfo(ID_Product)))
                     {
                         MessageBox.Show("Sửa thông tin mặt hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         RefreshData(sender, e);
@@ -148,33 +152,28 @@ namespace BTDotNetCK.GUI
                 Dispose();
         }
 
-        private Product GetAllInfo(string newID_Product, bool isNewImage)
+        private Product GetAllInfo(string newID_Product)
         {
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-            if (isNewImage)
-            {
-                return new Product
-                {
-                    ID_Product = newID_Product,
-                    NameProduct = tbNameHang.Text,
-                    Category = cbCategory.SelectedItem.ToString(),
-                    QuantitySold = 0,
-                    Price = Convert.ToInt32(tbPrice.Text),
-                    Image = foodAvatar.ImageLocation.Remove(0, projectDirectory.Length + 1)
-                };
-            }
+            string path;
+            if (foodAvatar.Image == null)
+                path = null;
             else
             {
-                return new Product
-                {
-                    ID_Product = newID_Product,
-                    NameProduct = tbNameHang.Text,
-                    Category = cbCategory.SelectedItem.ToString(),
-                    QuantitySold = 0,
-                    Price = Convert.ToInt32(tbPrice.Text),
-                    Image = oldPath
-                };
+                if (oldPath == foodAvatar.ImageLocation)
+                    path = oldPath;
+                else
+                    path = foodAvatar.ImageLocation.Remove(0, projectDirectory.Length + 1);
             }
+            return new Product
+            {
+                ID_Product = newID_Product,
+                NameProduct = tbNameHang.Text,
+                Category = cbCategory.SelectedItem.ToString(),
+                QuantitySold = 0,
+                Price = Convert.ToInt32(tbPrice.Text),
+                Image = path
+            };
         }
 
         private void BtnDeleteImg_Click(object sender, EventArgs e)

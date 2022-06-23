@@ -16,7 +16,7 @@ namespace BTDotNetCK.GUI
     public partial class FormQLDT : Form
     {
         private Button btnCurrent;
-        //private readonly Dashboard model;
+        private readonly Dashboard model;
         public FormQLDT()
         {
             InitializeComponent();
@@ -24,40 +24,40 @@ namespace BTDotNetCK.GUI
             dtpEndDate.Value = DateTime.Now;
             btnLast7Days.Select();
 
-            //model = new Dashboard();
-            //LoadData();
-            
+            model = new Dashboard();
+            LoadData();
+
             btnOK.Hide();
             ActivateButton(btnLast7Days, Color.FromArgb(107, 83, 255));
         }
 
         private void FormQLDT_Load(object sender, EventArgs e)
         {
-            dgvHHTLI.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dgvHHTLI.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold);
+            dgvMHBI.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dgvMHBI.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold);
         }
 
-        //private void LoadData()
-        //{
-        //    bool refreshData = model.LoadData(dtpStartDate.Value, dtpEndDate.Value);
-        //    if (refreshData)
-        //    {
-        //        numberOrder.Text = model.NumOrders.ToString();
-        //        totalRevenue.Text = model.ToTalRevenue.ToString("##,#") + "VNĐ";
-        //        totalProfit.Text = model.TotalProfit.ToString("##,#") + "VNĐ";
-        //        numberCustomer.Text = model.NumCustomers.ToString();
-        //        remainingBook.Text = model.NumRemainingBooks.ToString();
-        //        sellBook.Text = model.NumSellBooks.ToString();
+        private void LoadData()
+        {
+            bool refreshData = model.LoadData(dtpStartDate.Value, dtpEndDate.Value);
+            if (refreshData)
+            {
+                numberOrder.Text = model.NumOrders.ToString();
+                totalRevenue.Text = model.ToTalRevenue.ToString("##,#") + "VNĐ";
+                totalProfit.Text = model.TotalProfit.ToString("##,#") + "VNĐ";
+                numberCustomer.Text = model.NumCustomers.ToString();
+                totalCategory.Text = model.NumCategoryProduct.ToString();
+                quantitySold.Text = model.NumQuantitySold.ToString();
 
-        //        chartGrossRevenue.DataSource = model.GrossRevenueList;
-        //        chartGrossRevenue.DataBind();
+                chartGrossRevenue.DataSource = model.GrossRevenueList;
+                chartGrossRevenue.DataBind();
 
-        //        chartTopFiveBooks.DataSource = model.TopBookLists;
-        //        chartTopFiveBooks.DataBind();
+                chartTopFiveProducts.DataSource = model.TopProductList;
+                chartTopFiveProducts.DataBind();
 
-        //        dgvHHTLI.DataSource = model.UnderstockBookList;
-        //    }
-        //}
+                dgvMHBI.DataSource = model.UnderstockProductList;
+            }
+        }
 
         private void DisableButton()
         {
@@ -136,7 +136,7 @@ namespace BTDotNetCK.GUI
             ActivateButton(sender, Color.FromArgb(107, 83, 255));
             dtpStartDate.Value = DateTime.Today.AddHours(0);
             dtpEndDate.Value = DateTime.Now;
-            //LoadData();
+            LoadData();
         }
 
         private void BtnLast7Days_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace BTDotNetCK.GUI
             ActivateButton(sender, Color.FromArgb(107, 83, 255));
             dtpStartDate.Value = DateTime.Today.AddDays(-7);
             dtpEndDate.Value = DateTime.Now;
-            //LoadData();
+            LoadData();
         }
 
         private void BtnThisMonth_Click(object sender, EventArgs e)
@@ -154,7 +154,7 @@ namespace BTDotNetCK.GUI
             ActivateButton(sender, Color.FromArgb(107, 83, 255));
             dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             dtpEndDate.Value = DateTime.Now;
-            //LoadData();
+            LoadData();
         }
 
         private void BtnThisQuarter_Click(object sender, EventArgs e)
@@ -170,12 +170,42 @@ namespace BTDotNetCK.GUI
             else
                 dtpStartDate.Value = new DateTime(DateTime.Today.Year, 10, 1);
             dtpEndDate.Value = DateTime.Now;
-            //LoadData();
+            LoadData();
         }
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
-            //LoadData();
+            LoadData();
+        }
+
+        private void BtnOK_MouseLeave(object sender, EventArgs e)
+        {
+            btnOK.ForeColor = Color.Black;
+        }
+
+        private void BtnCustomDate_MouseLeave(object sender, EventArgs e)
+        {
+            btnCustomDate.ForeColor = Color.Black;
+        }
+
+        private void BtnToday_MouseLeave(object sender, EventArgs e)
+        {
+            btnToday.ForeColor = Color.Black;
+        }
+
+        private void BtnLast7Days_MouseLeave(object sender, EventArgs e)
+        {
+            btnLast7Days.ForeColor = Color.Black;
+        }
+
+        private void BtnThisMonth_MouseLeave(object sender, EventArgs e)
+        {
+            btnThisMonth.ForeColor = Color.Black;
+        }
+
+        private void BtnThisQuarter_MouseLeave(object sender, EventArgs e)
+        {
+            btnThisQuarter.ForeColor = Color.Black;
         }
     }
 }

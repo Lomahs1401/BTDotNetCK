@@ -75,7 +75,7 @@ namespace BTDotNetCK.GUI
             this.panelOptions.Controls.Add(this.btnDeleteNV);
             this.panelOptions.Controls.Add(this.btnAddNV);
             this.panelOptions.Controls.Add(this.btnSuaNV);
-            this.panelOptions.Location = new System.Drawing.Point(829, 170);
+            this.panelOptions.Location = new System.Drawing.Point(829, 174);
             this.panelOptions.Name = "panelOptions";
             this.panelOptions.Size = new System.Drawing.Size(149, 149);
             this.panelOptions.TabIndex = 32;
@@ -164,7 +164,7 @@ namespace BTDotNetCK.GUI
             this.lblSNVNu.ForeColor = System.Drawing.Color.Black;
             this.lblSNVNu.Location = new System.Drawing.Point(815, 49);
             this.lblSNVNu.Name = "lblSNVNu";
-            this.lblSNVNu.Size = new System.Drawing.Size(36, 19);
+            this.lblSNVNu.Size = new System.Drawing.Size(29, 16);
             this.lblSNVNu.TabIndex = 52;
             this.lblSNVNu.Text = "100";
             // 
@@ -177,7 +177,7 @@ namespace BTDotNetCK.GUI
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(766, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 19);
+            this.label7.Size = new System.Drawing.Size(113, 16);
             this.label7.TabIndex = 51;
             this.label7.Text = "Số nhân viên nữ";
             // 
@@ -190,7 +190,7 @@ namespace BTDotNetCK.GUI
             this.lblSNVNam.ForeColor = System.Drawing.Color.Black;
             this.lblSNVNam.Location = new System.Drawing.Point(459, 49);
             this.lblSNVNam.Name = "lblSNVNam";
-            this.lblSNVNam.Size = new System.Drawing.Size(36, 19);
+            this.lblSNVNam.Size = new System.Drawing.Size(29, 16);
             this.lblSNVNam.TabIndex = 50;
             this.lblSNVNam.Text = "100";
             // 
@@ -203,7 +203,7 @@ namespace BTDotNetCK.GUI
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(410, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 19);
+            this.label5.Size = new System.Drawing.Size(124, 16);
             this.label5.TabIndex = 49;
             this.label5.Text = "Số nhân viên nam";
             // 
@@ -215,7 +215,7 @@ namespace BTDotNetCK.GUI
             this.lblTSNV.ForeColor = System.Drawing.Color.Black;
             this.lblTSNV.Location = new System.Drawing.Point(97, 49);
             this.lblTSNV.Name = "lblTSNV";
-            this.lblTSNV.Size = new System.Drawing.Size(36, 19);
+            this.lblTSNV.Size = new System.Drawing.Size(29, 16);
             this.lblTSNV.TabIndex = 48;
             this.lblTSNV.Text = "100";
             // 
@@ -227,7 +227,7 @@ namespace BTDotNetCK.GUI
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(45, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 19);
+            this.label2.Size = new System.Drawing.Size(125, 16);
             this.label2.TabIndex = 47;
             this.label2.Text = "Tổng số nhân viên";
             // 

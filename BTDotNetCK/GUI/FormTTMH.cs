@@ -1,6 +1,5 @@
 ﻿using BTDotNetCK.BLL;
-using BTDotNetCK.DTO;
-using DoAnPBL3.Models;
+using BTDotNetCK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BTDotNetCK.DTO;
 
 namespace BTDotNetCK.GUI
 {

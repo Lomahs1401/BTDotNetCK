@@ -14,6 +14,7 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormQLMH : Form
     {
+        private readonly string defaultImg = "Img\\Icon\\default.jpg";
         private readonly string password;
         public FormQLMH(string password)
         {

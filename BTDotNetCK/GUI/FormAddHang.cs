@@ -15,6 +15,7 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormAddHang : Form
     {
+        private readonly string defaultImg = "Img\\Icon\\default.jpg";
         public delegate void LoadData(object sender, EventArgs e);
         public LoadData RefreshData { get; set; }
 
@@ -67,10 +68,8 @@ namespace BTDotNetCK.GUI
                 StringBuilder newProductID;
                 string ID_Product = BLL_QLBH.Instance.GetLastID();
 
-                if (ID_Product == "P0000")
-                {
-                    newProductID = new StringBuilder(ID_Product);
-                }
+                if (ID_Product == null)
+                    newProductID = new StringBuilder("P0000");
                 else
                 {
                     string code = ID_Product.Substring(1, ID_Product.Length - 1); // 0006

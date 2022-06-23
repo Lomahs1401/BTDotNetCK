@@ -30,6 +30,7 @@ namespace BTDotNetCK.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDonDatMon));
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@ namespace BTDotNetCK.GUI
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.btnAddMon = new Guna.UI2.WinForms.Guna2Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTable = new System.Windows.Forms.ComboBox();
             this.lblTable = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -238,13 +239,16 @@ namespace BTDotNetCK.GUI
             this.btnAddMon.Text = "Thêm món";
             this.btnAddMon.Click += new System.EventHandler(this.BtnAddMon_Click);
             // 
-            // comboBox1
+            // cbTable
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(638, 65);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 65;
+            this.cbTable.FormattingEnabled = true;
+            this.cbTable.IntegralHeight = false;
+            this.cbTable.Location = new System.Drawing.Point(638, 65);
+            this.cbTable.MaxDropDownItems = 5;
+            this.cbTable.Name = "cbTable";
+            this.cbTable.Size = new System.Drawing.Size(121, 21);
+            this.cbTable.TabIndex = 65;
+            this.cbTable.SelectedIndexChanged += new System.EventHandler(this.CbTable_SelectedIndexChanged);
             // 
             // lblTable
             // 
@@ -262,7 +266,7 @@ namespace BTDotNetCK.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 510);
             this.Controls.Add(this.lblTable);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbTable);
             this.Controls.Add(this.tbMoney);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbSL);
@@ -273,6 +277,7 @@ namespace BTDotNetCK.GUI
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.panelTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHoaDonDatMon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHoaDon";
@@ -302,7 +307,7 @@ namespace BTDotNetCK.GUI
         private Guna.UI2.WinForms.Guna2TextBox tbSL;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTable;
         private System.Windows.Forms.Label lblTable;
     }
 }

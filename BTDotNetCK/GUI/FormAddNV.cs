@@ -1,6 +1,5 @@
 ﻿using BTDotNetCK.BLL;
 using BTDotNetCK.DTO;
-using BTDotNetCK.Validator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +17,7 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormAddNV : Form
     {
+        private readonly string defaultImg = "Img\\Icon\\default.jpg";
         public delegate void LoadData(object sender, EventArgs e);
         public LoadData RefreshData { get; set; }
 
@@ -211,10 +211,9 @@ namespace BTDotNetCK.GUI
             {
                 StringBuilder newStaffId; // S0006
                 string ID_Staff = BLL_QLNV.Instance.GetLastID();
+
                 if (ID_Staff == null)
-                {
                     newStaffId = new StringBuilder("S0000");
-                }
                 else
                 {
                     string code = ID_Staff.Substring(1, ID_Staff.Length - 1); // 0006

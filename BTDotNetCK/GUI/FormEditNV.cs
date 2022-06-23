@@ -15,6 +15,7 @@ namespace BTDotNetCK.GUI
 {
     public partial class FormEditNV : Form
     {
+        private readonly string defaultImg = "Img\\Icon\\default.jpg";
         private string oldPath;
         public delegate void LoadData(object sender, EventArgs e);
         public LoadData RefreshData { get; set; }
@@ -23,7 +24,6 @@ namespace BTDotNetCK.GUI
         public FormEditNV(string ID_Staff)
         {
             this.ID_Staff = ID_Staff;
-           
             InitializeComponent();
             guna2ShadowForm1.SetShadowForm(this);
         }
@@ -31,7 +31,6 @@ namespace BTDotNetCK.GUI
         private void FormEditNV_Load(object sender, EventArgs e)
         {
             ShowInfo(BLL_QLNV.Instance.GetStaffByID(ID_Staff));
-            
         }
 
         private void ShowInfo(Staff staff)

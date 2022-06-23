@@ -142,6 +142,9 @@
   <data name="sua tuoi da" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\sua tuoi da.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="password icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\password icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="noelle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\noelle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,9 +184,6 @@
   <data name="male staff 8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Staff\male staff 8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cookies" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\cookies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="sua tuoi tran chau duong den kem trung nuong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\sua tuoi tran chau duong den kem trung nuong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,14 +199,8 @@
   <data name="exit blue icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\exit blue icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="qiqi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\qiqi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="kem oc que" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\kem oc que.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tra sua socola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Product\tra sua socola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="java" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\java.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,17 +223,11 @@
   <data name="shopping1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\shopping1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kujou sara" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\kujou sara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="female staff 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Staff\female staff 1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="xiangling" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\xiangling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="coffee shop icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\coffee shop icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ningguang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\ningguang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,9 +244,6 @@
   <data name="cookies da xay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\cookies da xay.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="male staff 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Staff\male staff 3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Email icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\Email icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -270,9 +255,6 @@
   </data>
   <data name="male staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Staff\male staff.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="product detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\product detail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="female staff 6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Staff\female staff 6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,6 +298,9 @@
   <data name="female staff 4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Staff\female staff 4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fischl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\fischl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="capuchino" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\capuchino.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -355,11 +340,20 @@
   <data name="bac xiu nong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\bac xiu nong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="heizou" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\heizou.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shenhe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\shenhe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="childe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\childe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kazuha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\kazuha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="male staff 7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Staff\male staff 7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -372,6 +366,9 @@
   </data>
   <data name="matcha da xay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\matcha da xay.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cookies socola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Product\cookies socola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yunjin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\yunjin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -403,6 +400,9 @@
   <data name="bac xiu da" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\bac xiu da.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="coffee-shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\coffee-shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="women" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\women.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -411,9 +411,6 @@
   </data>
   <data name="sinh to xoai" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\sinh to xoai.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sua chua nha dam" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Product\sua chua nha dam.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="aloy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\aloy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -433,9 +430,6 @@
   <data name="razor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\razor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zhongli" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\zhongli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="aether" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\aether.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -447,9 +441,6 @@
   </data>
   <data name="tra sua milkfoam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\tra sua milkfoam.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Set_Product" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\Set_Product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="xoai xay socola" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\xoai xay socola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -489,9 +480,6 @@
   </data>
   <data name="blue eye icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\blue eye icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="male admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\male admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="beidou" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\beidou.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -541,23 +529,32 @@
   <data name="latte matcha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\latte matcha.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="male staff 10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Staff\male staff 10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="klee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\klee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cacao nong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\cacao nong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jean" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\jean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cookies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\cookies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fischl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\fischl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="product detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\product detail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="itto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\itto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cacao da" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Product\cacao da.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buyer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\buyer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xiao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\xiao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blue eye slash icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\blue eye slash icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -571,11 +568,11 @@
   <data name="ayato" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\ayato.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="heizou" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\heizou.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="male admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\male admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="password icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\password icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kujou sara" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\kujou sara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ca phe bot bien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\ca phe bot bien.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -583,14 +580,14 @@
   <data name="sql-file2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\sql-file2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="xiao" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\xiao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="male staff 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Staff\male staff 3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\delete_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="male staff 10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Staff\male staff 10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tra sua socola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Product\tra sua socola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="male staff 5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Staff\male staff 5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -601,8 +598,8 @@
   <data name="ca phe dua da xay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\ca phe dua da xay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="keqing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\keqing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="zhongli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\zhongli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="matcha bot bien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\matcha bot bien.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -612,6 +609,9 @@
   </data>
   <data name="icons8_cancel_45px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon\icons8_cancel_45px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="web-browser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\web-browser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eula" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\eula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -634,8 +634,8 @@
   <data name="ca phe den may" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\ca phe den may.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="web-browser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\web-browser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="qiqi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\qiqi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dalgona tran chau" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\dalgona tran chau.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -643,8 +643,8 @@
   <data name="albedo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\albedo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="keqing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\keqing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="amber" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\amber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -652,8 +652,8 @@
   <data name="gorou" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\gorou.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cookies socola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Product\cookies socola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sua chua nha dam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Product\sua chua nha dam.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thom ep" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\thom ep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -661,16 +661,19 @@
   <data name="ganyu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\GI\ganyu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\GI\jean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tra hoa dau biec tran chau" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Product\tra hoa dau biec tran chau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cacao da" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Product\cacao da.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="coffee shop icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\coffee shop icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kazuha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\GI\kazuha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Set_Product" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\Set_Product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="coffee-shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon\coffee-shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon\default.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -43,5 +43,20 @@ namespace BTDotNetCK.BLL
         {
             return DAL_QLHD.Instance.AddOrderDetail(orderDetail);
         }
+
+        public List<CBB_TableItem> GetCBB_TableItems()
+        {
+            return DAL_QLHD.Instance.GetCBB_TableItems();
+        }
+
+        public string[] ShowOrderInfo(string ID_Order)
+        {
+            return DAL_QLHD.Instance.ShowOrderInfo(ID_Order);
+        }
+
+        public string[][] ShowOrderTable(string ID_Order)
+        {
+            return DAL_QLHD.Instance.ShowOrderTable(ID_Order);
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace BTDotNetCK.GUI
                 Customer customer = BLL_QLKH.Instance.GetCustomerByPhone(tbConfirmPhone.Text);
                 if (customer == null)
                 {
-                    DialogResult result = MessageBox.Show("Khách hàng hiện tại chưa có trong hệ thống. Xác nhận thêm mới?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("Khách hàng hiện tại chưa có trong hệ thống. Xác nhận thêm mới?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
                         new FormAddKH(tbConfirmPhone.Text).ShowDialog();
@@ -45,9 +45,13 @@ namespace BTDotNetCK.GUI
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Khách hàng " + customer.NameCustomer + " có trong hệ thống. Xác nhận đặt món?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("Khách hàng " + customer.NameCustomer + " có trong hệ thống. Xác nhận đặt món?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
+                        DialogResult dialogResult = MessageBox.Show("Xác nhận in hóa đơn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
+                            FormHoaDonDatMon.isConfirmPrintOrder = true;
+                        
                         FormHoaDonDatMon.ID_Customer = customer.ID_Customer;
                         Dispose();
                     }
