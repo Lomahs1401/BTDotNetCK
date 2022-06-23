@@ -230,7 +230,7 @@ namespace BTDotNetCK.GUI
                 msgValidateAddress.ForeColor = Color.Red;
                 isValidAddress = false;
             }
-            
+
             if (isValidName && isValidEmail && isValidDateOfBirth && isValidStartDate &&
                 isValidGender && isValidIdCard && isValidPhone && isValidAddress)
             {
@@ -256,7 +256,7 @@ namespace BTDotNetCK.GUI
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            bool isNewName, isNewEmail, isNewDateOfBirth, isNewStartDate, isNewGender, 
+            bool isNewName, isNewEmail, isNewDateOfBirth, isNewStartDate, isNewGender,
                 isNewPhone, isNewID_Card, isNewAddress, isNewImage = false;
             Staff oldStaff = BLL_QLNV.Instance.GetStaffByID(ID_Staff);
             isNewName = oldStaff.NameStaff != tbNameNV.Text;
